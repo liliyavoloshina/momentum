@@ -1,20 +1,17 @@
-let username = document.querySelector('#greetingName').value
-
-function changeName(e) {
-  username = e.target.value
-}
-
 function setUsernameToStorage() {
-  localStorage.setItem('username', username)
+  localStorage.setItem(
+    'username',
+    document.querySelector('#greetingName').value
+  )
 }
 
 function getUsernameFromStorage() {
-  if(localStorage.getItem('username')) {
-    username = localStorage.getItem('username')
+  if (localStorage.getItem('username')) {
+    document.querySelector('#greetingName').value =
+      localStorage.getItem('username')
+  } else {
+    document.querySelector('#greetingName').value = 'stranger'
   }
 }
 
-window.addEventListener('beforeunload', setUsernameToStorage)
-window.addEventListener('load', getUsernameFromStorage)
-
-export default changeName
+export { setUsernameToStorage, getUsernameFromStorage }
