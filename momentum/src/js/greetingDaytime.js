@@ -1,4 +1,5 @@
-const greetingDaytimeEl = document.querySelector('.greeting__daytime')
+const greetingDaytimeEl = document.querySelector('#greetingDaytime')
+
 function getTimeOfDay() {
   const date = new Date()
   const hours = date.getHours()

@@ -1,4 +1,4 @@
-const timeEl = document.querySelector('.time')
+const timeEl = document.querySelector('#time')
 
 function showTime() {
   const date = new Date()

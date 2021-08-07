@@ -1,4 +1,4 @@
-const dateEl = document.querySelector('.date')
+const dateEl = document.querySelector('#date')
 let locale = 'en-US'
 const options = {
   month: 'long',
