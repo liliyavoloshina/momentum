@@ -1,11 +1,10 @@
-const time = document.querySelector('.time')
+const timeEl = document.querySelector('.time')
+
 function showTime() {
   const date = new Date()
   const currentTime = date.toLocaleTimeString()
-  if (time) {
-    time.textContent = currentTime
-  }
+  timeEl.textContent = currentTime
   setTimeout(showTime, 1000)
 }
 
-export { showTime }
+export default showTime
