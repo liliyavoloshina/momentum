@@ -3,8 +3,7 @@ let locale = 'en-US'
 const options = {
   month: 'long',
   day: 'numeric',
-  weekday: 'long',
-  timeZone: 'UTC'
+  weekday: 'long'
 }
 
 function showDate() {
