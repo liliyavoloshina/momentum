@@ -10,12 +10,23 @@ All the resets, variables, mixins, and utility classes
 
 body {
   font-family: 'Lato', sans-serif;
-  -webkit-transition: background-image .5s linear;
-  transition: background-image .5s linear;
+  color: #d8d8d8;
+  background: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  -webkit-transition: background-image 0.5s linear;
+  transition: background-image 0.5s linear;
 }
 
-.name-active {
-  color: red;
+.btn {
+  border: none;
+  outline: none;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.btn:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 /*
@@ -78,8 +89,8 @@ Styles for the header, footer, the grid system e.t.c.
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-column-gap: .2em;
-          column-gap: .2em;
+  -webkit-column-gap: 0.2em;
+          column-gap: 0.2em;
   margin-top: 1em;
   font-size: 3em;
 }
@@ -94,9 +105,42 @@ Styles for the header, footer, the grid system e.t.c.
   width: 40%;
   padding-top: 4px;
   font-size: inherit;
+  text-transform: capitalize;
   border: 0;
   outline: 0;
   background-color: transparent;
+}
+
+.name-active {
+  color: red;
+}
+
+.name-inactive {
+  color: #d8d8d8;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 45%;
+  width: 50px;
+  height: 50px;
+}
+
+.slide-btn:hover {
+  opacity: .5;
+  cursor: pointer;
+}
+
+.slide-prev-btn {
+  left: 2em;
+  background: url("/momentum/img/prev.png");
+  background-size: contain;
+}
+
+.slide-next-btn {
+  right: 2em;
+  background: url("/momentum/img/next.png");
+  background-size: contain;
 }
 
 .footer {

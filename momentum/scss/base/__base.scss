@@ -6,9 +6,18 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  transition: background-image .5s linear;
+  color: $text-primary;
+  background: rgba(0, 0, 0, 0.5);
+  background-blend-mode: multiply;
+  transition: background-image 0.5s linear;
 }
 
-.name-active {
-  color: red;
+.btn {
+  border: none;
+  outline: none;
+  transition: .2s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }

@@ -19,7 +19,13 @@ function getUsernameFromStorage() {
 }
 
 function changeInputColor(e) {
-  e.target.classList.toggle('name-active')
+  if (e.target.classList.contains('name-inactive')) {
+    e.target.classList.add('name-active')
+    e.target.classList.remove('name-inactive')
+  } else {
+    e.target.classList.add('name-inactive')
+    e.target.classList.remove('name-active')
+  }
 }
 
 export { setUsernameToStorage, getUsernameFromStorage, changeInputColor }

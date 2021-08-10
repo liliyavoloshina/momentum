@@ -18,7 +18,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: .2em;
+  column-gap: 0.2em;
   margin-top: 1em;
   font-size: 3em;
 
@@ -32,8 +32,41 @@
     width: 40%;
     padding-top: 4px;
     font-size: inherit;
+    text-transform: capitalize;
     border: 0;
     outline: 0;
     background-color: transparent;
   }
+}
+
+.name-active {
+  color: red;
+}
+
+.name-inactive {
+  color: $text-primary;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 45%;
+  width: 50px;
+  height: 50px;
+
+  &:hover {
+    opacity: .5;
+    cursor: pointer;
+  }
+}
+
+.slide-prev-btn {
+  left: 2em;
+  background: url('/momentum/img/prev.png');
+  background-size: contain;
+}
+
+.slide-next-btn {
+  right: 2em;
+  background: url('/momentum/img/next.png');
+  background-size: contain;
 }

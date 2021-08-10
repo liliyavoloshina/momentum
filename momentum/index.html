@@ -15,7 +15,9 @@
 <body>
     <header class="header">
         <div class="header__widget"></div>
-        <div class="header__widget"></div>
+        <div class="weather-widget header__widget">
+
+        </div>
     </header>
 
     <main class="main">
@@ -23,21 +25,23 @@
         <div class="date" id="date"></div>
         <div class="greeting">
             <div class="greeting__daytime" id="greetingDaytime">Good morning,</div>
-            <input class="greeting__name" id="greetingName" type="text"></input>
+            <input class="greeting__name name-inactive" id="greetingName" type="text"></input>
         </div>
-        <button class="slide-prev-btn" id="slidePrev">prev</button>
-        <button class="slide-next-btn" id="slideNext">next</button>
     </main>
+
+    
+    <button class="slide-prev-btn slide-btn btn" id="slidePrev" title="Previous Slide"></button>
+    <button class="slide-next-btn slide-btn btn" id="slideNext" title="Next Slide"></button>
 
     <footer class="footer">
         <button class="quote-change">C</button>
         <div class="quote">
-            <div class="quote__text">"Reviewing what you have learned and learning anew, you are fit to be a teacher"
+            <div class="quote__text">"Reviewing what you have learned and learning anew, you are fit to be a
+                teacher"
             </div>
             <div class="quote__author">Confucius</div>
         </div>
     </footer>
-
     <script src="./js/index.js" type="module"></script>
 </body>
 
