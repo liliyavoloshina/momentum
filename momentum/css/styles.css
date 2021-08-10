@@ -69,7 +69,13 @@ All styles relating to a reusable component
 }
 
 .weather-widget__city {
+  padding-bottom: 0.2em;
   font-size: 1.5em;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.weather-widget__error {
+  display: none;
 }
 
 /*
