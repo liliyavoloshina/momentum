@@ -4,13 +4,13 @@ function getTimeOfDay() {
   const date = new Date()
   const hours = date.getHours()
 
-  if (hours >= 5 && hours < 12) {
+  if (hours >= 6 && hours < 12) {
     return 'morning'
-  } else if (hours >= 12 && hours < 17) {
+  } else if (hours >= 12 && hours < 18) {
     return 'day'
-  } else if (hours >= 17 && hours < 21) {
+  } else if (hours >= 18 && hours < 24) {
     return 'evening'
-  } else if (hours >= 21 || hours < 5) {
+  } else if (hours >= 0 || hours < 6) {
     return 'night'
   }
 }

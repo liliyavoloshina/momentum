@@ -40,8 +40,7 @@
   height: 50px;
 
   &:hover {
-    opacity: .5;
-    cursor: pointer;
+    transform: scale(1.2);
   }
 }
 

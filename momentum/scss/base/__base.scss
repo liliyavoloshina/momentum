@@ -16,9 +16,9 @@ body {
   border: none;
   outline: none;
   transition: 0.2s ease;
-
+  cursor: pointer;
   &:hover {
-    transform: scale(1.2);
+    opacity: 0.5;
   }
 }
 
