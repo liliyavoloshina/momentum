@@ -1,3 +1,8 @@
+const nameEl = document.querySelector('#greetingName')
+nameEl.addEventListener('focus', (e) => changeInputColor(e))
+nameEl.addEventListener('blur', (e) => changeInputColor(e))
+
+
 function setUsernameToStorage() {
   localStorage.setItem(
     'username',
@@ -13,4 +18,8 @@ function getUsernameFromStorage() {
   }
 }
 
-export { setUsernameToStorage, getUsernameFromStorage }
+function changeInputColor(e) {
+  e.target.classList.toggle('name-active')
+}
+
+export { setUsernameToStorage, getUsernameFromStorage, changeInputColor }

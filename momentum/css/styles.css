@@ -12,6 +12,10 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.name-active {
+  color: red;
+}
+
 /*
 All styles relating to a reusable component
 */
