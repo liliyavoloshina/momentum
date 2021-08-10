@@ -1,3 +1,5 @@
+let lang = 'en'
+
 function changeInputColor(e) {
   if (e.target.classList.contains('input-inactive')) {
     e.target.classList.add('input-active')
@@ -8,4 +10,8 @@ function changeInputColor(e) {
   }
 }
 
-export { changeInputColor }
+function changeLanguage() {
+  lang === 'en' ? lang = 'ru' : 'en'
+}
+
+export { changeInputColor, changeLanguage, lang }

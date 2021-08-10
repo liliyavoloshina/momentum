@@ -1,5 +1,7 @@
+import {lang} from './helpers.js'
+
 const dateEl = document.querySelector('#date')
-let locale = 'en-US'
+let locale = lang === 'en' ? 'en-US' : 'ru-RU'
 const options = {
   month: 'long',
   day: 'numeric',

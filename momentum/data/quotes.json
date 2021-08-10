@@ -3,70 +3,70 @@
     "id": 1,
     "textRu": "Счастлив тот, кто счастлив у себя дома.",
     "textEn": "Happy is he who is happy at home.",
-    "authortRu": "Лев Толстой",
+    "authorRu": "Лев Толстой",
     "authorEn": "Leo Tolstoy"
   },
   {
     "id": 2,
     "textRu": "Чтобы добиться успеха в жизни, нужны две вещи: невежество и самоуверенность.",
     "textEn": "To succeed in life, you need two things: ignorance and confidence.",
-    "authortRu": "Марк Твен",
+    "authorRu": "Марк Твен",
     "authorEn": "Mark Twain"
   },
   {
     "id": 3,
     "textRu": "На то и ум, чтобы достичь того, чего хочешь.",
     "textEn": "Intelligence is there just to achieve what you want.",
-    "authortRu": "Федор Достоевский",
+    "authorRu": "Федор Достоевский",
     "authorEn": "Fedor Dostoyevsky"
   },
   {
     "id": 4,
     "textRu": "Всегда прощайте ваших врагов, ничто не раздражает их больше.",
     "textEn": "Always forgive your enemies; nothing annoys them so much.",
-    "authortRu": "Оскар Уайлд",
+    "authorRu": "Оскар Уайлд",
     "authorEn": "Oscar Wilde"
   },
   {
     "id": 5,
     "textRu": "Ваше время ограничено, так что не теряйте его, проживая чужую жизнь.",
     "textEn": "Your time is limited, so don’t waste it living someone else’s life.",
-    "authortRu": "Стив Джобс",
+    "authorRu": "Стив Джобс",
     "authorEn": "Steve Jobs"
   },
   {
     "id": 6,
     "textRu": "Пока мы откладываем все дела на потом, жизнь проходит мимо.",
     "textEn": "While we are postponing, life speeds by.",
-    "authortRu": "Сенека",
+    "authorRu": "Сенека",
     "authorEn": "Seneka"
   },
   {
     "id": 7,
     "textRu": "Успех — это один процент вдохновения и девяносто девять процентов пота.",
     "textEn": "Success is one percent inspiration, ninety-nine percent perspiration.",
-    "authortRu": "Томас Эдисон",
+    "authorRu": "Томас Эдисон",
     "authorEn": "Thomas Edison"
   },
   {
     "id": 8,
     "textRu": "Пусть уж меня ненавидят за то, кто я есть, чем любят за то, кем я не являюсь.",
     "textEn": "I'd rather be hated for who I am, than loved for who I am not.",
-    "authortRu": "Курт Кобейн",
+    "authorRu": "Курт Кобейн",
     "authorEn": "Kurt Cobain"
   },
   {
     "id": 9,
     "textRu": "Не бойтесь совершенства; вам его никогда не достичь.",
     "textEn": "Have no fear of perfection; you’ll never reach it.",
-    "authortRu": "Сальвадор Дали",
+    "authorRu": "Сальвадор Дали",
     "authorEn": "Salvador Dalí"
   },
   {
     "id": 10,
     "textRu": " Простота есть высшая степень утонченности.",
     "textEn": "Simplicity is the ultimate sophistication.",
-    "authortRu": "Леонардо да Винчи",
+    "authorRu": "Леонардо да Винчи",
     "authorEn": "Leonardo da Vinci"
   }
 ]
