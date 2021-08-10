@@ -18,10 +18,10 @@ window.addEventListener('beforeunload', () => {
 window.addEventListener('load', () => {
   getUsernameFromStorage()
   getCityFromStorage()
+  getWeather()
 })
 
 showTime()
 showDate()
 showGreeting()
 setBg()
-getWeather()
