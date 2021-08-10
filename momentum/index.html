@@ -2,50 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>momentum</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/owfont-regular.css">
-    <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>momentum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/owfont-regular.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
-    <header class="header">
-        <div class="header__widget"></div>
-        <div class="weather-widget header__widget">
-            <div class="weather-widget__city">Minsk</div>
-            <div class="weather-widget__icon"></div>
-            <div class="weather-widget__info"></div>
-        </div>
-    </header>
+  <header class="header">
+    <div class="header__widget"></div>
+    <div class="weather-widget header__widget">
+      <div class="weather-widget__city">
+        <input class="input input-inactive" id="weatherCity" type="text">
+      </div>
+      <div class="weather-widget__icon"><i class="weather-icon owf"></i></div>
+      <div class="weather-widget__info">
+        <div class="weather-temp"></div>
+        <div class="weather-desc"></div>
+      </div>
+    </div>
+  </header>
 
-    <main class="main">
-        <div class="time" id="time"></div>
-        <div class="date" id="date"></div>
-        <div class="greeting">
-            <div class="greeting__daytime" id="greetingDaytime">Good morning,</div>
-            <input class="greeting__name name-inactive" id="greetingName" type="text"></input>
-        </div>
-    </main>
+  <main class="main">
+    <div class="time" id="time"></div>
+    <div class="date" id="date"></div>
+    <div class="greeting">
+      <div class="greeting__daytime" id="greetingDaytime">Good morning,</div>
+      <div class="greeting__name">
+        <input class="input input-inactive" id="greetingName" type="text">
+      </div>
+  </main>
 
-    
-    <button class="slide-prev-btn slide-btn btn" id="slidePrev" title="Previous Slide"></button>
-    <button class="slide-next-btn slide-btn btn" id="slideNext" title="Next Slide"></button>
+  <button class="slide-prev-btn slide-btn btn" id="slidePrev" title="Previous Slide"></button>
+  <button class="slide-next-btn slide-btn btn" id="slideNext" title="Next Slide"></button>
 
-    <footer class="footer">
-        <button class="quote-change">C</button>
-        <div class="quote">
-            <div class="quote__text">"Reviewing what you have learned and learning anew, you are fit to be a
-                teacher"
-            </div>
-            <div class="quote__author">Confucius</div>
-        </div>
-    </footer>
-    <script src="./js/index.js" type="module"></script>
+  <footer class="footer">
+    <button class="quote-change">C</button>
+    <div class="quote">
+      <div class="quote__text">"Reviewing what you have learned and learning anew, you are fit to be a
+        teacher"
+      </div>
+      <div class="quote__author">Confucius</div>
+    </div>
+  </footer>
+  <script src="./js/index.js" type="module"></script>
 </body>
 
 </html>

@@ -28,23 +28,9 @@
   }
 
   &__name {
-    display: block;
     width: 40%;
     padding-top: 4px;
-    font-size: inherit;
-    text-transform: capitalize;
-    border: 0;
-    outline: 0;
-    background-color: transparent;
   }
-}
-
-.name-active {
-  color: red;
-}
-
-.name-inactive {
-  color: $text-primary;
 }
 
 .slide-btn {

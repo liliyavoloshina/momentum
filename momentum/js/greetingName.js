@@ -1,3 +1,5 @@
+import {changeInputColor} from './helpers.js'
+
 const nameEl = document.querySelector('#greetingName')
 nameEl.addEventListener('focus', (e) => changeInputColor(e))
 nameEl.addEventListener('blur', (e) => changeInputColor(e))
@@ -18,14 +20,4 @@ function getUsernameFromStorage() {
   }
 }
 
-function changeInputColor(e) {
-  if (e.target.classList.contains('name-inactive')) {
-    e.target.classList.add('name-active')
-    e.target.classList.remove('name-inactive')
-  } else {
-    e.target.classList.add('name-inactive')
-    e.target.classList.remove('name-active')
-  }
-}
-
-export { setUsernameToStorage, getUsernameFromStorage, changeInputColor }
+export { setUsernameToStorage, getUsernameFromStorage }
