@@ -1,13 +1,14 @@
 import { changeInputColor } from './helpers.js'
 
-const weatherIcon = document.querySelector('.weather-icon')
-const weatherTempEl = document.querySelector('.weather-temp')
-const weatherDescEl = document.querySelector('.weather-desc')
-const weatherWindEl = document.querySelector('.weather-wind')
-const weatherHumidityEl = document.querySelector('.weather-humidity')
-const weatherErrorEl = document.querySelector('.weather-widget__error')
-
 const weatherCityEl = document.querySelector('#weatherCity')
+const weatherIcon = document.querySelector('#weatherIcon')
+const weatherTempEl = document.querySelector('#weatherTemp')
+const weatherDescEl = document.querySelector('#weatherDesc')
+const weatherWindEl = document.querySelector('#weatherWind')
+const weatherHumidityEl = document.querySelector('#weatherHumidity')
+const weatherErrorEl = document.querySelector('.weather-widget__error')
+const weatherInfoEl = document.querySelector('.weather-widget__info')
+
 weatherCityEl.addEventListener('focus', e => changeInputColor(e))
 weatherCityEl.addEventListener('blur', e => changeInputColor(e))
 weatherCityEl.addEventListener('change', e => {
@@ -15,7 +16,7 @@ weatherCityEl.addEventListener('change', e => {
   getWeather()
 })
 
-let lang = 'ru'
+let lang = 'en'
 let city
 
 function setCityToStorage() {
@@ -47,13 +48,15 @@ async function getWeather() {
     weatherIcon.classList.add(`owf-${weatherId}`)
     weatherTempEl.textContent = `${weatherTemp} °C`
     weatherDescEl.textContent = weatherDesc
-    weatherWindEl.textContent = `${weatherWind} m/c`
-    weatherHumidityEl.textContent = `${weatherHumidity} %`
+    weatherWindEl.textContent = `Wind speed: ${weatherWind} m/c`
+    weatherHumidityEl.textContent = `Humidity: ${weatherHumidity} %`
 
-    weatherErrorEl.style.display = 'none'
+    weatherErrorEl.classList.add('hidden')
+    weatherInfoEl.classList.remove('hidden')
   } catch (e) {
-    weatherErrorEl.style.display = 'block'
-    weatherErrorEl.textContent = `Unfortunately, there is no "${city}" place on Earth...`
+    weatherErrorEl.classList.remove('hidden')
+    weatherInfoEl.classList.add('hidden')
+    weatherErrorEl.textContent = `Unfortunately, there is no place for "${city}" on Earth... :(`
     console.log(e, 'func')
   }
 }

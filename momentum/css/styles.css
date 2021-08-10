@@ -48,6 +48,10 @@ body {
   color: #d8d8d8;
 }
 
+.hidden {
+  display: none;
+}
+
 /*
 All styles relating to a reusable component
 */
@@ -59,12 +63,7 @@ All styles relating to a reusable component
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  row-gap: 1em;
   padding: 1em;
 }
 
@@ -75,7 +74,33 @@ All styles relating to a reusable component
 }
 
 .weather-widget__error {
-  display: none;
+  height: 70%;
+  font-size: 1.6em;
+}
+
+.weather-widget__info {
+  list-style: none;
+  font-size: 1.5em;
+}
+
+.weather-widget__info li + li {
+  margin-top: .5em;
+}
+
+.weather-info-main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1em;
+          column-gap: 1em;
+  font-size: 2em;
+}
+
+.weather-desc {
+  text-transform: capitalize;
 }
 
 /*

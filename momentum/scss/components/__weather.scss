@@ -1,8 +1,7 @@
 .weather-widget {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  row-gap: 1em;
   padding: 1em;
   &__city {
     padding-bottom: 0.2em;
@@ -10,8 +9,26 @@
     border-bottom: 1px solid $text-primary;
   }
   &__error {
-    display: none;
+    height: 70%;
+    font-size: 1.6em;
   }
-  &__icon {}
-  &__info{}
+  &__info{
+    list-style: none;
+    font-size: 1.5em;
+  }
+}
+
+.weather-widget__info li + li {
+  margin-top: .5em;
+}
+
+.weather-info-main {
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+  font-size: 2em;
+}
+
+.weather-desc {
+  text-transform: capitalize;
 }
