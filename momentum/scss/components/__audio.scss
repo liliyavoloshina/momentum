@@ -30,7 +30,8 @@
   &__track {
     display: flex;
     width: 200px;
-    height: 10px;
+    height: 8px;
+    border-radius: 5px;
     transition: height 0.3s;
     background: $color-dark;
     cursor: pointer;
@@ -39,6 +40,7 @@
     background: $text-primary;
     flex: 0;
     flex-basis: 50%;
+    border-radius: 5px;
   }
   &__duration {
     position: absolute;
@@ -91,8 +93,8 @@
 
 .audio-widget-volume-range {
   width: 100%;
-  height: 10px;
-  border-radius: 2px;
+  height: 8px;
+  border-radius: 5px;
   outline: none;
   transition: background 450ms ease-in;
   -webkit-appearance: none;
@@ -110,7 +112,7 @@
     transition: 0.7s linear;
     filter: $filter-purple;
   }
-  
+
   background: linear-gradient(
     to right,
     $text-primary 0%,
@@ -130,19 +132,5 @@
   &:hover,
   &.active {
     filter: $filter-purple;
-  }
-  &.active .btn {
-    background: url('/momentum/img/pause-audio.png');
-    background-size: contain;
-  }
-  &__play-btn {
-    width: 1em;
-    height: 1em;
-    background: url('/momentum/img/play-audio.png');
-    background-size: contain;
-  }
-  &__pause-btn {
-    background: url('/momentum/img/pause-audio.png');
-    background-size: contain;
   }
 }

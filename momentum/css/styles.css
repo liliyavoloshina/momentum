@@ -15,6 +15,7 @@ body {
   background-blend-mode: multiply;
   -webkit-transition: background-image 0.5s linear;
   transition: background-image 0.5s linear;
+  background-size: cover;
 }
 
 .btn {
@@ -154,7 +155,8 @@ All styles relating to a reusable component
   display: -ms-flexbox;
   display: flex;
   width: 200px;
-  height: 10px;
+  height: 8px;
+  border-radius: 5px;
   -webkit-transition: height 0.3s;
   transition: height 0.3s;
   background: #383838;
@@ -168,6 +170,7 @@ All styles relating to a reusable component
           flex: 0;
   -ms-flex-preferred-size: 50%;
       flex-basis: 50%;
+  border-radius: 5px;
 }
 
 .audio-widget-progress__duration {
@@ -234,8 +237,8 @@ All styles relating to a reusable component
 
 .audio-widget-volume-range {
   width: 100%;
-  height: 10px;
-  border-radius: 2px;
+  height: 8px;
+  border-radius: 5px;
   outline: none;
   -webkit-transition: background 450ms ease-in;
   transition: background 450ms ease-in;
@@ -278,23 +281,6 @@ All styles relating to a reusable component
 .playlist-item:hover, .playlist-item.active {
   -webkit-filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
           filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
-}
-
-.playlist-item.active .btn {
-  background: url("/momentum/img/pause-audio.png");
-  background-size: contain;
-}
-
-.playlist-item__play-btn {
-  width: 1em;
-  height: 1em;
-  background: url("/momentum/img/play-audio.png");
-  background-size: contain;
-}
-
-.playlist-item__pause-btn {
-  background: url("/momentum/img/pause-audio.png");
-  background-size: contain;
 }
 
 /*
