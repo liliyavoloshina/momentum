@@ -7,4 +7,4 @@ function showTime() {
   setTimeout(showTime, 1000)
 }
 
-export default showTime
+showTime()

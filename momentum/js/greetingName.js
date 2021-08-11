@@ -20,4 +20,9 @@ function getUsernameFromStorage() {
   }
 }
 
-export { setUsernameToStorage, getUsernameFromStorage }
+window.addEventListener('beforeunload', () => {
+  setUsernameToStorage()
+})
+window.addEventListener('load', () => {
+  getUsernameFromStorage()
+})

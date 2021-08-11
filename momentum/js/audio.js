@@ -1,6 +1,7 @@
-import playlist from "../data/playlist.js"
+import playlist from '../data/playlist.js'
 
 const audioPlayMain = document.querySelector('#audioPlayMain')
+const playlistEl = document.querySelector('#playlist')
 
 let isPlaying = false
 let playNum = 0
@@ -23,8 +24,39 @@ function playAudio() {
 }
 
 function playNext() {
+  console.log('work')
 }
-function playPrev() {
+function playPrev() {}
+
+function initPlaylist() {
+  playlistEl.innerHTML = `
+  ${
+    playlist.length > 0
+      ? playlist
+          .map(
+            item =>
+              `<li class="playlist-item" data-id="${item.id}">
+               <button class="playlist-item__play-btn btn" title="Play/Pause Audio"></button>
+              <div class="playlist-item__name">${item.title}</div>
+            </li>`
+          )
+          .join('')
+      : '---'
+  }
+  `
 }
 
-export {playAudio}
+
+const audioVolumeRange = document.querySelector('#audioVolumeRange')
+
+audioVolumeRange.addEventListener('input', (e) => {
+  const input = e.target
+  input.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${
+    input.value * 70
+  }%, #383838 ${input.value * 100}%, #383838 100%)`
+  // currentVideo.volume = value
+})
+
+initPlaylist()
+
+export { playAudio, initPlaylist, playNext }

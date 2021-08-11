@@ -21,9 +21,9 @@
 
         <div class="audio-widget-info__controls">
           <div class="audio-widget-control-btns">
-            <button class="audio-widget-prev-btn btn" title="Previous Audio"></button>
+            <button class="audio-widget-prev-btn btn" id="audioPrevMain" title="Previous Audio"></button>
             <button class="audio-widget-play-btn btn" id="audioPlayMain" title="Play/Pause Audio"></button>
-            <button class="audio-widget-next-btn btn" title="Next Audio"></button>
+            <button class="audio-widget-next-btn btn" id="audioNextMain" title="Next Audio"></button>
           </div>
 
           <div class="audio-widget-progress">
@@ -42,16 +42,7 @@
         </div>
       </div>
 
-      <ul class="audio-widget-playlist">
-        <li class="playlist-item active">
-          <button class="playlist-item__play-btn btn" title="Play/Pause Audio"></button>
-          <div class="playlist-item__name">Lofi Hip-Hop</div>
-        </li>
-        <li class="playlist-item">
-          <button class="playlist-item__play-btn btn" title="Play/Pause Audio"></button>
-          <div class="playlist-item__name">Lofi Hip-Hop</div>
-        </li>
-      </ul>
+      <ul class="audio-widget-playlist" id="playlist"></ul>
     </div>
 
     <div class="weather-widget header__widget">

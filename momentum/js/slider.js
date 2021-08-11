@@ -1,5 +1,11 @@
 import { getTimeOfDay } from './greetingDaytime.js'
 
+const slidePrev = document.querySelector('#slidePrev')
+const slideNext = document.querySelector('#slideNext')
+
+slidePrev.addEventListener('click', getSlidePrev)
+slideNext.addEventListener('click', getSlideNext)
+
 let randomNum = getRandomNum()
 
 function getRandomNum() {
@@ -28,4 +34,4 @@ function getSlideNext() {
   setBg()
 }
 
-export {getSlidePrev, getSlideNext, setBg}
+setBg()

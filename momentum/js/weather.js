@@ -57,8 +57,14 @@ async function getWeather() {
     weatherErrorEl.classList.remove('hidden')
     weatherInfoEl.classList.add('hidden')
     weatherErrorEl.textContent = `Unfortunately, there is no place for "${city}" on Earth... :(`
-    console.log(e, 'func')
   }
 }
 
-export { getWeather, setCityToStorage, getCityFromStorage }
+
+window.addEventListener('beforeunload', () => {
+  setCityToStorage()
+})
+window.addEventListener('load', () => {
+  getCityFromStorage()
+  getWeather()
+})

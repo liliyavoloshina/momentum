@@ -21,4 +21,6 @@ function showGreeting() {
   greetingDaytimeEl.textContent = greetingText
 }
 
-export {showGreeting, getTimeOfDay}
+showGreeting()
+
+export {getTimeOfDay}

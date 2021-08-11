@@ -105,10 +105,12 @@
     cursor: pointer;
     background: $text-primary;
   }
+
   &::-webkit-slider-thumb:hover {
     transition: 0.7s linear;
     filter: $filter-purple;
   }
+  
   background: linear-gradient(
     to right,
     $text-primary 0%,

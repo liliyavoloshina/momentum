@@ -1,8 +1,10 @@
 import {lang} from './helpers.js'
 
-const quoteChangeBtn = document.querySelector('.quote-change')
+const quoteChangeBtn = document.querySelector('#quoteChangeBtn')
 const quoteTextEl = document.querySelector('#quoteText')
 const quoteAuthorEl = document.querySelector('#quoteAuthor')
+
+quoteChangeBtn.addEventListener('click', changeQuote)
 
 let randomQuote
 let textQuote
@@ -28,4 +30,4 @@ async function changeQuote() {
   quoteAuthorEl.textContent = `— ${authorQuote}`
 }
 
-export default changeQuote
+changeQuote()

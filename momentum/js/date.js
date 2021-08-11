@@ -17,4 +17,5 @@ function showDate() {
   setTimeout(showDate, 1000)
 }
 
-export default showDate
+
+showDate()
