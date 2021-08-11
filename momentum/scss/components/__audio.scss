@@ -1,0 +1,120 @@
+.audio-widget {
+  width: 600px;
+  background-color: rgb(250, 60, 60);
+  padding: 1em;
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2em;
+  }
+
+  &-playlist {
+    list-style-type: none;
+  }
+}
+
+.audio-widget-info {
+  &__name {
+    margin-bottom: .5em;
+    font-size: 1.5em;
+  }
+  &__controls {
+    display: flex;
+    align-items: center;
+    column-gap: 2em;
+  }
+}
+
+.audio-widget-progress {
+  position: relative;
+  &__track {
+    display: flex;
+    width: 200px;
+    height: 10px;
+    transition: height 0.3s;
+    background: $color-dark;
+    cursor: pointer;
+  }
+  &__track-filled {
+    background: $text-primary;
+    flex: 0;
+    flex-basis: 50%;
+  }
+  &__duration {
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    flex-basis: 10%;
+    font-size: 0.9em;
+  }
+}
+
+.audio-widget-control-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
+  & .btn {
+    width: 2em;
+    height: 2em;
+  }
+}
+
+.audio-widget-prev-btn {
+  background: url('/momentum/img/prev-audio.png');
+  background-size: contain;
+}
+.audio-widget-play-btn {
+  background: url('/momentum/img/play-audio.png');
+  background-size: contain;
+}
+.audio-widget-pause-btn {
+  background: url('/momentum/img/pause-audio.png');
+  background-size: contain;
+}
+.audio-widget-next-btn {
+  background: url('/momentum/img/next-audio.png');
+  background-size: contain;
+}
+
+.audio-widget-control-volume {
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+}
+
+.audio-widget-volume-btn {
+  width: 2em;
+  height: 2em;
+  background: url('/momentum/img/volume.png') center no-repeat;
+  background-size: contain;
+}
+
+.audio-widget-volume-range {
+  width: 100%;
+  height: 10px;
+  border-radius: 2px;
+  outline: none;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+
+  &::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: $text-primary;
+  }
+  background: linear-gradient(
+    to right,
+    $text-primary 0%,
+    $text-primary 45%,
+    $color-dark 30%,
+    $color-dark 100%
+  );
+}
+
+.playlist-item {
+  display: flex;
+}

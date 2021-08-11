@@ -15,7 +15,41 @@
 
 <body>
   <header class="header">
-    <div class="header__widget"></div>
+    <div class="audio-widget">
+      <div class="audio-widget-info">
+        <div class="audio-widget-info__name">Lofi Hip-Hop</div>
+
+        <div class="audio-widget-info__controls">
+          <div class="audio-widget-control-btns">
+            <button class="audio-widget-prev-btn btn" title="Previous Audio"></button>
+            <button class="audio-widget-play-btn btn" title="Play/Pause Audio"></button>
+            <button class="audio-widget-next-btn btn" title="Next Audio"></button>
+          </div>
+
+          <div class="audio-widget-progress">
+            <div class="audio-widget-progress__track">
+              <div class="audio-widget-progress__track-filled"></div>
+            </div>
+            <div class="audio-widget-progress__duration">
+              <span class="audio-widget-progress__duration-cur">00:00</span>/<span class="audio-widget-progress__duration-end">3:50</span>
+            </div>
+          </div>
+          <div class="audio-widget-control-volume">
+            <button class="audio-widget-volume-btn btn" title="Volume Audio Regulation"></button>
+            <input class="audio-widget-volume-range" id="audioVolumeRange" type="range" min="0.1" max="1" value="0.5" step="0.1"
+              title="Volume Regulation">
+          </div>
+        </div>
+      </div>
+
+      <ul class="audio-widget-playlist">
+        <li class="playlist-item">
+          <button class="playlist-item__play btn" title="Play/Pause Audio">play</button>
+          <div class="playlist-item__name">Lofi Hip-Hop</div>
+        </li>
+      </ul>
+    </div>
+
     <div class="weather-widget header__widget">
       <div class="weather-widget__city">
         <input class="input input-inactive" id="weatherCity" type="text">
@@ -29,7 +63,7 @@
         <li class="weather-desc" id="weatherDesc"></li>
         <li class="weather-wind" id="weatherWind"></li>
         <li class="weather-humidity" id="weatherHumidity"></li>
-      </гд>
+        </гд>
     </div>
   </header>
 
@@ -47,7 +81,7 @@
   <button class="slide-next-btn slide-btn btn" id="slideNext" title="Next Slide"></button>
 
   <footer class="footer">
-    <button class="quote-change btn" title="Change Quote"></button>
+    <button class="quote-change btn" title="Change Quote" id="quoteChangeBtn"></button>
     <div class="quote">
       <div class="quote__text" id="quoteText"></div>
       <div class="quote__author" id="quoteAuthor"></div>

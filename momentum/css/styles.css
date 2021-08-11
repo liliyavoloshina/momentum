@@ -103,6 +103,157 @@ All styles relating to a reusable component
   text-transform: capitalize;
 }
 
+.audio-widget {
+  width: 600px;
+  background-color: #fa3c3c;
+  padding: 1em;
+}
+
+.audio-widget-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2em;
+}
+
+.audio-widget-playlist {
+  list-style-type: none;
+}
+
+.audio-widget-info__name {
+  margin-bottom: .5em;
+  font-size: 1.5em;
+}
+
+.audio-widget-info__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 2em;
+          column-gap: 2em;
+}
+
+.audio-widget-progress {
+  position: relative;
+}
+
+.audio-widget-progress__track {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  height: 10px;
+  -webkit-transition: height 0.3s;
+  transition: height 0.3s;
+  background: #383838;
+  cursor: pointer;
+}
+
+.audio-widget-progress__track-filled {
+  background: #d8d8d8;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.audio-widget-progress__duration {
+  position: absolute;
+  bottom: -30px;
+  right: 0;
+  -ms-flex-preferred-size: 10%;
+      flex-basis: 10%;
+  font-size: 0.9em;
+}
+
+.audio-widget-control-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 150px;
+}
+
+.audio-widget-control-btns .btn {
+  width: 2em;
+  height: 2em;
+}
+
+.audio-widget-prev-btn {
+  background: url("/momentum/img/prev-audio.png");
+  background-size: contain;
+}
+
+.audio-widget-play-btn {
+  background: url("/momentum/img/play-audio.png");
+  background-size: contain;
+}
+
+.audio-widget-pause-btn {
+  background: url("/momentum/img/pause-audio.png");
+  background-size: contain;
+}
+
+.audio-widget-next-btn {
+  background: url("/momentum/img/next-audio.png");
+  background-size: contain;
+}
+
+.audio-widget-control-volume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1em;
+          column-gap: 1em;
+}
+
+.audio-widget-volume-btn {
+  width: 2em;
+  height: 2em;
+  background: url("/momentum/img/volume.png") center no-repeat;
+  background-size: contain;
+}
+
+.audio-widget-volume-range {
+  width: 100%;
+  height: 10px;
+  border-radius: 2px;
+  outline: none;
+  -webkit-transition: background 450ms ease-in;
+  transition: background 450ms ease-in;
+  -webkit-appearance: none;
+  background: -webkit-gradient(linear, left top, right top, from(#d8d8d8), color-stop(45%, #d8d8d8), color-stop(30%, #383838), to(#383838));
+  background: linear-gradient(to right, #d8d8d8 0%, #d8d8d8 45%, #383838 30%, #383838 100%);
+}
+
+.audio-widget-volume-range::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #d8d8d8;
+}
+
+.playlist-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /*
 Styles for the header, footer, the grid system e.t.c.
 */
@@ -113,16 +264,7 @@ Styles for the header, footer, the grid system e.t.c.
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   height: 30vh;
-}
-
-.header__widget {
-  width: 300px;
-  height: 300px;
-  background-color: green;
 }
 
 .main {

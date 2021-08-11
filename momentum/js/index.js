@@ -8,7 +8,8 @@ import changeQuote from './quote.js'
 
 const slidePrev = document.querySelector('#slidePrev')
 const slideNext = document.querySelector('#slideNext')
-const quoteChangeBtn = document.querySelector('.quote-change')
+const quoteChangeBtn = document.querySelector('#quoteChangeBtn')
+const audioVolumeRange = document.querySelector('#audioVolumeRange')
 
 slidePrev.addEventListener('click', getSlidePrev)
 slideNext.addEventListener('click', getSlideNext)
@@ -22,6 +23,14 @@ window.addEventListener('load', () => {
   getUsernameFromStorage()
   getCityFromStorage()
   getWeather()
+})
+
+audioVolumeRange.addEventListener('input', function () {
+  const value = this.value
+  this.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${
+    value * 70
+  }%, #383838 ${value * 100}%, #383838 100%)`
+  // currentVideo.volume = value
 })
 
 showTime()
