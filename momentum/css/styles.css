@@ -11,7 +11,7 @@ All the resets, variables, mixins, and utility classes
 body {
   font-family: 'Lato', sans-serif;
   color: #d8d8d8;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   background-blend-mode: multiply;
   -webkit-transition: background-image 0.5s linear;
   transition: background-image 0.5s linear;
@@ -20,13 +20,14 @@ body {
 .btn {
   border: none;
   outline: none;
-  -webkit-transition: 0.2s ease;
-  transition: 0.2s ease;
   cursor: pointer;
 }
 
 .btn:hover {
-  opacity: 0.5;
+  -webkit-transition: .5s linear;
+  transition: .5s linear;
+  -webkit-filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+          filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
 }
 
 .input {
@@ -41,7 +42,11 @@ body {
 }
 
 .input-active {
-  color: red;
+  color: #d8d8d8;
+  -webkit-transition: .5s linear;
+  transition: .5s linear;
+  -webkit-filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+          filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
 }
 
 .input-inactive {
@@ -64,6 +69,7 @@ All styles relating to a reusable component
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 1em;
+  width: 300px;
   padding: 1em;
 }
 
@@ -247,6 +253,13 @@ All styles relating to a reusable component
   background: #d8d8d8;
 }
 
+.audio-widget-volume-range::-webkit-slider-thumb:hover {
+  -webkit-transition: 0.7s linear;
+  transition: 0.7s linear;
+  -webkit-filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+          filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+}
+
 .playlist-item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -258,8 +271,8 @@ All styles relating to a reusable component
           column-gap: 1em;
   height: 2em;
   cursor: pointer;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+  -webkit-transition: 0.7s linear;
+  transition: 0.7s linear;
 }
 
 .playlist-item:hover, .playlist-item.active {

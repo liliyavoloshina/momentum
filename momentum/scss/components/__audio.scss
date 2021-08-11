@@ -105,6 +105,10 @@
     cursor: pointer;
     background: $text-primary;
   }
+  &::-webkit-slider-thumb:hover {
+    transition: 0.7s linear;
+    filter: $filter-purple;
+  }
   background: linear-gradient(
     to right,
     $text-primary 0%,
@@ -120,10 +124,10 @@
   column-gap: 1em;
   height: 2em;
   cursor: pointer;
-  transition: .5s ease;
+  transition: 0.7s linear;
   &:hover,
   &.active {
-    filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+    filter: $filter-purple;
   }
   &.active .btn {
     background: url('/momentum/img/pause-audio.png');

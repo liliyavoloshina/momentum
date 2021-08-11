@@ -1,8 +1,30 @@
-const audio = new Audio()
+import playlist from "../data/playlist.js"
+
+const audioPlayMain = document.querySelector('#audioPlayMain')
+
+let isPlaying = false
+let playNum = 0
+
+const curAudio = new Audio()
 
 function playAudio() {
-  audio.src = // ссылка на аудио-файл;
-  audio.currentTime = 0;
-  audio.play();
+  curAudio.src = playlist[playNum].src
+  curAudio.currentTime = 0
+  if (isPlaying) {
+    curAudio.pause()
+    audioPlayMain.classList.remove('audio-widget-pause-btn')
+    audioPlayMain.classList.add('audio-widget-play-btn')
+  } else {
+    curAudio.play()
+    audioPlayMain.classList.add('audio-widget-pause-btn')
+    audioPlayMain.classList.remove('audio-widget-play-btn')
+  }
+  isPlaying = !isPlaying
 }
 
+function playNext() {
+}
+function playPrev() {
+}
+
+export {playAudio}

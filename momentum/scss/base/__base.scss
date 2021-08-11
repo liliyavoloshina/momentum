@@ -7,7 +7,7 @@
 body {
   font-family: 'Lato', sans-serif;
   color: $text-primary;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   background-blend-mode: multiply;
   transition: background-image 0.5s linear;
 }
@@ -15,10 +15,10 @@ body {
 .btn {
   border: none;
   outline: none;
-  transition: 0.2s ease;
   cursor: pointer;
   &:hover {
-    opacity: 0.5;
+    transition: .5s linear;
+    filter: $filter-purple;
   }
 }
 
@@ -33,7 +33,9 @@ body {
   background-color: transparent;
 
   &-active {
-    color: red;
+    color: $text-primary;
+    transition: .5s linear;
+    filter: $filter-purple;
   }
   
   &-inactive {

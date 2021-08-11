@@ -5,11 +5,13 @@ import { setUsernameToStorage, getUsernameFromStorage } from './greetingName.js'
 import { getSlideNext, getSlidePrev, setBg } from './slider.js'
 import { getWeather, setCityToStorage, getCityFromStorage } from './weather.js'
 import changeQuote from './quote.js'
+import {playAudio} from './audio.js'
 
 const slidePrev = document.querySelector('#slidePrev')
 const slideNext = document.querySelector('#slideNext')
 const quoteChangeBtn = document.querySelector('#quoteChangeBtn')
 const audioVolumeRange = document.querySelector('#audioVolumeRange')
+const audioPlayMain = document.querySelector('#audioPlayMain')
 
 slidePrev.addEventListener('click', getSlidePrev)
 slideNext.addEventListener('click', getSlideNext)
@@ -32,6 +34,8 @@ audioVolumeRange.addEventListener('input', function () {
   }%, #383838 ${value * 100}%, #383838 100%)`
   // currentVideo.volume = value
 })
+
+audioPlayMain.addEventListener('click', playAudio)
 
 showTime()
 showDate()
