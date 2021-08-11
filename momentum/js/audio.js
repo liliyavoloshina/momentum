@@ -1,29 +1,40 @@
 import playlist from '../data/playlist.js'
 
-
-
 const audioPlayMain = document.querySelector('#audioPlayMain')
 const audioNextMain = document.querySelector('#audioNextMain')
 const audioPrevMain = document.querySelector('#audioPrevMain')
+const audioNameEl = document.querySelector('#audioName')
+const audioProgressEl = document.querySelector('#audioProgress')
+const audioDurationEndEl = document.querySelector('#audioDurationEnd')
+const audioDurationCurEl = document.querySelector('#audioDurationCur')
 const playlistEl = document.querySelector('#playlist')
 
 initPlaylist()
 
-audioPlayMain.addEventListener('click', togglePlay)
-audioNextMain.addEventListener('click', playNext)
-audioPrevMain.addEventListener('click', playPrev)
-
 let isPlaying = false
 let playNum = 0
 let curAudioEl
+let durationEnd = playlist[0].duration
 
 const curAudio = new Audio()
+
+// инициализация песни
 curAudio.src = playlist[playNum].src
 curAudio.currentTime = 0
 curAudio.dataset.id = playlist[playNum].id
+
+
 curAudioEl = document.querySelector(`[data-id="${curAudio.dataset.id}"]`)
 curAudioEl.classList.add('active')
+audioNameEl.textContent = playlist[playNum].title
+audioDurationEndEl.textContent = `00:${durationEnd}`
 
+function updateProgress() {
+  const percent = (curAudio.currentTime / curAudio.duration) * 100
+  const currentTime = Math.floor(curAudio.currentTime).toString().padStart(2, 0)
+  audioProgressEl.style.flexBasis = `${percent}%`
+  audioDurationCurEl.textContent = `00:${currentTime}`
+}
 
 function toggleMainBtn() {
   if (isPlaying) {
@@ -60,7 +71,9 @@ function playNext() {
   curAudioEl.classList.add('active')
   isPlaying = true
   toggleMainBtn()
-  console.log(curAudioEl)
+  audioNameEl.textContent = playlist[playNum].title
+  durationEnd = playlist[playNum].duration
+  audioDurationEndEl.textContent = `00:${durationEnd}`
 }
 
 function playPrev() {
@@ -78,7 +91,9 @@ function playPrev() {
   curAudioEl.classList.add('active')
   isPlaying = true
   toggleMainBtn()
-  console.log(curAudioEl)
+  audioNameEl.textContent = playlist[playNum].title
+  durationEnd = playlist[playNum].duration
+  audioDurationEndEl.textContent = `00:${durationEnd}`
 }
 
 function initPlaylist() {
@@ -106,4 +121,9 @@ audioVolumeRange.addEventListener('input', e => {
   }%, #383838 ${input.value * 100}%, #383838 100%)`
   // currentVideo.volume = value
 })
+
+audioPlayMain.addEventListener('click', togglePlay)
+audioNextMain.addEventListener('click', playNext)
+audioPrevMain.addEventListener('click', playPrev)
+curAudio.addEventListener('timeupdate', updateProgress)
 
