@@ -24,8 +24,8 @@ async function getRandomQuote() {
 async function changeQuote() {
   quoteChangeBtn.classList.toggle('quote-change-revert')
   await getRandomQuote()
-  quoteTextEl.textContent = `${textQuote}`
-  quoteAuthorEl.textContent = `${authorQuote}`
+  quoteTextEl.textContent = `«${textQuote}»`
+  quoteAuthorEl.textContent = `— ${authorQuote}`
 }
 
 export default changeQuote

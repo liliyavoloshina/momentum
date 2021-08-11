@@ -68,5 +68,75 @@
     "textEn": "Simplicity is the ultimate sophistication.",
     "authorRu": "Леонардо да Винчи",
     "authorEn": "Leonardo da Vinci"
+  },
+  {
+    "id": 11,
+    "textRu": "Работайте усердно, чтобы получить то, что любите, иначе придется полюбить то, что получили.",
+    "textEn": "Work hard to get what you like, otherwise you'll be forced to just like what you get.",
+    "authorRu": "Бернард Шоу",
+    "authorEn": "Bernard Shaw"
+  },
+  {
+    "id": 12,
+    "textRu": "Выбирайте работу по душе, и вам не придется работать ни дня в своей жизни.",
+    "textEn": "Choose a job you love, and you will never have to work a day in your life.",
+    "authorRu": "Конфуций",
+    "authorEn": "Confucius"
+  },
+  {
+    "id": 13,
+    "textRu": "В центре трудности лежит возможность.",
+    "textEn": "In the middle of difficulty lies opportunity.",
+    "authorRu": "Альберт Эйнштейн",
+    "authorEn": "Albert Einstein"
+  },
+  {
+    "id": 14,
+    "textRu": "Если Вы не думаете о будущем, у Вас его не будет.",
+    "textEn": "If you do not think about the future, you cannot have one.",
+    "authorRu": "Голсуорси",
+    "authorEn": "Galsworthy"
+  },
+  {
+    "id": 15,
+    "textRu": "Если Вы не думаете о будущем, у Вас его не будет.",
+    "textEn": "If you do not think about the future, you cannot have one.",
+    "authorRu": "Голсуорси",
+    "authorEn": "Galsworthy"
+  },
+  {
+    "id": 16,
+    "textRu": "Успех не в том, что имеешь, а в том, что ты из себя представляешь.",
+    "textEn": "Success is not in what you have, but who you are.",
+    "authorRu": "Бо Беннет",
+    "authorEn": "Bo Bennett"
+  },
+  {
+    "id": 17,
+    "textRu": "Восемьдесят процентов успеха в том, чтобы появиться в нужное время в нужном месте.",
+    "textEn": "Eighty percent of success is showing up.",
+    "authorRu": "Вуди Аллен",
+    "authorEn": "Woody Allen"
+  },
+  {
+    "id": 18,
+    "textRu": "Секрет успеха в постоянстве цели.",
+    "textEn": "The secret of success is constancy of purpose.",
+    "authorRu": "Бенджамин Дизраэли",
+    "authorEn": "Benjamin Disraeli"
+  },
+  {
+    "id": 19,
+    "textRu": "Жизнь приятна. Смерть безмятежна. Вся проблема в переходе от одного к другому.",
+    "textEn": "Life is pleasant. Death is peaceful. It’s the transition that’s troublesome.",
+    "authorRu": "Айзек Азимов",
+    "authorEn": "Isaac Asimov"
+  },
+  {
+    "id": 20,
+    "textRu": "Жизнь была бы трагичной, если бы не была такой забавной.",
+    "textEn": "Life would be tragic if it weren’t funny.",
+    "authorRu": "Стивен Хокинг",
+    "authorEn": "Stephen Hawking"
   }
 ]

@@ -16,3 +16,18 @@
     transform: rotateX(180deg);
   }
 }
+
+.quote {
+  padding-top: 2em;
+  &__text {
+    text-align: center;
+    font-size: 1.5em;
+    font-style: italic;
+  }
+
+  &__author {
+    padding-top: 1em;
+    text-align: right;
+    font-size: 1.2em;
+  }
+}
