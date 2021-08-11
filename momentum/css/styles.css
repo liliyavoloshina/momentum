@@ -105,7 +105,6 @@ All styles relating to a reusable component
 
 .audio-widget {
   width: 600px;
-  background-color: #fa3c3c;
   padding: 1em;
 }
 
@@ -125,7 +124,7 @@ All styles relating to a reusable component
 }
 
 .audio-widget-info__name {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   font-size: 1.5em;
 }
 
@@ -252,6 +251,37 @@ All styles relating to a reusable component
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1em;
+          column-gap: 1em;
+  height: 2em;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.playlist-item:hover, .playlist-item.active {
+  -webkit-filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+          filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+}
+
+.playlist-item.active .btn {
+  background: url("/momentum/img/pause-audio.png");
+  background-size: contain;
+}
+
+.playlist-item__play-btn {
+  width: 1em;
+  height: 1em;
+  background: url("/momentum/img/play-audio.png");
+  background-size: contain;
+}
+
+.playlist-item__pause-btn {
+  background: url("/momentum/img/pause-audio.png");
+  background-size: contain;
 }
 
 /*
