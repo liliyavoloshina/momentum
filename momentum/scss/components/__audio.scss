@@ -36,11 +36,17 @@
     background: $color-dark;
     cursor: pointer;
   }
+ 
   &__track-filled {
     background: $text-primary;
     flex: 0;
     flex-basis: 0%;
     border-radius: 5px;
+  }
+
+  &__track-filled.active {
+    transition: filter 0.7s linear, flex-basis 0.2s ease-in-out;
+    filter: $filter-purple;
   }
   &__duration {
     position: absolute;

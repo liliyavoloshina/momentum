@@ -173,6 +173,15 @@ All styles relating to a reusable component
   border-radius: 5px;
 }
 
+.audio-widget-progress__track-filled.active {
+  -webkit-transition: -webkit-filter 0.7s linear, -webkit-flex-basis 0.2s ease-in-out;
+  transition: -webkit-filter 0.7s linear, -webkit-flex-basis 0.2s ease-in-out;
+  transition: filter 0.7s linear, flex-basis 0.2s ease-in-out;
+  transition: filter 0.7s linear, flex-basis 0.2s ease-in-out, -webkit-filter 0.7s linear, -webkit-flex-basis 0.2s ease-in-out, -ms-flex-preferred-size 0.2s ease-in-out;
+  -webkit-filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+          filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+}
+
 .audio-widget-progress__duration {
   position: absolute;
   bottom: -30px;

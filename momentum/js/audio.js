@@ -5,6 +5,7 @@ const audioNextMain = document.querySelector('#audioNextMain')
 const audioPrevMain = document.querySelector('#audioPrevMain')
 const audioNameEl = document.querySelector('#audioName')
 const audioProgressEl = document.querySelector('#audioProgress')
+const audioProgressFillEl = document.querySelector('#audioProgressFill')
 const audioDurationEndEl = document.querySelector('#audioDurationEnd')
 const audioDurationCurEl = document.querySelector('#audioDurationCur')
 const playlistEl = document.querySelector('#playlist')
@@ -33,7 +34,7 @@ audioDurationEndEl.textContent = `00:${durationEnd}`
 function updateProgress() {
   const percent = (curAudio.currentTime / curAudio.duration) * 100
   const currentTime = Math.floor(curAudio.currentTime).toString().padStart(2, 0)
-  audioProgressEl.style.flexBasis = `${percent}%`
+  audioProgressFillEl.style.flexBasis = `${percent}%`
   audioDurationCurEl.textContent = `00:${currentTime}`
 
   if (curAudio.currentTime === curAudio.duration) {
@@ -62,6 +63,7 @@ function togglePlay() {
 }
 
 function initCurrent() {
+  curAudioEl.classList.remove('active')
   curAudio.src = playlist[playNum].src
   curAudio.currentTime = 0
   curAudio.dataset.id = playlist[playNum].id
@@ -76,7 +78,6 @@ function initCurrent() {
 }
 
 function playNext() {
-  curAudioEl.classList.remove('active')
   if (playNum + 1 >= playlist.length) {
     playNum = 0
   } else {
@@ -86,7 +87,6 @@ function playNext() {
 }
 
 function playPrev() {
-  curAudioEl.classList.remove('active')
   if (playNum - 1 < 0) {
     playNum = playlist.length - 1
   } else {
@@ -96,10 +96,20 @@ function playPrev() {
 }
 
 function switchAudio() {
-  curAudioEl.classList.remove('active')
   const index = [...this.parentElement.childNodes].indexOf(this)
   playNum = index
   initCurrent()
+}
+
+function scrub(e) {
+  const scrubTime =
+    (e.offsetX / audioProgressEl.offsetWidth) * curAudio.duration
+  curAudio.currentTime = scrubTime
+  audioProgressFillEl.classList.add('active')
+
+  setTimeout(() => {
+    audioProgressFillEl.classList.remove('active')
+  }, 500)
 }
 
 function initPlaylist() {
@@ -125,7 +135,7 @@ audioVolumeRange.addEventListener('input', e => {
   input.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${
     input.value * 70
   }%, #383838 ${input.value * 100}%, #383838 100%)`
-  // currentVideo.volume = value
+  curAudio.volume = input.value
 })
 
 audioPlayMain.addEventListener('click', togglePlay)
@@ -135,4 +145,4 @@ curAudio.addEventListener('timeupdate', updateProgress)
 playlistItemsEls.forEach(item => {
   item.addEventListener('click', switchAudio)
 })
-
+audioProgressEl.addEventListener('click', scrub)
