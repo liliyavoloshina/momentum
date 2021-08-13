@@ -8,6 +8,8 @@ const audioProgressEl = document.querySelector('#audioProgress')
 const audioProgressFillEl = document.querySelector('#audioProgressFill')
 const audioDurationEndEl = document.querySelector('#audioDurationEnd')
 const audioDurationCurEl = document.querySelector('#audioDurationCur')
+const audioVolumeRange = document.querySelector('#audioVolumeRange')
+const audioVolumeBtn = document.querySelector('#audioVolumeBtn')
 const playlistEl = document.querySelector('#playlist')
 
 initPlaylist()
@@ -21,6 +23,7 @@ let durationEnd = playlist[0].duration
 
 // инициализация песни
 const curAudio = new Audio()
+curAudio.volume = 0.5
 curAudio.src = playlist[playNum].src
 curAudio.currentTime = 0
 curAudio.dataset.id = playlist[playNum].id
@@ -112,6 +115,25 @@ function scrub(e) {
   }, 500)
 }
 
+function volumeRegBtn() {
+  if (curAudio.volume === 0.1) {
+    curAudio.volume = 0.9
+  } else {
+    curAudio.volume = 0.1
+  }
+  audioVolumeRange.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${
+    curAudio.volume * 70
+  }%, #383838 ${curAudio.volume * 100}%, #383838 100%)`
+  audioVolumeRange.value = curAudio.volume
+}
+
+function volumeRegRange(input) {
+  input.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${
+    input.value * 70
+  }%, #383838 ${input.value * 100}%, #383838 100%)`
+  curAudio.volume = input.value
+}
+
 function initPlaylist() {
   playlistEl.innerHTML = `${
     playlist.length > 0
@@ -128,15 +150,18 @@ function initPlaylist() {
   }`
 }
 
-const audioVolumeRange = document.querySelector('#audioVolumeRange')
-
 audioVolumeRange.addEventListener('input', e => {
   const input = e.target
-  input.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${
-    input.value * 70
-  }%, #383838 ${input.value * 100}%, #383838 100%)`
-  curAudio.volume = input.value
+  volumeRegRange(input)
 })
+// audioVolumeRange.addEventListener('input', e => {
+//   const input = e.target
+//   input.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${
+//     input.value * 70
+//   }%, #383838 ${input.value * 100}%, #383838 100%)`
+//   curAudio.volume = input.value
+// })
+audioVolumeBtn.addEventListener('click', volumeRegBtn)
 
 audioPlayMain.addEventListener('click', togglePlay)
 audioNextMain.addEventListener('click', playNext)
