@@ -61,7 +61,7 @@
   width: 500px;
   height: 500px;
   padding: 0 2em;
-  background-color: #383838;
+  background-color: $color-dark;
   border-radius: 5px;
   opacity: 0;
   transition: 0.7s linear;
@@ -74,17 +74,26 @@
   }
   &__widgets {
   }
+  &__photos {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.input-tag {
+  height: 2em;
+  background-color: #242424;
 }
 
 .setting-section {
   padding: 1.5em 0;
 
-  &:not(:last-of-type) {
+  &--underline {
     border-bottom: 1px solid #d8d8d8;
   }
 
   &__heading {
-    padding-bottom: .5em;
+    padding-bottom: 0.5em;
     color: #fff;
     font-weight: 400;
     text-transform: uppercase;
