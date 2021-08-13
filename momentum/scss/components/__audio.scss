@@ -36,7 +36,7 @@
     background: $color-dark;
     cursor: pointer;
   }
- 
+
   &__track-filled {
     background: $text-primary;
     flex: 0;
@@ -93,8 +93,12 @@
 .audio-widget-volume-btn {
   width: 2em;
   height: 2em;
-  background: url('/momentum/img/volume.png') center no-repeat;
+  background-image: url('/momentum/img/mute.png');
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
+  background-color: transparent;
+  transition: background-image 0.2s ease-in-out;
 }
 
 .audio-widget-volume-range {
@@ -132,11 +136,27 @@
   display: flex;
   align-items: center;
   column-gap: 1em;
+  width: fit-content;
   height: 2em;
   cursor: pointer;
   transition: 0.7s linear;
   &:hover,
   &.active {
     filter: $filter-purple;
+  }
+
+  &__small-btn {
+    width: 1em;
+    height: 1em;
+    background-size: contain;
+    background-color: transparent;
+  }
+
+  &__small-btn.play {
+    background-image: url('/momentum/img/play-audio.png');
+  }
+
+  &__small-btn.pause {
+    background-image: url('/momentum/img/pause-audio.png');
   }
 }

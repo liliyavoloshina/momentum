@@ -34,6 +34,8 @@ curAudioEl.classList.add('active')
 audioNameEl.textContent = playlist[playNum].title
 audioDurationEndEl.textContent = `00:${durationEnd}`
 
+let audioPlaySmall = curAudioEl.querySelector('button')
+
 function updateProgress() {
   const percent = (curAudio.currentTime / curAudio.duration) * 100
   const currentTime = Math.floor(curAudio.currentTime).toString().padStart(2, 0)
@@ -55,6 +57,17 @@ function toggleMainBtn() {
   }
 }
 
+function toggleSmallBtn() {
+  console.log('toggleSmallBtn')
+  if (isPlaying) {
+    audioPlaySmall.classList.add('pause')
+    audioPlaySmall.classList.remove('play')
+  } else {
+    audioPlaySmall.classList.remove('pause')
+    audioPlaySmall.classList.add('play')
+  }
+}
+
 function togglePlay() {
   if (isPlaying) {
     curAudio.pause()
@@ -63,18 +76,25 @@ function togglePlay() {
   }
   isPlaying = !isPlaying
   toggleMainBtn()
+  toggleSmallBtn()
 }
 
 function initCurrent() {
   curAudioEl.classList.remove('active')
+  audioPlaySmall.classList.remove('pause')
+  audioPlaySmall.classList.add('play')
   curAudio.src = playlist[playNum].src
   curAudio.currentTime = 0
   curAudio.dataset.id = playlist[playNum].id
   curAudioEl = document.querySelector(`[data-id="${curAudio.dataset.id}"]`)
+  audioPlaySmall = curAudioEl.querySelector('button')
   curAudio.play()
   curAudioEl.classList.add('active')
+  audioPlaySmall.classList.add('pause')
+  audioPlaySmall.classList.remove('play')
   isPlaying = true
   toggleMainBtn()
+  toggleSmallBtn()
   audioNameEl.textContent = playlist[playNum].title
   durationEnd = playlist[playNum].duration
   audioDurationEndEl.textContent = `00:${durationEnd}`
@@ -100,8 +120,12 @@ function playPrev() {
 
 function switchAudio() {
   const index = [...this.parentElement.childNodes].indexOf(this)
-  playNum = index
-  initCurrent()
+  if (index === playNum) {
+    togglePlay()
+  } else {
+    playNum = index
+    initCurrent()
+  }
 }
 
 function scrub(e) {
@@ -116,15 +140,13 @@ function scrub(e) {
 }
 
 function volumeRegBtn() {
-  if (curAudio.volume === 0.1) {
-    curAudio.volume = 0.9
+  if (curAudio.muted) {
+    curAudio.muted = false
+    audioVolumeBtn.style.backgroundImage = "url('/momentum/img/mute.png')"
   } else {
-    curAudio.volume = 0.1
+    curAudio.muted = true
+    audioVolumeBtn.style.backgroundImage = "url('/momentum/img/volume.png')"
   }
-  audioVolumeRange.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${
-    curAudio.volume * 70
-  }%, #383838 ${curAudio.volume * 100}%, #383838 100%)`
-  audioVolumeRange.value = curAudio.volume
 }
 
 function volumeRegRange(input) {
@@ -141,7 +163,7 @@ function initPlaylist() {
           .map(
             item =>
               `<li class="playlist-item" data-id="${item.id}">
-               ${item.id}.
+              <button class="playlist-item__small-btn btn play" title="Play/Pause Audio"></button>
               <div class="playlist-item__name">${item.title}</div>
             </li>`
           )
@@ -154,15 +176,7 @@ audioVolumeRange.addEventListener('input', e => {
   const input = e.target
   volumeRegRange(input)
 })
-// audioVolumeRange.addEventListener('input', e => {
-//   const input = e.target
-//   input.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${
-//     input.value * 70
-//   }%, #383838 ${input.value * 100}%, #383838 100%)`
-//   curAudio.volume = input.value
-// })
 audioVolumeBtn.addEventListener('click', volumeRegBtn)
-
 audioPlayMain.addEventListener('click', togglePlay)
 audioNextMain.addEventListener('click', playNext)
 audioPrevMain.addEventListener('click', playPrev)

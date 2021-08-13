@@ -83,6 +83,7 @@ All styles relating to a reusable component
 .weather-widget__error {
   height: 70%;
   font-size: 1.6em;
+  color: #c52929;
 }
 
 .weather-widget__info {
@@ -240,8 +241,13 @@ All styles relating to a reusable component
 .audio-widget-volume-btn {
   width: 2em;
   height: 2em;
-  background: url("/momentum/img/volume.png") center no-repeat;
+  background-image: url("/momentum/img/mute.png");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: contain;
+  background-color: transparent;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
 }
 
 .audio-widget-volume-range {
@@ -281,6 +287,9 @@ All styles relating to a reusable component
           align-items: center;
   -webkit-column-gap: 1em;
           column-gap: 1em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   height: 2em;
   cursor: pointer;
   -webkit-transition: 0.7s linear;
@@ -290,6 +299,21 @@ All styles relating to a reusable component
 .playlist-item:hover, .playlist-item.active {
   -webkit-filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
           filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+}
+
+.playlist-item__small-btn {
+  width: 1em;
+  height: 1em;
+  background-size: contain;
+  background-color: transparent;
+}
+
+.playlist-item__small-btn.play {
+  background-image: url("/momentum/img/play-audio.png");
+}
+
+.playlist-item__small-btn.pause {
+  background-image: url("/momentum/img/pause-audio.png");
 }
 
 /*
