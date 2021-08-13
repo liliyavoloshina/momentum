@@ -16,16 +16,15 @@ let playNum = 0
 let curAudioEl
 let durationEnd = playlist[0].duration
 
-const curAudio = new Audio()
-
 // инициализация песни
+const curAudio = new Audio()
 curAudio.src = playlist[playNum].src
 curAudio.currentTime = 0
 curAudio.dataset.id = playlist[playNum].id
 
-
 curAudioEl = document.querySelector(`[data-id="${curAudio.dataset.id}"]`)
 curAudioEl.classList.add('active')
+
 audioNameEl.textContent = playlist[playNum].title
 audioDurationEndEl.textContent = `00:${durationEnd}`
 
@@ -34,6 +33,10 @@ function updateProgress() {
   const currentTime = Math.floor(curAudio.currentTime).toString().padStart(2, 0)
   audioProgressEl.style.flexBasis = `${percent}%`
   audioDurationCurEl.textContent = `00:${currentTime}`
+
+  if (curAudio.currentTime === curAudio.duration) {
+    playNext()
+  }
 }
 
 function toggleMainBtn() {
@@ -56,13 +59,7 @@ function togglePlay() {
   toggleMainBtn()
 }
 
-function playNext() {
-  curAudioEl.classList.remove('active')
-  if (playNum + 1 >= playlist.length) {
-    playNum = 0
-  } else {
-    playNum++
-  }
+function initCurrent() {
   curAudio.src = playlist[playNum].src
   curAudio.currentTime = 0
   curAudio.dataset.id = playlist[playNum].id
@@ -76,6 +73,27 @@ function playNext() {
   audioDurationEndEl.textContent = `00:${durationEnd}`
 }
 
+function playNext() {
+  curAudioEl.classList.remove('active')
+  if (playNum + 1 >= playlist.length) {
+    playNum = 0
+  } else {
+    playNum++
+  }
+  initCurrent()
+  // curAudio.src = playlist[playNum].src
+  // curAudio.currentTime = 0
+  // curAudio.dataset.id = playlist[playNum].id
+  // curAudioEl = document.querySelector(`[data-id="${curAudio.dataset.id}"]`)
+  // curAudio.play()
+  // curAudioEl.classList.add('active')
+  // isPlaying = true
+  // toggleMainBtn()
+  // audioNameEl.textContent = playlist[playNum].title
+  // durationEnd = playlist[playNum].duration
+  // audioDurationEndEl.textContent = `00:${durationEnd}`
+}
+
 function playPrev() {
   curAudioEl.classList.remove('active')
   if (playNum - 1 < 0) {
@@ -83,17 +101,18 @@ function playPrev() {
   } else {
     playNum--
   }
-  curAudio.src = playlist[playNum].src
-  curAudio.currentTime = 0
-  curAudio.dataset.id = playlist[playNum].id
-  curAudioEl = document.querySelector(`[data-id="${curAudio.dataset.id}"]`)
-  curAudio.play()
-  curAudioEl.classList.add('active')
-  isPlaying = true
-  toggleMainBtn()
-  audioNameEl.textContent = playlist[playNum].title
-  durationEnd = playlist[playNum].duration
-  audioDurationEndEl.textContent = `00:${durationEnd}`
+  initCurrent()
+  // curAudio.src = playlist[playNum].src
+  // curAudio.currentTime = 0
+  // curAudio.dataset.id = playlist[playNum].id
+  // curAudioEl = document.querySelector(`[data-id="${curAudio.dataset.id}"]`)
+  // curAudio.play()
+  // curAudioEl.classList.add('active')
+  // isPlaying = true
+  // toggleMainBtn()
+  // audioNameEl.textContent = playlist[playNum].title
+  // durationEnd = playlist[playNum].duration
+  // audioDurationEndEl.textContent = `00:${durationEnd}`
 }
 
 function initPlaylist() {
