@@ -11,6 +11,8 @@ const playlistEl = document.querySelector('#playlist')
 
 initPlaylist()
 
+const playlistItemsEls = document.querySelectorAll('.playlist-item')
+
 let isPlaying = false
 let playNum = 0
 let curAudioEl
@@ -81,17 +83,6 @@ function playNext() {
     playNum++
   }
   initCurrent()
-  // curAudio.src = playlist[playNum].src
-  // curAudio.currentTime = 0
-  // curAudio.dataset.id = playlist[playNum].id
-  // curAudioEl = document.querySelector(`[data-id="${curAudio.dataset.id}"]`)
-  // curAudio.play()
-  // curAudioEl.classList.add('active')
-  // isPlaying = true
-  // toggleMainBtn()
-  // audioNameEl.textContent = playlist[playNum].title
-  // durationEnd = playlist[playNum].duration
-  // audioDurationEndEl.textContent = `00:${durationEnd}`
 }
 
 function playPrev() {
@@ -102,17 +93,13 @@ function playPrev() {
     playNum--
   }
   initCurrent()
-  // curAudio.src = playlist[playNum].src
-  // curAudio.currentTime = 0
-  // curAudio.dataset.id = playlist[playNum].id
-  // curAudioEl = document.querySelector(`[data-id="${curAudio.dataset.id}"]`)
-  // curAudio.play()
-  // curAudioEl.classList.add('active')
-  // isPlaying = true
-  // toggleMainBtn()
-  // audioNameEl.textContent = playlist[playNum].title
-  // durationEnd = playlist[playNum].duration
-  // audioDurationEndEl.textContent = `00:${durationEnd}`
+}
+
+function switchAudio() {
+  curAudioEl.classList.remove('active')
+  const index = [...this.parentElement.childNodes].indexOf(this)
+  playNum = index
+  initCurrent()
 }
 
 function initPlaylist() {
@@ -145,4 +132,7 @@ audioPlayMain.addEventListener('click', togglePlay)
 audioNextMain.addEventListener('click', playNext)
 audioPrevMain.addEventListener('click', playPrev)
 curAudio.addEventListener('timeupdate', updateProgress)
+playlistItemsEls.forEach(item => {
+  item.addEventListener('click', switchAudio)
+})
 
