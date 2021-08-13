@@ -1,4 +1,6 @@
-import {chooseLang} from './quote.js'
+import { quoteLang } from './quote.js'
+import { showGreeting } from './greetingDaytime.js'
+
 const enLangInput = document.querySelector('#enLang')
 const ruLangInput = document.querySelector('#ruLang')
 
@@ -28,7 +30,9 @@ function getLangFromStorage() {
 }
 
 function switchLang() {
-  chooseLang(lang)
+  quoteLang()
+  // quoteLang(lang)
+  // showGreeting(lang)
 }
 
 window.addEventListener('beforeunload', () => {
@@ -40,5 +44,6 @@ window.addEventListener('load', () => {
 })
 
 getLangFromStorage()
+console.log(lang)
 
-export {lang, changeLang}
+export { lang, changeLang, getLangFromStorage }
