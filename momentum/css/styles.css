@@ -495,7 +495,10 @@ Styles for the header, footer, the grid system e.t.c.
 }
 
 .setting-section {
-  padding: 2em 0;
+  padding: 1.5em 0;
+}
+
+.setting-section:not(:last-of-type) {
   border-bottom: 1px solid #d8d8d8;
 }
 
@@ -514,6 +517,16 @@ Styles for the header, footer, the grid system e.t.c.
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.setting-section__info-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
 .radio-container {
@@ -545,11 +558,7 @@ Styles for the header, footer, the grid system e.t.c.
   border-radius: 50%;
 }
 
-.radio-container:hover .radio-input ~ .radio-checkmark {
-  background-color: #ccc;
-}
-
-.radio-container input:checked ~ .radio-checkmark {
+.radio-container .radio-input:checked ~ .radio-checkmark {
   background-color: #9400D3;
 }
 
@@ -572,19 +581,11 @@ Styles for the header, footer, the grid system e.t.c.
   background: #d8d8d8;
 }
 
-.checkbox {
-  /* On mouse-over, add a grey background color */
-  /* When the checkbox is checked, add a blue background */
-  /* Create the checkmark/indicator (hidden when not checked) */
-  /* Show the checkmark when checked */
-  /* Style the checkmark/indicator */
-}
-
 .checkbox-container {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin: 10px 0;
   cursor: pointer;
   font-size: 1.1em;
   -webkit-user-select: none;
@@ -619,7 +620,7 @@ Styles for the header, footer, the grid system e.t.c.
 }
 
 .checkbox-checkmark:after {
-  content: "";
+  content: '';
   position: absolute;
   display: none;
 }

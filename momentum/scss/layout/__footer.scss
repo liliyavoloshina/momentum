@@ -77,8 +77,12 @@
 }
 
 .setting-section {
-  padding: 2em 0;
-  border-bottom: 1px solid #d8d8d8;
+  padding: 1.5em 0;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid #d8d8d8;
+  }
+
   &__heading {
     padding-bottom: .5em;
     color: #fff;
@@ -89,6 +93,10 @@
   &__info {
     display: flex;
     flex-direction: column;
+  }
+  &__info-row {
+    display: flex;
+    flex-direction: row;
   }
 }
 
@@ -119,11 +127,7 @@
     border-radius: 50%;
   }
 
-  &-container:hover &-input ~ &-checkmark {
-    background-color: #ccc;
-  }
-
-  &-container input:checked ~ &-checkmark {
+  &-container &-input:checked ~ &-checkmark {
     background-color: $color-accent;
   }
 
@@ -152,12 +156,12 @@
     display: block;
     position: relative;
     padding-left: 35px;
-    margin-bottom: 12px;
+    margin: 10px 0;
     cursor: pointer;
     font-size: 1.1em;
     user-select: none;
   }
-  
+
   &-input {
     position: absolute;
     opacity: 0;
@@ -165,7 +169,7 @@
     height: 0;
     width: 0;
   }
-  
+
   &-checkmark {
     position: absolute;
     top: 0;
@@ -174,25 +178,25 @@
     width: 25px;
     background-color: $text-primary;
   }
-  
+
   &-container:hover &-input ~ &-checkmark {
     background-color: #ccc;
   }
-  
+
   &-container &-input:checked ~ &-checkmark {
     background-color: $color-accent;
   }
-  
+
   &-checkmark:after {
-    content: "";
+    content: '';
     position: absolute;
     display: none;
   }
-  
+
   &-container &-input:checked ~ &-checkmark:after {
     display: block;
   }
-  
+
   &-container &-checkmark:after {
     left: 9px;
     top: 5px;
