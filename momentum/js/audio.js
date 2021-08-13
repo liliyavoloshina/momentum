@@ -83,6 +83,7 @@ function initCurrent() {
   curAudioEl.classList.remove('active')
   audioPlaySmall.classList.remove('pause')
   audioPlaySmall.classList.add('play')
+  audioPlaySmall.addEventListener('click', togglePlay)
   curAudio.src = playlist[playNum].src
   curAudio.currentTime = 0
   curAudio.dataset.id = playlist[playNum].id
@@ -121,7 +122,8 @@ function playPrev() {
 function switchAudio() {
   const index = [...this.parentElement.childNodes].indexOf(this)
   if (index === playNum) {
-    togglePlay()
+    return
+    // togglePlay()
   } else {
     playNum = index
     initCurrent()
@@ -178,6 +180,7 @@ audioVolumeRange.addEventListener('input', e => {
 })
 audioVolumeBtn.addEventListener('click', volumeRegBtn)
 audioPlayMain.addEventListener('click', togglePlay)
+audioPlaySmall.addEventListener('click', togglePlay)
 audioNextMain.addEventListener('click', playNext)
 audioPrevMain.addEventListener('click', playPrev)
 curAudio.addEventListener('timeupdate', updateProgress)

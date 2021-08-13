@@ -291,7 +291,6 @@ All styles relating to a reusable component
   width: -moz-fit-content;
   width: fit-content;
   height: 2em;
-  cursor: pointer;
   -webkit-transition: 0.7s linear;
   transition: 0.7s linear;
 }
