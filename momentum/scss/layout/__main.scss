@@ -45,13 +45,13 @@
 }
 
 .slide-prev-btn {
-  left: 2em;
-  background: url('/momentum/img/prev.png');
+  left: 2rem;
+  background: url('/momentum/img/prev.png') no-repeat;
   background-size: contain;
 }
 
 .slide-next-btn {
-  right: 2em;
-  background: url('/momentum/img/next.png');
+  right: 2rem;
+  background: url('/momentum/img/next.png') no-repeat;
   background-size: contain;
 }
