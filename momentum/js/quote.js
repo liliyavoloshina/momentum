@@ -1,5 +1,4 @@
-import {lang} from './helpers.js'
-
+import { lang } from './lang.js'
 const quoteChangeBtn = document.querySelector('#quoteChangeBtn')
 const quoteTextEl = document.querySelector('#quoteText')
 const quoteAuthorEl = document.querySelector('#quoteAuthor')
@@ -19,15 +18,27 @@ async function getQuotes() {
 async function getRandomQuote() {
   const quotes = await getQuotes()
   randomQuote = quotes[Math.floor(Math.random() * quotes.length)]
-  lang === 'en' ? textQuote = randomQuote.textEn : textQuote = randomQuote.textRu
-  lang === 'en' ? authorQuote = randomQuote.authorEn : authorQuote = randomQuote.authorRu
+  chooseLang()
+}
+
+function chooseLang() {
+  console.log(lang, 'lang in quotes')
+  lang == 'en'
+    ? (textQuote = randomQuote.text_en)
+    : (textQuote = randomQuote.text_ru)
+  lang == 'en'
+    ? (authorQuote = randomQuote.author_en)
+    : (authorQuote = randomQuote.author_ru)
+
+  quoteTextEl.textContent = `«${textQuote}»`
+  quoteAuthorEl.textContent = `— ${authorQuote}`
 }
 
 async function changeQuote() {
   quoteChangeBtn.classList.toggle('quote-change-revert')
   await getRandomQuote()
-  quoteTextEl.textContent = `«${textQuote}»`
-  quoteAuthorEl.textContent = `— ${authorQuote}`
 }
 
 changeQuote()
+
+export { chooseLang }

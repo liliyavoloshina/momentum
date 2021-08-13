@@ -1,4 +1,4 @@
-import {lang} from './helpers.js'
+import {lang} from './lang.js'
 
 const dateEl = document.querySelector('#date')
 let locale = lang === 'en' ? 'en-US' : 'ru-RU'

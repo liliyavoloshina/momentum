@@ -1,142 +1,142 @@
 [
   {
     "id": 1,
-    "textRu": "Счастлив тот, кто счастлив у себя дома.",
-    "textEn": "Happy is he who is happy at home.",
-    "authorRu": "Лев Толстой",
-    "authorEn": "Leo Tolstoy"
+    "text_ru": "Счастлив тот, кто счастлив у себя дома.",
+    "text_en": "Happy is he who is happy at home.",
+    "author_ru": "Лев Толстой",
+    "author_en": "Leo Tolstoy"
   },
   {
     "id": 2,
-    "textRu": "Чтобы добиться успеха в жизни, нужны две вещи: невежество и самоуверенность.",
-    "textEn": "To succeed in life, you need two things: ignorance and confidence.",
-    "authorRu": "Марк Твен",
-    "authorEn": "Mark Twain"
+    "text_ru": "Чтобы добиться успеха в жизни, нужны две вещи: невежество и самоуверенность.",
+    "text_en": "To succeed in life, you need two things: ignorance and confidence.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 3,
-    "textRu": "На то и ум, чтобы достичь того, чего хочешь.",
-    "textEn": "Intelligence is there just to achieve what you want.",
-    "authorRu": "Федор Достоевский",
-    "authorEn": "Fedor Dostoyevsky"
+    "text_ru": "На то и ум, чтобы достичь того, чего хочешь.",
+    "text_en": "Intelligence is there just to achieve what you want.",
+    "author_ru": "Федор Достоевский",
+    "author_en": "Fedor Dostoyevsky"
   },
   {
     "id": 4,
-    "textRu": "Всегда прощайте ваших врагов, ничто не раздражает их больше.",
-    "textEn": "Always forgive your enemies; nothing annoys them so much.",
-    "authorRu": "Оскар Уайлд",
-    "authorEn": "Oscar Wilde"
+    "text_ru": "Всегда прощайте ваших врагов, ничто не раздражает их больше.",
+    "text_en": "Always forgive your enemies; nothing annoys them so much.",
+    "author_ru": "Оскар Уайлд",
+    "author_en": "Oscar Wilde"
   },
   {
     "id": 5,
-    "textRu": "Ваше время ограничено, так что не теряйте его, проживая чужую жизнь.",
-    "textEn": "Your time is limited, so don’t waste it living someone else’s life.",
-    "authorRu": "Стив Джобс",
-    "authorEn": "Steve Jobs"
+    "text_ru": "Ваше время ограничено, так что не теряйте его, проживая чужую жизнь.",
+    "text_en": "Your time is limited, so don’t waste it living someone else’s life.",
+    "author_ru": "Стив Джобс",
+    "author_en": "Steve Jobs"
   },
   {
     "id": 6,
-    "textRu": "Пока мы откладываем все дела на потом, жизнь проходит мимо.",
-    "textEn": "While we are postponing, life speeds by.",
-    "authorRu": "Сенека",
-    "authorEn": "Seneka"
+    "text_ru": "Пока мы откладываем все дела на потом, жизнь проходит мимо.",
+    "text_en": "While we are postponing, life speeds by.",
+    "author_ru": "Сенека",
+    "author_en": "Seneka"
   },
   {
     "id": 7,
-    "textRu": "Успех — это один процент вдохновения и девяносто девять процентов пота.",
-    "textEn": "Success is one percent inspiration, ninety-nine percent perspiration.",
-    "authorRu": "Томас Эдисон",
-    "authorEn": "Thomas Edison"
+    "text_ru": "Успех — это один процент вдохновения и девяносто девять процентов пота.",
+    "text_en": "Success is one percent inspiration, ninety-nine percent perspiration.",
+    "author_ru": "Томас Эдисон",
+    "author_en": "Thomas Edison"
   },
   {
     "id": 8,
-    "textRu": "Пусть уж меня ненавидят за то, кто я есть, чем любят за то, кем я не являюсь.",
-    "textEn": "I'd rather be hated for who I am, than loved for who I am not.",
-    "authorRu": "Курт Кобейн",
-    "authorEn": "Kurt Cobain"
+    "text_ru": "Пусть уж меня ненавидят за то, кто я есть, чем любят за то, кем я не являюсь.",
+    "text_en": "I'd rather be hated for who I am, than loved for who I am not.",
+    "author_ru": "Курт Кобейн",
+    "author_en": "Kurt Cobain"
   },
   {
     "id": 9,
-    "textRu": "Не бойтесь совершенства; вам его никогда не достичь.",
-    "textEn": "Have no fear of perfection; you’ll never reach it.",
-    "authorRu": "Сальвадор Дали",
-    "authorEn": "Salvador Dalí"
+    "text_ru": "Не бойтесь совершенства; вам его никогда не достичь.",
+    "text_en": "Have no fear of perfection; you’ll never reach it.",
+    "author_ru": "Сальвадор Дали",
+    "author_en": "Salvador Dalí"
   },
   {
     "id": 10,
-    "textRu": " Простота есть высшая степень утонченности.",
-    "textEn": "Simplicity is the ultimate sophistication.",
-    "authorRu": "Леонардо да Винчи",
-    "authorEn": "Leonardo da Vinci"
+    "text_ru": " Простота есть высшая степень утонченности.",
+    "text_en": "Simplicity is the ultimate sophistication.",
+    "author_ru": "Леонардо да Винчи",
+    "author_en": "Leonardo da Vinci"
   },
   {
     "id": 11,
-    "textRu": "Работайте усердно, чтобы получить то, что любите, иначе придется полюбить то, что получили.",
-    "textEn": "Work hard to get what you like, otherwise you'll be forced to just like what you get.",
-    "authorRu": "Бернард Шоу",
-    "authorEn": "Bernard Shaw"
+    "text_ru": "Работайте усердно, чтобы получить то, что любите, иначе придется полюбить то, что получили.",
+    "text_en": "Work hard to get what you like, otherwise you'll be forced to just like what you get.",
+    "author_ru": "Бернард Шоу",
+    "author_en": "Bernard Shaw"
   },
   {
     "id": 12,
-    "textRu": "Выбирайте работу по душе, и вам не придется работать ни дня в своей жизни.",
-    "textEn": "Choose a job you love, and you will never have to work a day in your life.",
-    "authorRu": "Конфуций",
-    "authorEn": "Confucius"
+    "text_ru": "Выбирайте работу по душе, и вам не придется работать ни дня в своей жизни.",
+    "text_en": "Choose a job you love, and you will never have to work a day in your life.",
+    "author_ru": "Конфуций",
+    "author_en": "Confucius"
   },
   {
     "id": 13,
-    "textRu": "В центре трудности лежит возможность.",
-    "textEn": "In the middle of difficulty lies opportunity.",
-    "authorRu": "Альберт Эйнштейн",
-    "authorEn": "Albert Einstein"
+    "text_ru": "В центре трудности лежит возможность.",
+    "text_en": "In the middle of difficulty lies opportunity.",
+    "author_ru": "Альберт Эйнштейн",
+    "author_en": "Albert Einstein"
   },
   {
     "id": 14,
-    "textRu": "Если Вы не думаете о будущем, у Вас его не будет.",
-    "textEn": "If you do not think about the future, you cannot have one.",
-    "authorRu": "Голсуорси",
-    "authorEn": "Galsworthy"
+    "text_ru": "Если Вы не думаете о будущем, у Вас его не будет.",
+    "text_en": "If you do not think about the future, you cannot have one.",
+    "author_ru": "Голсуорси",
+    "author_en": "Galsworthy"
   },
   {
     "id": 15,
-    "textRu": "Если Вы не думаете о будущем, у Вас его не будет.",
-    "textEn": "If you do not think about the future, you cannot have one.",
-    "authorRu": "Голсуорси",
-    "authorEn": "Galsworthy"
+    "text_ru": "Если Вы не думаете о будущем, у Вас его не будет.",
+    "text_en": "If you do not think about the future, you cannot have one.",
+    "author_ru": "Голсуорси",
+    "author_en": "Galsworthy"
   },
   {
     "id": 16,
-    "textRu": "Успех не в том, что имеешь, а в том, что ты из себя представляешь.",
-    "textEn": "Success is not in what you have, but who you are.",
-    "authorRu": "Бо Беннет",
-    "authorEn": "Bo Bennett"
+    "text_ru": "Успех не в том, что имеешь, а в том, что ты из себя представляешь.",
+    "text_en": "Success is not in what you have, but who you are.",
+    "author_ru": "Бо Беннет",
+    "author_en": "Bo Bennett"
   },
   {
     "id": 17,
-    "textRu": "Восемьдесят процентов успеха в том, чтобы появиться в нужное время в нужном месте.",
-    "textEn": "Eighty percent of success is showing up.",
-    "authorRu": "Вуди Аллен",
-    "authorEn": "Woody Allen"
+    "text_ru": "Восемьдесят процентов успеха в том, чтобы появиться в нужное время в нужном месте.",
+    "text_en": "Eighty percent of success is showing up.",
+    "author_ru": "Вуди Аллен",
+    "author_en": "Woody Allen"
   },
   {
     "id": 18,
-    "textRu": "Секрет успеха в постоянстве цели.",
-    "textEn": "The secret of success is constancy of purpose.",
-    "authorRu": "Бенджамин Дизраэли",
-    "authorEn": "Benjamin Disraeli"
+    "text_ru": "Секрет успеха в постоянстве цели.",
+    "text_en": "The secret of success is constancy of purpose.",
+    "author_ru": "Бенджамин Дизраэли",
+    "author_en": "Benjamin Disraeli"
   },
   {
     "id": 19,
-    "textRu": "Жизнь приятна. Смерть безмятежна. Вся проблема в переходе от одного к другому.",
-    "textEn": "Life is pleasant. Death is peaceful. It’s the transition that’s troublesome.",
-    "authorRu": "Айзек Азимов",
-    "authorEn": "Isaac Asimov"
+    "text_ru": "Жизнь приятна. Смерть безмятежна. Вся проблема в переходе от одного к другому.",
+    "text_en": "Life is pleasant. Death is peaceful. It’s the transition that’s troublesome.",
+    "author_ru": "Айзек Азимов",
+    "author_en": "Isaac Asimov"
   },
   {
     "id": 20,
-    "textRu": "Жизнь была бы трагичной, если бы не была такой забавной.",
-    "textEn": "Life would be tragic if it weren’t funny.",
-    "authorRu": "Стивен Хокинг",
-    "authorEn": "Stephen Hawking"
+    "text_ru": "Жизнь была бы трагичной, если бы не была такой забавной.",
+    "text_en": "Life would be tragic if it weren’t funny.",
+    "author_ru": "Стивен Хокинг",
+    "author_en": "Stephen Hawking"
   }
 ]

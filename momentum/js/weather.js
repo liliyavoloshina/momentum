@@ -1,4 +1,5 @@
 import { changeInputColor } from './helpers.js'
+import { lang } from './lang.js'
 
 const weatherCityEl = document.querySelector('#weatherCity')
 const weatherIcon = document.querySelector('#weatherIcon')
@@ -16,7 +17,6 @@ weatherCityEl.addEventListener('change', e => {
   getWeather()
 })
 
-let lang = 'en'
 let city
 
 function setCityToStorage() {

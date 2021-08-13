@@ -83,61 +83,62 @@
       <div class="quote__author" id="quoteAuthor"></div>
     </div>
     <div class="setting-btn" id="settingBtn"></div>
-    <div class="setting-area show" id="settingArea">
-      <div class="setting-area__lang setting-section setting-section--underline">
-        <h3 class="setting-section__heading">Language</h3>
+  </footer>
+
+  <div class="setting-area show" id="settingArea">
+    <div class="setting-area__lang setting-section setting-section--underline">
+      <h3 class="setting-section__heading">Language</h3>
+      <div class="setting-section__info">
+        <label class="radio-container">
+          English
+          <input class="radio-input" type="radio" name="lang" value="en" id="enLang">
+          <span class="radio-checkmark"></span>
+        </label>
+        <label class="radio-container">
+          Russian
+          <input class="radio-input" type="radio" name="lang" value="ru" id="ruLang">
+          <span class="radio-checkmark"></span>
+        </label>
+      </div>
+    </div>
+    <div class="setting-area__widgets setting-section setting-section--underline">
+      <h3 class="setting-section__heading">Widgets to show</h3>
+      <div class="setting-section__info setting-section__info-row">
+        <label class="checkbox-container">One
+          <input class="checkbox-input" type="checkbox" checked>
+          <span class="checkbox-checkmark"></span>
+        </label>
+      </div>
+    </div>
+    <div class="setting-area__photos">
+      <div class="setting-section">
+        <h3 class="setting-section__heading">Photo Source</h3>
         <div class="setting-section__info">
           <label class="radio-container">
-            English
-            <input class="radio-input" type="radio" name="lang" id="enLang" checked>
+            GitHub
+            <input class="radio-input" type="radio" name="photoSource" id="githubSource" checked>
             <span class="radio-checkmark"></span>
           </label>
           <label class="radio-container">
-            Russian
-            <input class="radio-input" type="radio" name="lang" id="ruLang">
+            Unsplash
+            <input class="radio-input" type="radio" name="photoSource" id="unsplashSource">
+            <span class="radio-checkmark"></span>
+          </label>
+          <label class="radio-container">
+            Flickr
+            <input class="radio-input" type="radio" name="photoSource" id="flickrSource">
             <span class="radio-checkmark"></span>
           </label>
         </div>
       </div>
-      <div class="setting-area__widgets setting-section setting-section--underline">
-        <h3 class="setting-section__heading">Widgets to show</h3>
-        <div class="setting-section__info setting-section__info-row">
-          <label class="checkbox-container">One
-            <input class="checkbox-input" type="checkbox" checked>
-            <span class="checkbox-checkmark"></span>
-          </label>
-        </div>
-      </div>
-      <div class="setting-area__photos">
-        <div class="setting-section">
-          <h3 class="setting-section__heading">Photo Source</h3>
-          <div class="setting-section__info">
-            <label class="radio-container">
-              GitHub
-              <input class="radio-input" type="radio" name="photoSource" id="githubSource" checked>
-              <span class="radio-checkmark"></span>
-            </label>
-            <label class="radio-container">
-              Unsplash
-              <input class="radio-input" type="radio" name="photoSource" id="unsplashSource">
-              <span class="radio-checkmark"></span>
-            </label>
-            <label class="radio-container">
-              Flickr
-              <input class="radio-input" type="radio" name="photoSource" id="flickrSource">
-              <span class="radio-checkmark"></span>
-            </label>
-          </div>
-        </div>
-        <div class="setting-section">
-          <h3 class="setting-section__heading">Photo Tag</h3>
-          <div class="setting-section__info">
-            <input class="input input-tag input-inactive" id="photoTag" type="text">
-          </div>
+      <div class="setting-section">
+        <h3 class="setting-section__heading">Photo Tag</h3>
+        <div class="setting-section__info">
+          <input class="input input-tag input-inactive" id="photoTag" type="text">
         </div>
       </div>
     </div>
-  </footer>
+  </div>
   <script src="./js/index.js" type="module"></script>
 </body>
 
