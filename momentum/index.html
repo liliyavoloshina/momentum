@@ -15,7 +15,7 @@
 
 <body>
   <header class="header">
-    <div class="audio-widget">
+    <div class="audio-widget widget" data-widget="audio">
       <div class="audio-widget-info">
         <div class="audio-widget-info__name" id="audioName"></div>
 
@@ -46,7 +46,7 @@
       <ul class="audio-widget-playlist" id="playlist"></ul>
     </div>
 
-    <div class="weather-widget header__widget">
+    <div class="weather-widget header__widget widget" data-widget="weather">
       <div class="weather-widget__city">
         <input class="input input-inactive" id="weatherCity" type="text">
       </div>
@@ -104,8 +104,12 @@
     <div class="setting-area__widgets setting-section setting-section--underline">
       <h3 class="setting-section__heading">Widgets to show</h3>
       <div class="setting-section__info setting-section__info-row">
-        <label class="checkbox-container">One
-          <input class="checkbox-input" type="checkbox" checked>
+        <label class="checkbox-container">Audio
+          <input class="checkbox-input widget-checkbox" data-widget="audio" type="checkbox" checked>
+          <span class="checkbox-checkmark"></span>
+        </label>
+        <label class="checkbox-container">Weather
+          <input class="checkbox-input widget-checkbox" data-widget="weather" type="checkbox" checked>
           <span class="checkbox-checkmark"></span>
         </label>
       </div>

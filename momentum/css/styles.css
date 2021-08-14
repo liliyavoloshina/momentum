@@ -29,8 +29,8 @@ ul {
 }
 
 .btn:hover {
-  -webkit-transition: .5s linear;
-  transition: .5s linear;
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
   -webkit-filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
           filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
 }
@@ -48,8 +48,8 @@ ul {
 
 .input-active {
   color: #d8d8d8;
-  -webkit-transition: .5s linear;
-  transition: .5s linear;
+  -webkit-transition: 0.5s linear;
+  transition: 0.5s linear;
   -webkit-filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
           filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
 }
@@ -60,6 +60,10 @@ ul {
 
 .hidden {
   display: none;
+}
+
+.widget-hidden {
+  opacity: 0;
 }
 
 /*
@@ -76,6 +80,8 @@ All styles relating to a reusable component
   row-gap: 1em;
   width: 300px;
   padding: 1em;
+  -webkit-transition: opacity .5s linear;
+  transition: opacity .5s linear;
 }
 
 .weather-widget__city {
@@ -117,6 +123,8 @@ All styles relating to a reusable component
 .audio-widget {
   width: 600px;
   padding: 2em;
+  -webkit-transition: opacity .5s linear;
+  transition: opacity .5s linear;
 }
 
 .audio-widget-info {

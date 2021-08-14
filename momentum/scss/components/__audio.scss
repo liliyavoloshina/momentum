@@ -1,6 +1,7 @@
 .audio-widget {
   width: 600px;
   padding: 2em;
+  transition: opacity .5s linear;
 
   &-info {
     display: flex;

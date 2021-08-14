@@ -1,7 +1,7 @@
-import {lang} from './lang.js'
+import { getLangFromStorage } from './helpers.js'
 
 const dateEl = document.querySelector('#date')
-let locale = lang === 'en' ? 'en-US' : 'ru-RU'
+
 const options = {
   month: 'long',
   day: 'numeric',
@@ -9,6 +9,8 @@ const options = {
 }
 
 function showDate() {
+  const lang = getLangFromStorage()
+  const locale = lang === 'en' ? 'en-US' : 'ru-RU'
   const date = new Date()
   const currentDate = date.toLocaleDateString(locale, options)
 
@@ -19,3 +21,5 @@ function showDate() {
 
 
 showDate()
+
+export {showDate}

@@ -1,7 +1,5 @@
 import { getLangFromStorage } from './helpers.js'
-// let { lang } = await import('./lang.js')
-// console.log('quote load')
-// console.log(lang)
+
 const quoteChangeBtn = document.querySelector('#quoteChangeBtn')
 const quoteTextEl = document.querySelector('#quoteText')
 const quoteAuthorEl = document.querySelector('#quoteAuthor')

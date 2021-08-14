@@ -1,5 +1,4 @@
-import { changeInputColor } from './helpers.js'
-import { lang } from './lang.js'
+import { changeInputColor, getLangFromStorage } from './helpers.js'
 
 const weatherCityEl = document.querySelector('#weatherCity')
 const weatherIcon = document.querySelector('#weatherIcon')
@@ -34,6 +33,7 @@ function getCityFromStorage() {
 }
 
 async function getWeather() {
+  const lang = getLangFromStorage()
   try {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lang}&appid=01d522b353a969527c35ef13f4db2c3e&units=metric`
     const res = await fetch(url)
@@ -48,8 +48,8 @@ async function getWeather() {
     weatherIcon.classList.add(`owf-${weatherId}`)
     weatherTempEl.textContent = `${weatherTemp} °C`
     weatherDescEl.textContent = weatherDesc
-    weatherWindEl.textContent = `Wind speed: ${weatherWind} m/c`
-    weatherHumidityEl.textContent = `Humidity: ${weatherHumidity} %`
+    weatherWindEl.textContent = `${lang == 'en' ? 'Wind speed' : 'Скорость ветра'}: ${weatherWind} m/c`
+    weatherHumidityEl.textContent = `${lang == 'en' ? 'Humidity' : 'Влажность'}: ${weatherHumidity} %`
 
     weatherErrorEl.classList.add('hidden')
     weatherInfoEl.classList.remove('hidden')
@@ -68,3 +68,6 @@ window.addEventListener('load', () => {
   getCityFromStorage()
   getWeather()
 })
+
+
+export {getWeather}

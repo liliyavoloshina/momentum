@@ -22,7 +22,7 @@ ul {
   outline: none;
   cursor: pointer;
   &:hover {
-    transition: .5s linear;
+    transition: 0.5s linear;
     filter: $filter-purple;
   }
 }
@@ -39,10 +39,10 @@ ul {
 
   &-active {
     color: $text-primary;
-    transition: .5s linear;
+    transition: 0.5s linear;
     filter: $filter-purple;
   }
-  
+
   &-inactive {
     color: $text-primary;
   }
@@ -50,4 +50,8 @@ ul {
 
 .hidden {
   display: none;
+}
+
+.widget-hidden {
+  opacity: 0;
 }
