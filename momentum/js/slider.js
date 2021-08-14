@@ -16,9 +16,9 @@ function padNum(num) {
   return num.toString().padStart(2, 0)
 }
 
-function setBg() {
+async function setBg() {
   const img = new Image();
-  img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${getTimeOfDay()}/${padNum(randomNum)}.jpg`
+  img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${await getTimeOfDay()}/${padNum(randomNum)}.jpg`
   img.addEventListener('load', () => {      
     document.body.style.backgroundImage = `url('${img.src}')`
   })

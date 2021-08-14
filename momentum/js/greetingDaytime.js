@@ -1,9 +1,9 @@
-// import { lang } from './lang.js'
+import { lang } from './lang.js' 
 // let { lang } = await import('./lang.js')
-let lang = 'en'
+// let lang = 'en'
 const greetingDaytimeEl = document.querySelector('#greetingDaytime')
 
-function getTimeOfDay() {
+async function getTimeOfDay() {
   const date = new Date()
   const hours = date.getHours()
 
@@ -18,9 +18,8 @@ function getTimeOfDay() {
   }
 }
 
-function getGreetingText() {
-  const timeOfDay = getTimeOfDay()
-
+async function getGreetingText() {
+  const timeOfDay =  await getTimeOfDay()
   if (timeOfDay === 'morning') {
     if (lang == 'en') {
       return 'Good morning'
@@ -48,8 +47,9 @@ function getGreetingText() {
   }
 }
 
-function showGreeting() {
-  const greetingText = `${getGreetingText()},`
+async function showGreeting() {
+  console.log('show greet')
+  const greetingText = `${await getGreetingText()},`
   greetingDaytimeEl.textContent = greetingText
 }
 

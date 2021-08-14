@@ -32,7 +32,7 @@ function getLangFromStorage() {
 function switchLang() {
   quoteLang()
   // quoteLang(lang)
-  // showGreeting(lang)
+  showGreeting()
 }
 
 window.addEventListener('beforeunload', () => {
@@ -44,6 +44,5 @@ window.addEventListener('load', () => {
 })
 
 getLangFromStorage()
-console.log(lang)
 
 export { lang, changeLang, getLangFromStorage }

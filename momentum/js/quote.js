@@ -1,4 +1,5 @@
 import { lang } from './lang.js'
+// let { lang } = await import('./lang.js')
 // let lang = 'en'
 const quoteChangeBtn = document.querySelector('#quoteChangeBtn')
 const quoteTextEl = document.querySelector('#quoteText')
@@ -23,7 +24,7 @@ async function getRandomQuote() {
 }
 
 function quoteLang() {
-  // console.log(lang, 'lang in quotes')
+  // console.log(lang, 'lang from quote')
   lang == 'en' ? (textQuote = randomQuote.text_en) : (textQuote = randomQuote.text_ru)
   lang == 'en' ? (authorQuote = randomQuote.author_en) : (authorQuote = randomQuote.author_ru)
 
