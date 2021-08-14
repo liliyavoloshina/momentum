@@ -1,6 +1,5 @@
-import { lang } from './lang.js' 
-// let { lang } = await import('./lang.js')
-// let lang = 'en'
+import { lang } from './lang.js'
+
 const greetingDaytimeEl = document.querySelector('#greetingDaytime')
 
 async function getTimeOfDay() {
@@ -48,7 +47,6 @@ async function getGreetingText() {
 }
 
 async function showGreeting() {
-  console.log('show greet')
   const greetingText = `${await getGreetingText()},`
   greetingDaytimeEl.textContent = greetingText
 }
