@@ -1,4 +1,5 @@
 import { lang } from './lang.js'
+
 const quoteChangeBtn = document.querySelector('#quoteChangeBtn')
 const quoteTextEl = document.querySelector('#quoteText')
 const quoteAuthorEl = document.querySelector('#quoteAuthor')

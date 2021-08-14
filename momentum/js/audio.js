@@ -1,3 +1,6 @@
+// import { lang } from './lang.js'
+let lang = 'ru'
+// let {lang} = await import('./lang.js')
 import playlist from '../data/playlist.js'
 
 const audioPlayMain = document.querySelector('#audioPlayMain')
@@ -31,7 +34,7 @@ curAudio.dataset.id = playlist[playNum].id
 curAudioEl = document.querySelector(`[data-id="${curAudio.dataset.id}"]`)
 curAudioEl.classList.add('active')
 
-audioNameEl.textContent = playlist[playNum].title
+audioNameEl.textContent = lang == 'en' ? playlist[playNum].title_en : playlist[playNum].title_ru
 audioDurationEndEl.textContent = `00:${durationEnd}`
 
 let audioPlaySmall = curAudioEl.querySelector('button')
@@ -58,7 +61,6 @@ function toggleMainBtn() {
 }
 
 function toggleSmallBtn() {
-  console.log('toggleSmallBtn')
   if (isPlaying) {
     audioPlaySmall.classList.add('pause')
     audioPlaySmall.classList.remove('play')
@@ -66,6 +68,11 @@ function toggleSmallBtn() {
     audioPlaySmall.classList.remove('pause')
     audioPlaySmall.classList.add('play')
   }
+}
+
+async function changeAudioLang() {
+  console.log(lang, 'changeAudioLang')
+  playlistItemsEls.forEach(item => lang == 'en' ? item.querySelector('.playlist-item__name').textContent = playlist[item.dataset.id - 1].title_en : item.querySelector('.playlist-item__name').textContent = playlist[item.dataset.id - 1].title_ru)
 }
 
 function togglePlay() {
@@ -84,11 +91,14 @@ function initCurrent() {
   audioPlaySmall.classList.remove('pause')
   audioPlaySmall.classList.add('play')
   audioPlaySmall.addEventListener('click', togglePlay)
+
   curAudio.src = playlist[playNum].src
   curAudio.currentTime = 0
   curAudio.dataset.id = playlist[playNum].id
+
   curAudioEl = document.querySelector(`[data-id="${curAudio.dataset.id}"]`)
   audioPlaySmall = curAudioEl.querySelector('button')
+
   curAudio.play()
   curAudioEl.classList.add('active')
   audioPlaySmall.classList.add('pause')
@@ -96,7 +106,7 @@ function initCurrent() {
   isPlaying = true
   toggleMainBtn()
   toggleSmallBtn()
-  audioNameEl.textContent = playlist[playNum].title
+  audioNameEl.textContent = lang == 'en' ? playlist[playNum].title_en : playlist[playNum].title_ru
   durationEnd = playlist[playNum].duration
   audioDurationEndEl.textContent = `00:${durationEnd}`
 }
@@ -123,7 +133,6 @@ function switchAudio() {
   const index = [...this.parentElement.childNodes].indexOf(this)
   if (index === playNum) {
     return
-    // togglePlay()
   } else {
     playNum = index
     initCurrent()
@@ -166,13 +175,14 @@ function initPlaylist() {
             item =>
               `<li class="playlist-item" data-id="${item.id}">
               <button class="playlist-item__small-btn btn play" title="Play/Pause Audio"></button>
-              <div class="playlist-item__name">${item.title}</div>
+              <div class="playlist-item__name">${lang == 'en' ? item.title_en : item.title_ru}</div>
             </li>`
           )
           .join('')
       : '---'
   }`
 }
+console.log('audio loaded')
 
 audioVolumeRange.addEventListener('input', e => {
   const input = e.target
@@ -188,3 +198,5 @@ playlistItemsEls.forEach(item => {
   item.addEventListener('click', switchAudio)
 })
 audioProgressEl.addEventListener('click', scrub)
+
+export { changeAudioLang }
