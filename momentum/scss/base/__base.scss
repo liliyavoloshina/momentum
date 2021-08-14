@@ -21,6 +21,7 @@ ul {
   border: none;
   outline: none;
   cursor: pointer;
+
   &:hover {
     transition: 0.5s linear;
     filter: $filter-purple;
@@ -50,6 +51,10 @@ ul {
 
 .hidden {
   display: none;
+}
+
+.widget {
+  transition: opacity .5s linear;
 }
 
 .widget-hidden {

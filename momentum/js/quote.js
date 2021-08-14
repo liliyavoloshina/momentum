@@ -36,7 +36,7 @@ function quoteLang() {
 }
 
 async function changeQuote() {
-  quoteChangeBtn.classList.toggle('quote-change-revert')
+  quoteChangeBtn.classList.toggle('revert')
   await getRandomQuote()
 }
 
