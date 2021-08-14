@@ -2,53 +2,43 @@ import { quoteLang } from './quote.js'
 import { showGreeting } from './greetingDaytime.js'
 import { getUsernameFromStorage } from './greetingName.js'
 import { changeAudioLang } from './audio.js'
+import { getLangFromStorage } from './helpers.js'
 
 const enLangInput = document.querySelector('#enLang')
 const ruLangInput = document.querySelector('#ruLang')
 
 let lang
-
-await getLangFromStorage()
-
-console.log(lang, 'lang from lang')
+console.log('lang loaded')
 
 function changeLang() {
+  const updatedLang = this.value
+  localStorage.setItem('lang', updatedLang)
   lang = this.value
   switchLang()
 }
 
-function setLangToStorage() {
-  localStorage.setItem('lang', lang)
-}
+function setLang() {
+  const langFromStore = getLangFromStorage()
 
-async function getLangFromStorage() {
-  if (localStorage.getItem('lang')) {
-    lang = localStorage.getItem('lang')
-    if (lang == 'en') {
-      enLangInput.checked = true
-    } else {
-      enLangInput.checked = false
-      ruLangInput.checked = true
-    }
-  } else {
-    lang = 'en'
+  if (langFromStore == 'en') {
     enLangInput.checked = true
+  } else {
+    enLangInput.checked = false
+    ruLangInput.checked = true
   }
 }
 
 function switchLang() {
+  // console.log(lang)
   quoteLang()
   showGreeting()
   getUsernameFromStorage()
   changeAudioLang()
 }
 
-window.addEventListener('beforeunload', () => {
-  setLangToStorage()
-})
-
 window.addEventListener('load', async () => {
-  await getLangFromStorage()
+  await setLang()
+  console.log('load')
 })
 
-export { lang, changeLang, getLangFromStorage }
+export { lang, changeLang }

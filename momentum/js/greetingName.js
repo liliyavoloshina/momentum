@@ -1,4 +1,5 @@
-import { lang } from './lang.js'
+import { getLangFromStorage } from './helpers.js'
+// let {lang} = await import('./lang.js')
 import { changeInputColor } from './helpers.js'
 
 const nameEl = document.querySelector('#greetingName')
@@ -11,6 +12,7 @@ function setUsernameToStorage() {
 }
 
 function getUsernameFromStorage() {
+  const lang = getLangFromStorage()
   if (localStorage.getItem('username')) {
     if (localStorage.getItem('username') == 'stranger' || localStorage.getItem('username') == 'незнакомец') {
       document.querySelector('#greetingName').value =

@@ -8,6 +8,13 @@ function changeInputColor(e) {
   }
 }
 
+function getLangFromStorage() {
+  if (localStorage.getItem('lang')) {
+    return localStorage.getItem('lang')
+  } else {
+    return 'en'
+  }
+}
 
 
-export { changeInputColor }
+export { changeInputColor, getLangFromStorage }

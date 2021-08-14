@@ -1,6 +1,4 @@
-// import { lang } from './lang.js'
-let lang = 'ru'
-// let {lang} = await import('./lang.js')
+import { getLangFromStorage } from './helpers.js'
 import playlist from '../data/playlist.js'
 
 const audioPlayMain = document.querySelector('#audioPlayMain')
@@ -14,6 +12,8 @@ const audioDurationCurEl = document.querySelector('#audioDurationCur')
 const audioVolumeRange = document.querySelector('#audioVolumeRange')
 const audioVolumeBtn = document.querySelector('#audioVolumeBtn')
 const playlistEl = document.querySelector('#playlist')
+
+let lang = getLangFromStorage()
 
 initPlaylist()
 
@@ -71,8 +71,9 @@ function toggleSmallBtn() {
 }
 
 async function changeAudioLang() {
-  console.log(lang, 'changeAudioLang')
+  lang = getLangFromStorage()
   playlistItemsEls.forEach(item => lang == 'en' ? item.querySelector('.playlist-item__name').textContent = playlist[item.dataset.id - 1].title_en : item.querySelector('.playlist-item__name').textContent = playlist[item.dataset.id - 1].title_ru)
+  audioNameEl.textContent = lang == 'en' ? playlist[playNum].title_en : playlist[playNum].title_ru
 }
 
 function togglePlay() {
@@ -182,7 +183,6 @@ function initPlaylist() {
       : '---'
   }`
 }
-console.log('audio loaded')
 
 audioVolumeRange.addEventListener('input', e => {
   const input = e.target

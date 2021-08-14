@@ -1,5 +1,7 @@
-import { lang } from './lang.js'
-
+import { getLangFromStorage } from './helpers.js'
+// let { lang } = await import('./lang.js')
+// console.log('quote load')
+// console.log(lang)
 const quoteChangeBtn = document.querySelector('#quoteChangeBtn')
 const quoteTextEl = document.querySelector('#quoteText')
 const quoteAuthorEl = document.querySelector('#quoteAuthor')
@@ -23,8 +25,13 @@ async function getRandomQuote() {
 }
 
 function quoteLang() {
-  lang == 'en' ? (textQuote = randomQuote.text_en) : (textQuote = randomQuote.text_ru)
-  lang == 'en' ? (authorQuote = randomQuote.author_en) : (authorQuote = randomQuote.author_ru)
+  const lang = getLangFromStorage()
+  lang === 'en'
+    ? (textQuote = randomQuote.text_en)
+    : (textQuote = randomQuote.text_ru)
+  lang === 'en'
+    ? (authorQuote = randomQuote.author_en)
+    : (authorQuote = randomQuote.author_ru)
 
   quoteTextEl.textContent = `«${textQuote}»`
   quoteAuthorEl.textContent = `— ${authorQuote}`

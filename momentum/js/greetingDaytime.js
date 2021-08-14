@@ -1,5 +1,4 @@
-import { lang } from './lang.js'
-
+import { getLangFromStorage } from './helpers.js'
 const greetingDaytimeEl = document.querySelector('#greetingDaytime')
 
 async function getTimeOfDay() {
@@ -19,6 +18,7 @@ async function getTimeOfDay() {
 
 async function getGreetingText() {
   const timeOfDay =  await getTimeOfDay()
+  const lang = getLangFromStorage()
   if (timeOfDay === 'morning') {
     if (lang == 'en') {
       return 'Good morning'
