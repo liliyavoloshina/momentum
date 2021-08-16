@@ -10,15 +10,6 @@ function changeSource() {
   source = this.dataset.source
   setSourceToStorage()
   setBg()
-  tag = getTagFromStorage()
-  if (source === 'github') {
-    console.log(source, 'sourde = github')
-    imageTagEl.value = '-'
-    imageTagEl.disabled = true
-  } else {
-    imageTagEl.value = tag
-    imageTagEl.disabled = false
-  }
 }
 
 function changeTag() {
@@ -29,21 +20,29 @@ function changeTag() {
 
 function getSourceFromStorage() {
   if (localStorage.getItem('source')) {
-    return JSON.parse(localStorage.getItem('source'))
+    source = JSON.parse(localStorage.getItem('source'))
   } else {
-    return 'github'
+    source = 'github'
   }
+  return source
 }
 
 function getTagFromStorage() {
- if (localStorage.getItem('tag')) {
+  if (localStorage.getItem('tag')) {
     tag = JSON.parse(localStorage.getItem('tag'))
     imageTagEl.value = tag
-    return tag
   } else {
     imageTagEl.value = 'nature'
-    return 'nature'
+    tag = 'nature'
   }
+  if (source === 'github') {
+    imageTagEl.value = '-'
+    imageTagEl.disabled = true
+  } else {
+    imageTagEl.value = tag
+    imageTagEl.disabled = false
+  }
+  return tag
 }
 
 function setSourceToStorage() {
@@ -55,14 +54,13 @@ function setTagToStorage() {
 }
 
 window.addEventListener('load', () => {
+  tag = getTagFromStorage()
   source = getSourceFromStorage()
   widgetsRadios.forEach(radio => {
     radio.dataset.source === source
       ? (radio.checked = true)
       : (radio.checked = false)
   })
-  
-  
 })
 
 widgetsRadios.forEach(radio => {
