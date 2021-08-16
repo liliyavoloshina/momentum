@@ -9,5 +9,6 @@ import './weather.js'
 import './audio.js'
 import './settings.js'
 import './showWidgets.js'
+import './images.js'
 
 

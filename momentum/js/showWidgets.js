@@ -1,6 +1,5 @@
 const widgets = document.querySelectorAll('.widget')
 const widgetsCheckboxes = document.querySelectorAll('.widget-checkbox')
-const audioWidget = document.querySelector('.audio-widget')
 
 let hidden = []
 
@@ -27,7 +26,6 @@ function getHiddenFromStorage() {
   } else {
     hidden = []
   }
-  console.log(hidden)
 }
 
 function setHiddenToStorage() {
