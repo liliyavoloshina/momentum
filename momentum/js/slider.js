@@ -1,5 +1,5 @@
 import { getTimeOfDay } from './greetingDaytime.js'
-import { getSourceFromStorage } from './images.js'
+import { getSourceFromStorage, getTagFromStorage } from './images.js'
 
 const slidePrev = document.querySelector('#slidePrev')
 const slideNext = document.querySelector('#slideNext')
@@ -19,21 +19,33 @@ function padNum(num) {
 
 async function setBg() {
   let source = getSourceFromStorage()
-  console.log(source, 'setBg')
+  let tag = getTagFromStorage()
   let url
-  let tag = 'nature'
+
   if (source === 'unsplash') {
     const response = await fetch(
-      `https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=nature&client_id=ZMe8BGgm8MXpmbZUBCgMi4m1CTgEQhzy90dkk9gjcpY`
+      `https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=${tag}&client_id=ZMe8BGgm8MXpmbZUBCgMi4m1CTgEQhzy90dkk9gjcpY`
     )
     const json = await response.json()
     url = json.urls.raw
   }
+
+  if (source === 'flickr') {
+    const response = await fetch(
+      `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=d67d8fac287c9a1f0a13e08a11231403&tags=${tag}&tag_mode=all&extras=url_h&format=json&nojsoncallback=1`
+    )
+    const json = await response.json()
+    const photos = json.photos.photo
+    const randomImage = photos[Math.floor(Math.random() * photos.length)]
+    url = randomImage.url_h
+  }
+
   if (source === 'github') {
     url = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${await getTimeOfDay()}/${padNum(
       randomNum
     )}.jpg`
   }
+
   const img = new Image()
   img.src = url
   img.addEventListener('load', () => {
