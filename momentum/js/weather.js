@@ -28,7 +28,7 @@ function getCityFromStorage() {
     document.querySelector('#weatherCity').value = localStorage.getItem('city')
   } else {
     city = 'Минск'
-    document.querySelector('#weatherCity').value = 'Минск'
+    document.querySelector('#weatherCity').value = 'Minsk'
   }
 }
 

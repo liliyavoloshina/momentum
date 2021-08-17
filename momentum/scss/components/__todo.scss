@@ -1,0 +1,18 @@
+.todo-area {
+  position: absolute;
+  right: 2em;
+  bottom: 7em;
+  width: 500px;
+  height: 525px;
+  padding: 0 2em;
+  background-color: $color-dark;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.7s linear;
+  z-index: -1;
+
+  &.show {
+    z-index: 2;
+    opacity: 1;
+  }
+}

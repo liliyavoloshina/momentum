@@ -10,7 +10,6 @@ const enLangInput = document.querySelector('#enLang')
 const ruLangInput = document.querySelector('#ruLang')
 
 let lang
-console.log('lang loaded')
 
 function changeLang() {
   const updatedLang = this.value

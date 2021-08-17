@@ -10,5 +10,6 @@ import './audio.js'
 import './settings.js'
 import './showWidgets.js'
 import './images.js'
+import './todo.js'
 
 
