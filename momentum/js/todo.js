@@ -1,9 +1,10 @@
 import { changeInputColor } from './helpers.js'
+
 const todoOpenBtn = document.querySelector('#todoBtn')
 const todoArea = document.querySelector('#todoArea')
 const todoNameSelects = document.querySelectorAll('input[data-todolist]')
 const todolists = document.querySelectorAll('ul[data-todolist]')
-const todoNewInputs = document.querySelectorAll('.todolist-new')
+const todoNewInput = document.querySelector('#newtodo')
 
 let currentTodolistName = 'inbox'
 let currentTodolistEl = document.querySelector('ul[data-todolist="inbox"]')
@@ -27,37 +28,71 @@ function changeTodolist() {
   renderTodoList()
 }
 
+function checkTodo(e) {
+  const todoId = e.target.dataset.id
+  const updatedTodos = todos[currentTodolistName].map(todo => {
+    if (todo.id == todoId) {
+      return {
+        ...todo,
+        completed: !todo.completed
+      }
+    }
+    return todo
+  })
+  todos[currentTodolistName] = updatedTodos
+  let completedInbox = todos.inbox.filter(todo => todo.completed)
+  let completedToday = todos.today.filter(todo => todo.completed)
+  todos.done = completedInbox.concat(completedToday)
+  setTodosToStorage()
+  renderTodoList()
+}
+
 function renderTodoList() {
-  console.log(currentTodolistEl)
   currentTodolistEl.innerHTML =
     todos[currentTodolistName].length > 0
-      ? todos[currentTodolistName].map(
-          todo => `
-        <li class="todo-item ${todo.completed === true ? 'todo-item--completed' : ''}" data-todoid="${todo.id}">
+      ? todos[currentTodolistName]
+          .map(
+            todo => `
+        <li class="todo-item ${
+          todo.completed === true ? 'todo-item--completed' : ''
+        }" data-todoid="${todo.id}">
           <label class="checkbox-container">${todo.text}
-            <input class="checkbox-input" type="checkbox" ${todo.completed === true ? 'checked' : ''}>
+            <input class="checkbox-input todo-checkbox" type="checkbox" data-id="${
+              todo.id
+            }" ${todo.completed === true ? 'checked' : ''}>
             <span class="checkbox-checkmark"></span>
           </label>
         </li>`
-        ).join('')
+          )
+          .join('')
       : `<div class="todolist-empty">
-          <h3>${currentTodolistName === 'done' ? `You haven't completed any todo yet...` : 'Add a todo to get started!'}</h3>
+          <h3>${
+            currentTodolistName === 'done'
+              ? `You haven't completed any todo yet...`
+              : 'Add a todo to get started!'
+          }</h3>
         </div>`
+
+  const checkboxesTodo = document.querySelectorAll('.todo-checkbox')
+  checkboxesTodo.forEach(checkbox =>
+    checkbox.addEventListener('change', checkTodo)
+  )
 }
 
 function addNewTodo(e) {
   const input = e.target
-  const todoCategory = input.dataset.todolist
   const todoText = input.value
-
   const newTodo = {
-    id: todos[todoCategory].length + 1,
+    id: Date.now(),
     text: todoText,
     completed: false
   }
 
-  todos[todoCategory].push(newTodo)
+  todos[currentTodolistName].push(newTodo)
   setTodosToStorage()
+  renderTodoList()
+  input.value = ''
+  changeInputColor(e)
 }
 
 function setTodosToStorage() {
@@ -80,20 +115,14 @@ todoOpenBtn.addEventListener('click', toggleTodoArea)
 todoNameSelects.forEach(select =>
   select.addEventListener('change', changeTodolist)
 )
-todoNewInputs.forEach(input =>
-  input.addEventListener('focus', e => changeInputColor(e))
-)
-todoNewInputs.forEach(input =>
-  input.addEventListener('blur', e => changeInputColor(e))
-)
-todoNewInputs.forEach(input =>
-  input.addEventListener('keyup', e => {
-    if (e.keyCode === 13) {
-      e.preventDefault()
-      addNewTodo(e)
-    }
-  })
-)
+todoNewInput.addEventListener('focus', e => changeInputColor(e))
+todoNewInput.addEventListener('blur', e => changeInputColor(e))
+todoNewInput.addEventListener('keyup', e => {
+  if (e.keyCode === 13) {
+    e.preventDefault()
+    addNewTodo(e)
+  }
+})
 window.addEventListener('load', () => {
   getTodosFromStorage()
   renderTodoList()
