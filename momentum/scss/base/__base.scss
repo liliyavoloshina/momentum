@@ -51,12 +51,9 @@ ul {
 
 .hidden {
   display: none;
-}
-
-.widget {
-  transition: opacity .5s linear;
-}
-
-.widget-hidden {
   opacity: 0;
+}
+
+.widget, .todolist {
+  transition: opacity 0.5s linear;
 }

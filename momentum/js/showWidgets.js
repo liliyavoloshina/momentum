@@ -7,7 +7,7 @@ function changeVisibilty() {
   const widget = this.dataset.widget
   const checked = this.checked
   const widgetEl = document.querySelector(`div[data-widget="${widget}"]`)
-  widgetEl.classList.toggle('widget-hidden')
+  widgetEl.classList.toggle('hidden')
 
   if (!checked) {
     hidden.push(widget)
@@ -36,7 +36,7 @@ function checkHidden() {
   hidden.map(widgetName => {
     widgets.forEach(widget => {
       widget.dataset.widget === widgetName
-        ? widget.classList.add('widget-hidden')
+        ? widget.classList.add('hidden')
         : ''
     })
   })

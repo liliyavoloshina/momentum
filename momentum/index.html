@@ -85,7 +85,27 @@
     </div>
 
     <div class="todo-area widget" id="todoArea" data-widget="todo">
-
+      <div class="todo-area__heading">
+        <div class="select-todolist" tabindex="1">
+          <input class="select-todolist__input" name="todolist-name" type="radio" id="inbox" data-todolist="inbox" value="inbox" checked>
+          <label for="inbox" class="select-todolist__option">Inbox</label>
+          <input class="select-todolist__input" name="todolist-name" type="radio" id="today" data-todolist="today" value="today">
+          <label for="today" class="select-todolist__option">Today</label>
+          <input class="select-todolist__input" name="todolist-name" type="radio" id="done" data-todolist="done" value="done">
+          <label for="done" class="select-todolist__option">Done</label>
+        </div>
+      </div>
+      <div class="todo-area__main">
+        <ul class="todolist" data-todolist="inbox">
+          inbox
+        </ul>
+        <ul class="todolist hidden" data-todolist="today">
+          today
+        </ul>
+        <ul class="todolist hidden" data-todolist="done">
+          done
+        </ul>
+      </div>
     </div>
     <div class="todo-btn" id="todoBtn"></div>
     <div class="setting-btn" id="settingBtn"></div>

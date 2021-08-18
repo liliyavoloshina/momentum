@@ -15,4 +15,85 @@
     z-index: 2;
     opacity: 1;
   }
+
+  &__heading {
+    padding: 2em 0;
+  }
+}
+
+.todolist {
+}
+
+.select-todolist {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 250px;
+  height: 40px;
+
+  &__option {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    order: 2;
+    width: 100%;
+    min-height: 40px;
+    padding: 0 30px 0 10px;
+    background: $color-black;
+    border-top: $color-black solid 1px;
+    pointer-events: none;
+    z-index: 1;
+    box-sizing: border-box;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+  }
+
+  &__option:hover {
+    background-color: $color-accent;
+  }
+
+  &:focus &__option {
+    position: relative;
+    pointer-events: all;
+  }
+
+  &__input {
+    position: absolute;
+    left: -99999px;
+    opacity: 0;
+  }
+
+  &__input:checked + label {
+    position: relative;
+    order: 1;
+    z-index: 2;
+    border-top: none;
+    background: $color-black;
+  }
+
+  &__input:checked + label:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: calc(50% - 2.5px);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $color-accent;
+    pointer-events: none;
+    z-index: 3;
+  }
+
+  &__input:checked + label:before {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    content: '';
+    background: $color-black;
+  }
 }
