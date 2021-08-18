@@ -30,19 +30,36 @@ function changeTodolist() {
 
 function checkTodo(e) {
   const todoId = e.target.dataset.id
-  const updatedTodos = todos[currentTodolistName].map(todo => {
-    if (todo.id == todoId) {
-      return {
-        ...todo,
-        completed: !todo.completed
+  const todoCategory = e.target.dataset.category
+  let updatedTodos
+  if (currentTodolistName === 'done') {
+    updatedTodos = todos[todoCategory].map(todo => {
+      if (todo.id == todoId) {
+        return {
+          ...todo,
+          completed: false
+        }
       }
-    }
-    return todo
-  })
+      return todo
+    })
+    todos[todoCategory] = updatedTodos
+  } else {
+    updatedTodos = todos[currentTodolistName].map(todo => {
+      if (todo.id == todoId) {
+        return {
+          ...todo,
+          completed: !todo.completed
+        }
+      }
+      return todo
+    })
+  }
   todos[currentTodolistName] = updatedTodos
+
   let completedInbox = todos.inbox.filter(todo => todo.completed)
   let completedToday = todos.today.filter(todo => todo.completed)
   todos.done = completedInbox.concat(completedToday)
+
   setTodosToStorage()
   renderTodoList()
 }
@@ -59,7 +76,9 @@ function renderTodoList() {
           <label class="checkbox-container">${todo.text}
             <input class="checkbox-input todo-checkbox" type="checkbox" data-id="${
               todo.id
-            }" ${todo.completed === true ? 'checked' : ''}>
+            }" data-category="${todo.category}" ${
+              todo.completed === true ? 'checked' : ''
+            }>
             <span class="checkbox-checkmark"></span>
           </label>
         </li>`
@@ -85,6 +104,7 @@ function addNewTodo(e) {
   const newTodo = {
     id: Date.now(),
     text: todoText,
+    category: currentTodolistName,
     completed: false
   }
 
