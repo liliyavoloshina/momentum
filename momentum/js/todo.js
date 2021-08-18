@@ -28,16 +28,21 @@ function changeTodolist() {
 }
 
 function renderTodoList() {
+  console.log(currentTodolistEl)
   currentTodolistEl.innerHTML =
     todos[currentTodolistName].length > 0
       ? todos[currentTodolistName].map(
           todo => `
-      <li class="todo-item" data-id="${todo.id}">
-        <input type="checkbox" checked=${todo.completed} />
-        <div class="todo-item__name">${todo.text}</div>
-      </li>`
+        <li class="todo-item ${todo.completed === true ? 'todo-item--completed' : ''}" data-todoid="${todo.id}">
+          <label class="checkbox-container">${todo.text}
+            <input class="checkbox-input" type="checkbox" ${todo.completed === true ? 'checked' : ''}>
+            <span class="checkbox-checkmark"></span>
+          </label>
+        </li>`
         ).join('')
-      : 'Empty'
+      : `<div class="todolist-empty">
+          <h3>${currentTodolistName === 'done' ? `You haven't completed any todo yet...` : 'Add a todo to get started!'}</h3>
+        </div>`
 }
 
 function addNewTodo(e) {

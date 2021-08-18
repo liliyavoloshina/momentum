@@ -60,7 +60,6 @@ ul {
 }
 
 .hidden {
-  display: none;
   opacity: 0;
 }
 
@@ -532,18 +531,25 @@ All styles relating to a reusable component
   padding: 2em 0;
 }
 
+.todo-area__main {
+  position: relative;
+  height: 420px;
+}
+
+.new-todo-input {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  height: 30px;
+  font-size: 1.5em;
+}
+
 .todolist {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 400px;
+  height: 80%;
+}
+
+.todolist.hidden {
+  display: none;
 }
 
 .todolist-empty {
@@ -551,9 +557,14 @@ All styles relating to a reusable component
   text-align: center;
 }
 
-.todolist-new {
-  height: 30px;
-  font-size: 1.5em;
+.todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.todo-item--completed {
+  text-decoration: line-through;
 }
 
 .select-todolist {

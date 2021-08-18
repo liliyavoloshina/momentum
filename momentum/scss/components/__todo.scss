@@ -21,22 +21,37 @@
   }
 
   &__main {
+    position: relative;
+    height: 420px;
   }
 }
 
+.new-todo-input {
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  height: 30px;
+  font-size: 1.5em;
+}
+
 .todolist {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 400px;
+  height: 80%;
+
+  &.hidden {
+    display: none;
+  }
+
   &-empty {
     padding-top: 150px;
     text-align: center;
   }
+}
 
-  &-new {
-    height: 30px;
-    font-size: 1.5em;
+.todo-item {
+  display: flex;
+
+  &--completed {
+    text-decoration: line-through;
   }
 }
 
