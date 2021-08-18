@@ -64,6 +64,20 @@ function checkTodo(e) {
   renderTodoList()
 }
 
+function deleteTodo(e) {
+  const todoId = e.target.dataset.id
+  const todoCategory = e.target.dataset.category
+  let index = todos[todoCategory].findIndex(el => el.id == todoId)
+  todos[todoCategory].splice(index, 1)
+
+  let completedInbox = todos.inbox.filter(todo => todo.completed)
+  let completedToday = todos.today.filter(todo => todo.completed)
+  todos.done = completedInbox.concat(completedToday)
+
+  setTodosToStorage()
+  renderTodoList()
+}
+
 function renderTodoList() {
   currentTodolistEl.innerHTML =
     todos[currentTodolistName].length > 0
@@ -82,6 +96,9 @@ function renderTodoList() {
             }>
             <span class="checkbox-checkmark"></span>
           </label>
+          <button class="todo-item-delete btn" title="Delete Todo" data-id="${
+            todo.id
+          }" data-category="${todo.category}"></button>
         </li>`
           )
           .join('')
@@ -94,8 +111,12 @@ function renderTodoList() {
         </div>`
 
   const checkboxesTodo = document.querySelectorAll('.todo-checkbox')
+  const deleteTodoBtns = document.querySelectorAll('.todo-item-delete')
   checkboxesTodo.forEach(checkbox =>
     checkbox.addEventListener('change', checkTodo)
+  )
+  deleteTodoBtns.forEach(btn =>
+    btn.addEventListener('click', deleteTodo)
   )
 }
 

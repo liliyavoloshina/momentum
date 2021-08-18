@@ -65,6 +65,8 @@
 
 .todo-item {
   display: flex;
+  justify-content: space-between;
+  padding-right: 1em;
 
   &--completed {
     text-decoration: line-through;
@@ -75,6 +77,18 @@
     &-container {
       width: 350px;
     }
+  }
+
+  &-delete {
+    align-self: flex-start;
+    width: 20px;
+    height: 20px;
+    margin-top: 12px;
+    background-image: url('/momentum/img/remove.png');
+    background-color: transparent;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 

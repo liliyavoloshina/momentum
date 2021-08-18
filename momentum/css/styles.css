@@ -465,6 +465,11 @@ All styles relating to a reusable component
           justify-content: space-between;
 }
 
+.photo-note {
+  padding-top: 1em;
+  font-size: 12px;
+}
+
 .radio-container {
   display: block;
   position: relative;
@@ -587,6 +592,10 @@ All styles relating to a reusable component
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 1em;
 }
 
 .todo-item--completed {
@@ -596,6 +605,19 @@ All styles relating to a reusable component
 
 .todo-item .checkbox-container {
   width: 350px;
+}
+
+.todo-item-delete {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 20px;
+  height: 20px;
+  margin-top: 12px;
+  background-image: url("/momentum/img/remove.png");
+  background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .select-todolist {
