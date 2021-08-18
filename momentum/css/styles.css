@@ -68,6 +68,72 @@ ul {
   transition: opacity 0.5s linear;
 }
 
+.checkbox-container {
+  display: block;
+  position: relative;
+  width: 130px;
+  margin: 10px 0;
+  padding-left: 35px;
+  font-size: 1.1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-additional-text {
+  max-width: 500px;
+  height: auto;
+  word-wrap: break-word;
+}
+
+.checkbox-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #d8d8d8;
+}
+
+.checkbox-container:hover .checkbox-input ~ .checkbox-checkmark {
+  background-color: #ccc;
+}
+
+.checkbox-container .checkbox-input:checked ~ .checkbox-checkmark {
+  background-color: #9400D3;
+}
+
+.checkbox-checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container .checkbox-input:checked ~ .checkbox-checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkbox-checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #d8d8d8;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
 /*
 All styles relating to a reusable component
 */
@@ -94,6 +160,10 @@ All styles relating to a reusable component
   height: 70%;
   font-size: 1.6em;
   color: #c52929;
+}
+
+.weather-widget__error.hidden {
+  display: none;
 }
 
 .weather-widget__info {
@@ -447,66 +517,6 @@ All styles relating to a reusable component
   background: #d8d8d8;
 }
 
-.checkbox-container {
-  display: block;
-  position: relative;
-  width: 130px;
-  margin: 10px 0;
-  padding-left: 35px;
-  font-size: 1.1em;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.checkbox-input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.checkbox-checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #d8d8d8;
-}
-
-.checkbox-container:hover .checkbox-input ~ .checkbox-checkmark {
-  background-color: #ccc;
-}
-
-.checkbox-container .checkbox-input:checked ~ .checkbox-checkmark {
-  background-color: #9400D3;
-}
-
-.checkbox-checkmark:after {
-  content: '';
-  position: absolute;
-  display: none;
-}
-
-.checkbox-container .checkbox-input:checked ~ .checkbox-checkmark:after {
-  display: block;
-}
-
-.checkbox-container .checkbox-checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid #d8d8d8;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
 .todo-area {
   position: absolute;
   right: 2em;
@@ -546,6 +556,22 @@ All styles relating to a reusable component
 
 .todolist {
   height: 80%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.todolist::-webkit-scrollbar {
+  width: .5em;
+}
+
+.todolist::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #242424;
+}
+
+.todolist::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #d8d8d8;
 }
 
 .todolist.hidden {
@@ -565,6 +591,11 @@ All styles relating to a reusable component
 
 .todo-item--completed {
   text-decoration: line-through;
+  color: #9400D3;
+}
+
+.todo-item .checkbox-container {
+  width: 350px;
 }
 
 .select-todolist {

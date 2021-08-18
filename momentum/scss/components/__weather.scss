@@ -15,6 +15,9 @@
     font-size: 1.6em;
     color: #c52929;
   }
+  &__error.hidden {
+    display: none;
+  }
   &__info{
     font-size: 1.5em;
   }

@@ -73,7 +73,8 @@ function renderTodoList() {
         <li class="todo-item ${
           todo.completed === true ? 'todo-item--completed' : ''
         }" data-todoid="${todo.id}">
-          <label class="checkbox-container">${todo.text}
+          <label class="checkbox-container">
+          <div class="checkbox-additional-text">${todo.text}</div>
             <input class="checkbox-input todo-checkbox" type="checkbox" data-id="${
               todo.id
             }" data-category="${todo.category}" ${
@@ -101,18 +102,30 @@ function renderTodoList() {
 function addNewTodo(e) {
   const input = e.target
   const todoText = input.value
-  const newTodo = {
-    id: Date.now(),
-    text: todoText,
-    category: currentTodolistName,
-    completed: false
+  let newTodo
+
+  if (currentTodolistName === 'done') {
+    newTodo = {
+      id: Date.now(),
+      text: todoText,
+      category: 'inbox',
+      completed: true
+    }
+    todos.inbox.push(newTodo)
+  } else {
+    newTodo = {
+      id: Date.now(),
+      text: todoText,
+      category: currentTodolistName,
+      completed: false
+    }
   }
 
   todos[currentTodolistName].push(newTodo)
   setTodosToStorage()
   renderTodoList()
   input.value = ''
-  changeInputColor(e)
+  input.blur()
 }
 
 function setTodosToStorage() {

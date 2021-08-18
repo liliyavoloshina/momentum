@@ -36,6 +36,22 @@
 
 .todolist {
   height: 80%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: .5em;
+  }
+   
+  &::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: $color-black;
+  }
+   
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: $text-primary;
+  }
 
   &.hidden {
     display: none;
@@ -52,6 +68,13 @@
 
   &--completed {
     text-decoration: line-through;
+    color: $color-accent;
+  }
+
+  .checkbox {
+    &-container {
+      width: 350px;
+    }
   }
 }
 
