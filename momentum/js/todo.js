@@ -78,6 +78,12 @@ function deleteTodo(e) {
   renderTodoList()
 }
 
+function openMenuTodo(e) {
+  const btn = e.target
+  const menu = btn.parentNode.querySelector('.todo-menu')
+  menu.classList.toggle('hidden')
+}
+
 function renderTodoList() {
   currentTodolistEl.innerHTML =
     todos[currentTodolistName].length > 0
@@ -96,9 +102,22 @@ function renderTodoList() {
             }>
             <span class="checkbox-checkmark"></span>
           </label>
-          <button class="todo-item-delete btn" title="Delete Todo" data-id="${
+          <button class="todo-item-menu btn input-inactive" title="Todo Menu" data-id="${
             todo.id
           }" data-category="${todo.category}"></button>
+          <div class="todo-menu hidden">
+          <ul>
+            <li>
+              Edit
+            </li>
+            <li>
+              Move to ${todo.category === 'inbox' ? 'Today' : 'Inbox'}
+            </li>
+            <li>
+            Delete
+            </li>
+          </ul>
+          </div>
         </li>`
           )
           .join('')
@@ -112,12 +131,15 @@ function renderTodoList() {
 
   const checkboxesTodo = document.querySelectorAll('.todo-checkbox')
   const deleteTodoBtns = document.querySelectorAll('.todo-item-delete')
+  const menuTodoBtns = document.querySelectorAll('.todo-item-menu')
   checkboxesTodo.forEach(checkbox =>
     checkbox.addEventListener('change', checkTodo)
   )
-  deleteTodoBtns.forEach(btn =>
-    btn.addEventListener('click', deleteTodo)
-  )
+  menuTodoBtns.forEach(menu => menu.addEventListener('click', openMenuTodo))
+  menuTodoBtns.forEach(menu => menu.addEventListener('click', (e) => changeInputColor(e)))
+  // deleteTodoBtns.forEach(btn =>
+  //   btn.addEventListener('click', deleteTodo)
+  // )
 }
 
 function addNewTodo(e) {

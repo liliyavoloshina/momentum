@@ -589,6 +589,7 @@ All styles relating to a reusable component
 }
 
 .todo-item {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -607,17 +608,36 @@ All styles relating to a reusable component
   width: 350px;
 }
 
-.todo-item-delete {
+.todo-item-menu {
   -ms-flex-item-align: start;
       align-self: flex-start;
   width: 20px;
   height: 20px;
   margin-top: 12px;
-  background-image: url("/momentum/img/remove.png");
+  background-image: url("/momentum/img/todo-menu.png");
   background-color: transparent;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.todo-menu {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  width: 150px;
+  padding: 1em;
+  background-color: #242424;
+}
+
+.todo-menu.hidden {
+  display: none;
+}
+
+.todo-menu li:hover {
+  -webkit-filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+          filter: invert(90%) sepia(96%) saturate(7329%) hue-rotate(284deg) brightness(90%) contrast(114%);
+  cursor: pointer;
 }
 
 .select-todolist {

@@ -64,6 +64,7 @@
 }
 
 .todo-item {
+  position: relative;
   display: flex;
   justify-content: space-between;
   padding-right: 1em;
@@ -79,16 +80,34 @@
     }
   }
 
-  &-delete {
+  &-menu {
     align-self: flex-start;
     width: 20px;
     height: 20px;
     margin-top: 12px;
-    background-image: url('/momentum/img/remove.png');
+    background-image: url('/momentum/img/todo-menu.png');
     background-color: transparent;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+  }
+}
+
+.todo-menu {
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  width: 150px;
+  padding: 1em;
+  background-color: $color-black;
+
+  &.hidden {
+    display: none;
+  }
+
+  & li:hover {
+    filter: $filter-purple;
+    cursor: pointer;
   }
 }
 
