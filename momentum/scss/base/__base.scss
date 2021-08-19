@@ -48,6 +48,10 @@ ul {
   &-inactive {
     color: $text-primary;
   }
+
+  &:disabled {
+    color: $text-primary;
+  }
 }
 
 .hidden {

@@ -59,6 +59,10 @@ ul {
   color: #d8d8d8;
 }
 
+.input:disabled {
+  color: #d8d8d8;
+}
+
 .hidden {
   opacity: 0;
 }
@@ -598,6 +602,10 @@ All styles relating to a reusable component
 .todo-item--completed .todo-item-text {
   text-decoration: line-through;
   color: #9400D3;
+}
+
+.todo-item .hidden {
+  display: none;
 }
 
 .todo-item-text {

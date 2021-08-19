@@ -74,6 +74,10 @@
     color: $color-accent;
   }
 
+  & .hidden {
+    display: none;
+  }
+
   &-text {
     display: block;
     width: 370px;

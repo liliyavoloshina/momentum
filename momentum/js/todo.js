@@ -85,34 +85,59 @@ function deleteTodo(e) {
   renderTodoList()
 }
 
-// function editTodo(e) {
-//   const btn = e.target
-//   const todoId = btn.parentElement.parentElement.parentElement.attributes['data-todoid'].value
-//   const todoCategory = btn.parentElement.parentElement.parentElement.attributes['data-category'].value
-//   const todoMenu = btn.parentElement.parentElement
+function editTodo(e) {
+  const btn = e.target
+  const todoItem = btn.closest('.todo-item')
+  const todoItemText = todoItem.querySelector('.todo-item-text')
+  const todoId = todoItem.attributes['data-todoid'].value
+  const todoMenu = btn.parentElement.parentElement
 
-//   todoMenu.classList.add('hidden')
+  todoMenu.classList.add('todo-menu-hidden')
 
-//   let index = todos[todoCategory].findIndex(el => el.id == todoId)
-//   todos[todoCategory].splice(index, 1)
+  todoItemText.disabled = false
 
-//   let completedInbox = todos.inbox.filter(todo => todo.completed)
-//   let completedToday = todos.today.filter(todo => todo.completed)
-//   todos.done = completedInbox.concat(completedToday)
+  todoItemText.focus()
+  // todoItemText.classList.add('todo-item-text-active')
 
-//   setTodosToStorage()
-//   renderTodoList()
-// }
+  // let completedInbox = todos.inbox.filter(todo => todo.completed)
+  // let completedToday = todos.today.filter(todo => todo.completed)
+  // todos.done = completedInbox.concat(completedToday)
+
+  // setTodosToStorage()
+  // renderTodoList()
+  todoItemText.addEventListener('change', () =>
+    changeTextTodoItem(todoItemText, todoId)
+  )
+}
+
+function changeTextTodoItem(item, id) {
+  const updatedTodos = todos[currentTodolistName].map(todo => {
+    if (todo.id == id) {
+      return {
+        ...todo,
+        text: item.value
+      }
+    }
+    return todo
+  })
+  todos[currentTodolistName] = updatedTodos
+  item.disabled = true
+
+  setTodosToStorage()
+  renderTodoList()
+}
 
 function openMenuTodo(e) {
   const btn = e.target
   const menu = btn.parentNode.querySelector('.todo-menu')
 
-  if (openedMenu && openedMenu !== menu) {
+  if (openedMenu && openedMenu != menu) {
     openedMenu.classList.add('todo-menu-hidden')
   }
 
-  menu.classList.contains('todo-menu-hidden') ? menu.classList.remove('todo-menu-hidden') : menu.classList.add('todo-menu-hidden')
+  menu.classList.contains('todo-menu-hidden')
+    ? menu.classList.remove('todo-menu-hidden')
+    : menu.classList.add('todo-menu-hidden')
   openedMenu = menu
 }
 
@@ -135,17 +160,17 @@ function renderTodoList() {
             <span class="checkbox-checkmark"></span>
           </label>
           
-          <div class="todo-item-text" contentEditable="true">${todo.text}</div>
+          <input class="input todo-item-text" value="${todo.text}" disabled />
           <div class="todo-item-menu-area">
             <button class="todo-item-menu btn input-inactive" title="Todo Menu" data-id="${
               todo.id
             }" data-category="${todo.category}"></button>
             <div class="todo-menu todo-menu-hidden">
-              <ul>
-                <li>
+              <ul class="todo-menu-list">
+                <li class="todo-item-edit ${currentTodolistName === 'done' ? 'hidden' : ''}">
                   Edit
                 </li>
-                <li>
+                <li class="${currentTodolistName === 'done' ? 'hidden' : ''}">
                  Move to ${todo.category === 'inbox' ? 'Today' : 'Inbox'}
                 </li>
                 <li class="todo-item-delete">
@@ -166,14 +191,15 @@ function renderTodoList() {
         </div>`
 
   const checkboxesTodo = document.querySelectorAll('.todo-checkbox')
-  const deleteTodoItem = document.querySelectorAll('.todo-item-delete')
   const menuTodoBtns = document.querySelectorAll('.todo-item-menu')
+  const editTodoItem = document.querySelectorAll('.todo-item-edit')
+  const deleteTodoItem = document.querySelectorAll('.todo-item-delete')
   checkboxesTodo.forEach(checkbox =>
     checkbox.addEventListener('change', checkTodo)
   )
   menuTodoBtns.forEach(menu => menu.addEventListener('click', openMenuTodo))
-  // menuTodoBtns.forEach(menu => menu.addEventListener('click', (e) => changeInputColor(e)))
   deleteTodoItem.forEach(btn => btn.addEventListener('click', deleteTodo))
+  editTodoItem.forEach(btn => btn.addEventListener('click', editTodo))
 }
 
 function addNewTodo(e) {
