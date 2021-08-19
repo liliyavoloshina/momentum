@@ -9,6 +9,7 @@ const todoNewInput = document.querySelector('#newtodo')
 let currentTodolistName = 'inbox'
 let currentTodolistEl = document.querySelector('ul[data-todolist="inbox"]')
 let todos
+let openedMenu
 
 function toggleTodoArea() {
   todoOpenBtn.classList.toggle('revert')
@@ -65,8 +66,14 @@ function checkTodo(e) {
 }
 
 function deleteTodo(e) {
-  const todoId = e.target.dataset.id
-  const todoCategory = e.target.dataset.category
+  const btn = e.target
+  const todoItem = btn.closest('.todo-item')
+  const todoId = todoItem.attributes['data-todoid'].value
+  const todoCategory = todoItem.attributes['data-category'].value
+  const todoMenu = btn.parentElement.parentElement
+
+  todoMenu.classList.add('hidden')
+
   let index = todos[todoCategory].findIndex(el => el.id == todoId)
   todos[todoCategory].splice(index, 1)
 
@@ -78,10 +85,35 @@ function deleteTodo(e) {
   renderTodoList()
 }
 
+// function editTodo(e) {
+//   const btn = e.target
+//   const todoId = btn.parentElement.parentElement.parentElement.attributes['data-todoid'].value
+//   const todoCategory = btn.parentElement.parentElement.parentElement.attributes['data-category'].value
+//   const todoMenu = btn.parentElement.parentElement
+
+//   todoMenu.classList.add('hidden')
+
+//   let index = todos[todoCategory].findIndex(el => el.id == todoId)
+//   todos[todoCategory].splice(index, 1)
+
+//   let completedInbox = todos.inbox.filter(todo => todo.completed)
+//   let completedToday = todos.today.filter(todo => todo.completed)
+//   todos.done = completedInbox.concat(completedToday)
+
+//   setTodosToStorage()
+//   renderTodoList()
+// }
+
 function openMenuTodo(e) {
   const btn = e.target
   const menu = btn.parentNode.querySelector('.todo-menu')
-  menu.classList.toggle('hidden')
+
+  if (openedMenu && openedMenu !== menu) {
+    openedMenu.classList.add('todo-menu-hidden')
+  }
+
+  menu.classList.contains('todo-menu-hidden') ? menu.classList.remove('todo-menu-hidden') : menu.classList.add('todo-menu-hidden')
+  openedMenu = menu
 }
 
 function renderTodoList() {
@@ -92,9 +124,9 @@ function renderTodoList() {
             todo => `
         <li class="todo-item ${
           todo.completed === true ? 'todo-item--completed' : ''
-        }" data-todoid="${todo.id}">
+        }" data-todoid="${todo.id}" data-category="${todo.category}">
+        
           <label class="checkbox-container">
-          <div class="checkbox-additional-text">${todo.text}</div>
             <input class="checkbox-input todo-checkbox" type="checkbox" data-id="${
               todo.id
             }" data-category="${todo.category}" ${
@@ -102,21 +134,25 @@ function renderTodoList() {
             }>
             <span class="checkbox-checkmark"></span>
           </label>
-          <button class="todo-item-menu btn input-inactive" title="Todo Menu" data-id="${
-            todo.id
-          }" data-category="${todo.category}"></button>
-          <div class="todo-menu hidden">
-          <ul>
-            <li>
-              Edit
-            </li>
-            <li>
-              Move to ${todo.category === 'inbox' ? 'Today' : 'Inbox'}
-            </li>
-            <li>
-            Delete
-            </li>
-          </ul>
+          
+          <div class="todo-item-text" contentEditable="true">${todo.text}</div>
+          <div class="todo-item-menu-area">
+            <button class="todo-item-menu btn input-inactive" title="Todo Menu" data-id="${
+              todo.id
+            }" data-category="${todo.category}"></button>
+            <div class="todo-menu todo-menu-hidden">
+              <ul>
+                <li>
+                  Edit
+                </li>
+                <li>
+                 Move to ${todo.category === 'inbox' ? 'Today' : 'Inbox'}
+                </li>
+                <li class="todo-item-delete">
+                  Delete
+                </li>
+              </ul>
+            </div>
           </div>
         </li>`
           )
@@ -130,16 +166,14 @@ function renderTodoList() {
         </div>`
 
   const checkboxesTodo = document.querySelectorAll('.todo-checkbox')
-  const deleteTodoBtns = document.querySelectorAll('.todo-item-delete')
+  const deleteTodoItem = document.querySelectorAll('.todo-item-delete')
   const menuTodoBtns = document.querySelectorAll('.todo-item-menu')
   checkboxesTodo.forEach(checkbox =>
     checkbox.addEventListener('change', checkTodo)
   )
   menuTodoBtns.forEach(menu => menu.addEventListener('click', openMenuTodo))
-  menuTodoBtns.forEach(menu => menu.addEventListener('click', (e) => changeInputColor(e)))
-  // deleteTodoBtns.forEach(btn =>
-  //   btn.addEventListener('click', deleteTodo)
-  // )
+  // menuTodoBtns.forEach(menu => menu.addEventListener('click', (e) => changeInputColor(e)))
+  deleteTodoItem.forEach(btn => btn.addEventListener('click', deleteTodo))
 }
 
 function addNewTodo(e) {
@@ -168,7 +202,6 @@ function addNewTodo(e) {
   setTodosToStorage()
   renderTodoList()
   input.value = ''
-  input.blur()
 }
 
 function setTodosToStorage() {

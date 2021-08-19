@@ -64,44 +64,66 @@
 }
 
 .todo-item {
-  position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-right: 1em;
 
-  &--completed {
+  &--completed &-text {
     text-decoration: line-through;
     color: $color-accent;
   }
 
+  &-text {
+    display: block;
+    width: 370px;
+    height: auto;
+    cursor: default;
+    outline: 0;
+    word-wrap: break-word;
+  }
+
   .checkbox {
     &-container {
-      width: 350px;
+      width: 50px;
+      margin: 0;
+      padding: 0;
     }
+    &-checkmark {
+      top: -10px;
+    }
+  }
+
+  &-menu-area {
+    position: relative;
   }
 
   &-menu {
     align-self: flex-start;
     width: 20px;
     height: 20px;
-    margin-top: 12px;
     background-image: url('/momentum/img/todo-menu.png');
     background-color: transparent;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
   }
+
+  & + .todo-item {
+    margin-top: 1em;
+  }
 }
 
 .todo-menu {
   position: absolute;
-  top: 10px;
-  right: 50px;
+  top: 0;
+  right: 30px;
   width: 150px;
   padding: 1em;
+  border-radius: 5px;
   background-color: $color-black;
 
-  &.hidden {
+  &-hidden {
     display: none;
   }
 

@@ -4,13 +4,6 @@
   "version": "1.0",
   "description": "Momentum Task by Liliya Voloshina",
   "icons": {
-    "32": "./img/favicon.png"
-  },
-  "content_scripts": [
-    {
-      "matches": [
-        "<all_urls>"
-      ]
-    }
-  ]
+    "32": "favicon.ico"
+  }
 }

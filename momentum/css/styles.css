@@ -90,12 +90,6 @@ ul {
   width: 0;
 }
 
-.checkbox-additional-text {
-  max-width: 500px;
-  height: auto;
-  word-wrap: break-word;
-}
-
 .checkbox-checkmark {
   position: absolute;
   top: 0;
@@ -589,23 +583,44 @@ All styles relating to a reusable component
 }
 
 .todo-item {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-right: 1em;
 }
 
-.todo-item--completed {
+.todo-item--completed .todo-item-text {
   text-decoration: line-through;
   color: #9400D3;
 }
 
+.todo-item-text {
+  display: block;
+  width: 370px;
+  height: auto;
+  cursor: default;
+  outline: 0;
+  word-wrap: break-word;
+}
+
 .todo-item .checkbox-container {
-  width: 350px;
+  width: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-item .checkbox-checkmark {
+  top: -10px;
+}
+
+.todo-item-menu-area {
+  position: relative;
 }
 
 .todo-item-menu {
@@ -613,7 +628,6 @@ All styles relating to a reusable component
       align-self: flex-start;
   width: 20px;
   height: 20px;
-  margin-top: 12px;
   background-image: url("/momentum/img/todo-menu.png");
   background-color: transparent;
   background-size: contain;
@@ -621,16 +635,21 @@ All styles relating to a reusable component
   background-repeat: no-repeat;
 }
 
+.todo-item + .todo-item {
+  margin-top: 1em;
+}
+
 .todo-menu {
   position: absolute;
-  top: 10px;
-  right: 50px;
+  top: 0;
+  right: 30px;
   width: 150px;
   padding: 1em;
+  border-radius: 5px;
   background-color: #242424;
 }
 
-.todo-menu.hidden {
+.todo-menu-hidden {
   display: none;
 }
 
