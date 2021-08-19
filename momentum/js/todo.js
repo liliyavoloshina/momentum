@@ -85,8 +85,8 @@ function deleteTodo(e) {
   renderTodoList()
 }
 
-function editTodo(e) {
-  const btn = e.target
+function editTodo() {
+  const btn = this
   const todoItem = btn.closest('.todo-item')
   const todoItemText = todoItem.querySelector('.todo-item-text')
   const todoId = todoItem.attributes['data-todoid'].value
@@ -97,14 +97,10 @@ function editTodo(e) {
   todoItemText.disabled = false
 
   todoItemText.focus()
-  // todoItemText.classList.add('todo-item-text-active')
+  let tmpStr = todoItemText.value
+  todoItemText.value = ''
+  todoItemText.value = tmpStr
 
-  // let completedInbox = todos.inbox.filter(todo => todo.completed)
-  // let completedToday = todos.today.filter(todo => todo.completed)
-  // todos.done = completedInbox.concat(completedToday)
-
-  // setTodosToStorage()
-  // renderTodoList()
   todoItemText.addEventListener('change', () =>
     changeTextTodoItem(todoItemText, todoId)
   )
@@ -122,6 +118,25 @@ function changeTextTodoItem(item, id) {
   })
   todos[currentTodolistName] = updatedTodos
   item.disabled = true
+
+  setTodosToStorage()
+  renderTodoList()
+}
+
+function moveTodo() {
+  const btn = this
+  const todoItem = btn.closest('.todo-item')
+  const todoId = todoItem.attributes['data-todoid'].value
+  const todoCategory = todoItem.attributes['data-category'].value
+  const movedCategory = todoCategory == 'inbox' ? 'today' : 'inbox'
+
+  const oldTodo = todos[todoCategory].find(el => el.id == todoId)
+  const updatedTodo = {...oldTodo, category: movedCategory}
+  
+  let index = todos[todoCategory].findIndex(el => el.id == todoId)
+  todos[todoCategory].splice(index, 1)
+
+  todos[movedCategory].push(updatedTodo)
 
   setTodosToStorage()
   renderTodoList()
@@ -167,10 +182,14 @@ function renderTodoList() {
             }" data-category="${todo.category}"></button>
             <div class="todo-menu todo-menu-hidden">
               <ul class="todo-menu-list">
-                <li class="todo-item-edit ${currentTodolistName === 'done' ? 'hidden' : ''}">
+                <li class="todo-item-edit ${
+                  currentTodolistName === 'done' ? 'hidden' : ''
+                }">
                   Edit
                 </li>
-                <li class="${currentTodolistName === 'done' ? 'hidden' : ''}">
+                <li class="todo-item-move ${
+                  currentTodolistName === 'done' ? 'hidden' : ''
+                }">
                  Move to ${todo.category === 'inbox' ? 'Today' : 'Inbox'}
                 </li>
                 <li class="todo-item-delete">
@@ -194,12 +213,14 @@ function renderTodoList() {
   const menuTodoBtns = document.querySelectorAll('.todo-item-menu')
   const editTodoItem = document.querySelectorAll('.todo-item-edit')
   const deleteTodoItem = document.querySelectorAll('.todo-item-delete')
+  const moveTodoItem = document.querySelectorAll('.todo-item-move')
   checkboxesTodo.forEach(checkbox =>
     checkbox.addEventListener('change', checkTodo)
   )
   menuTodoBtns.forEach(menu => menu.addEventListener('click', openMenuTodo))
   deleteTodoItem.forEach(btn => btn.addEventListener('click', deleteTodo))
   editTodoItem.forEach(btn => btn.addEventListener('click', editTodo))
+  moveTodoItem.forEach(btn => btn.addEventListener('click', moveTodo))
 }
 
 function addNewTodo(e) {

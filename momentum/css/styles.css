@@ -615,6 +615,7 @@ All styles relating to a reusable component
   cursor: default;
   outline: 0;
   word-wrap: break-word;
+  color: #d8d8d8;
 }
 
 .todo-item .checkbox-container {
