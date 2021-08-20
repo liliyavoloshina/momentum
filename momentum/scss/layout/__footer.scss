@@ -15,7 +15,7 @@
     width: 30px;
     height: 30px;
     margin-bottom: 2em;
-    background: url('/momentum/img/refresh.png');
+    background: url('../img/refresh.png');
     background-size: contain;
     transition: 0.2s linear;
   }
@@ -43,7 +43,7 @@
   left: 2em;
   width: 50px;
   height: 50px;
-  background: url('/momentum/img/settings.png');
+  background: url('../img/settings.png');
   background-size: contain;
   transition: 0.7s linear;
   cursor: pointer;
@@ -64,7 +64,7 @@
   right: 2em;
   width: 50px;
   height: 50px;
-  background: url('/momentum/img/to-do-list.png');
+  background: url('../img/to-do-list.png');
   background-size: contain;
   transition: 0.7s linear;
   cursor: pointer;

@@ -285,22 +285,22 @@ All styles relating to a reusable component
 }
 
 .audio-widget-prev-btn {
-  background: url("./img/prev-audio.png");
+  background: url("../img/prev-audio.png");
   background-size: contain;
 }
 
 .audio-widget-play-btn {
-  background: url("/momentum/img/play-audio.png");
+  background: url("../img/play-audio.png");
   background-size: contain;
 }
 
 .audio-widget-pause-btn {
-  background: url("/momentum/img/pause-audio.png");
+  background: url("../img/pause-audio.png");
   background-size: contain;
 }
 
 .audio-widget-next-btn {
-  background: url("/momentum/img/next-audio.png");
+  background: url("../img/next-audio.png");
   background-size: contain;
 }
 
@@ -318,7 +318,7 @@ All styles relating to a reusable component
 .audio-widget-volume-btn {
   width: 2em;
   height: 2em;
-  background-image: url("/momentum/img/mute.png");
+  background-image: url("../img/mute.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -383,11 +383,11 @@ All styles relating to a reusable component
 }
 
 .playlist-item__small-btn.play {
-  background-image: url("/momentum/img/play-audio.png");
+  background-image: url("../img/play-audio.png");
 }
 
 .playlist-item__small-btn.pause {
-  background-image: url("/momentum/img/pause-audio.png");
+  background-image: url("../img/pause-audio.png");
 }
 
 .setting-area {
@@ -637,7 +637,7 @@ All styles relating to a reusable component
       align-self: flex-start;
   width: 20px;
   height: 20px;
-  background-image: url("/momentum/img/todo-menu.png");
+  background-image: url("../img/todo-menu.png");
   background-color: transparent;
   background-size: contain;
   background-position: center;
@@ -835,13 +835,13 @@ Styles for the header, footer, the grid system e.t.c.
 
 .slide-prev-btn {
   left: 2rem;
-  background: url("/momentum/img/prev.png") no-repeat;
+  background: url("../img/prev.png") no-repeat;
   background-size: contain;
 }
 
 .slide-next-btn {
   right: 2rem;
-  background: url("/momentum/img/next.png") no-repeat;
+  background: url("../img/next.png") no-repeat;
   background-size: contain;
 }
 
@@ -879,7 +879,7 @@ Styles for the header, footer, the grid system e.t.c.
   width: 30px;
   height: 30px;
   margin-bottom: 2em;
-  background: url("/momentum/img/refresh.png");
+  background: url("../img/refresh.png");
   background-size: contain;
   -webkit-transition: 0.2s linear;
   transition: 0.2s linear;
@@ -909,7 +909,7 @@ Styles for the header, footer, the grid system e.t.c.
   left: 2em;
   width: 50px;
   height: 50px;
-  background: url("/momentum/img/settings.png");
+  background: url("../img/settings.png");
   background-size: contain;
   -webkit-transition: 0.7s linear;
   transition: 0.7s linear;
@@ -934,7 +934,7 @@ Styles for the header, footer, the grid system e.t.c.
   right: 2em;
   width: 50px;
   height: 50px;
-  background: url("/momentum/img/to-do-list.png");
+  background: url("../img/to-do-list.png");
   background-size: contain;
   -webkit-transition: 0.7s linear;
   transition: 0.7s linear;

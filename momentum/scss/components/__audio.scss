@@ -68,19 +68,19 @@
 }
 
 .audio-widget-prev-btn {
-  background: url('./img/prev-audio.png');
+  background: url('../img/prev-audio.png');
   background-size: contain;
 }
 .audio-widget-play-btn {
-  background: url('/momentum/img/play-audio.png');
+  background: url('../img/play-audio.png');
   background-size: contain;
 }
 .audio-widget-pause-btn {
-  background: url('/momentum/img/pause-audio.png');
+  background: url('../img/pause-audio.png');
   background-size: contain;
 }
 .audio-widget-next-btn {
-  background: url('/momentum/img/next-audio.png');
+  background: url('../img/next-audio.png');
   background-size: contain;
 }
 
@@ -93,7 +93,7 @@
 .audio-widget-volume-btn {
   width: 2em;
   height: 2em;
-  background-image: url('/momentum/img/mute.png');
+  background-image: url('../img/mute.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -151,10 +151,10 @@
   }
 
   &__small-btn.play {
-    background-image: url('/momentum/img/play-audio.png');
+    background-image: url('../img/play-audio.png');
   }
 
   &__small-btn.pause {
-    background-image: url('/momentum/img/pause-audio.png');
+    background-image: url('../img/pause-audio.png');
   }
 }
