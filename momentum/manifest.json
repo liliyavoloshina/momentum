@@ -10,7 +10,8 @@
     "default_icon": "./img/favicon.png"
   },
   "background": {
-    "service_worker": "background.js"
+    "persistent": false,
+    "scripts": ["background.js"]
   },
-  "permissions": ["activeTab", "storage"]
+  "permissions": ["activeTab", "storage", "clipboardWrite"]
 }
