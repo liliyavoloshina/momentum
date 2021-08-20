@@ -848,7 +848,7 @@ Styles for the header, footer, the grid system e.t.c.
 
 .mobile {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   right: 0;
