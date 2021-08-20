@@ -138,5 +138,75 @@
     "text_en": "Life would be tragic if it weren’t funny.",
     "author_ru": "Стивен Хокинг",
     "author_en": "Stephen Hawking"
+  },
+  {
+    "id": 21,
+    "text_ru": "Смейтесь всегда, когда можете. Это самое дешевое лекарство.",
+    "text_en": "Always laugh when you can. It is cheap medicine.",
+    "author_ru": "Джорж Байрон",
+    "author_en": "George Byron"
+  },
+  {
+    "id": 22,
+    "text_ru": "Успех — дитя смелости.",
+    "text_en": "Success is the child of audacity.",
+    "author_ru": "Бенджамин Дизраэли",
+    "author_en": "Benjamin Disraeli"
+  },
+  {
+    "id": 23,
+    "text_ru": "Успех — это умение двигаться от неудачи к неудаче, не теряя энтузиазма.",
+    "text_en": "Success consists of going from failure to failure without loss of enthusiasm.",
+    "author_ru": "Уинстон Черчилль",
+    "author_en": "Winston Churchill"
+  },
+  {
+    "id": 24,
+    "text_ru": "Выживает не самый сильный и не самый умный, а тот, кто лучше всех приспосабливается к изменениям.",
+    "text_en": "It is not the strongest of the species that survives, nor the most intelligent, but the one most responsive to change.",
+    "author_ru": "Чарльз Дарвин",
+    "author_en": "Charles Darwin"
+  },
+  {
+    "id": 25,
+    "text_ru": "Воплощайте собственные мечты, или кто-то другой наймёт вас, чтобы воплощать свои.",
+    "text_en": "Build your own dreams, or someone else will hire you to build theirs.",
+    "author_ru": "Фаррах Грей",
+    "author_en": "Farrah Gray"
+  },
+  {
+    "id": 26,
+    "text_ru": "К достойной цели нет коротких путей.",
+    "text_en": "There are no shortcuts to any place worth going.",
+    "author_ru": "Хелен Келлер",
+    "author_en": "Helen Keller"
+  },
+  {
+    "id": 27,
+    "text_ru": "Успех — не ключ к счастью. Это счастье — ключ к успеху.",
+    "text_en": "Success is not the key to happiness. Happiness is the key to success.",
+    "author_ru": "Герман Кейн",
+    "author_en": "Herman Cain"
+  },
+  {
+    "id": 28,
+    "text_ru": "Ум — это всё. Что вы думаете, тем вы становитесь.",
+    "text_en": "The mind is everything. What you think you become.",
+    "author_ru": "Будда",
+    "author_en": "Buddha"
+  },
+  {
+    "id": 29,
+    "text_ru": "Когда я делаю добро, я чувствую себя хорошо. Когда я поступаю плохо, я чувствую себя плохо. Вот моя религия.",
+    "text_en": "When I do good, I feel good. When I do bad, I feel bad. That’s my religion.",
+    "author_ru": "Авраам Линкольн",
+    "author_en": "Abraham Lincoln"
+  },
+  {
+    "id": 30,
+    "text_ru": "Помните: никто не может заставить вас почувствовать себя униженным без вашего согласия.",
+    "text_en": "Remember no one can make you feel inferior without your consent.",
+    "author_ru": "Элеонора Рузвельт",
+    "author_en": "Eleanor Roosevelt"
   }
 ]
