@@ -5,6 +5,8 @@ import { changeAudioLang } from './audio.js'
 import { getLangFromStorage } from './helpers.js'
 import { showDate } from './date.js'
 import { getWeather } from './weather.js'
+import { getSettingLang } from './settings.js'
+import { getTodoLang } from './todo.js'
 
 const enLangInput = document.querySelector('#enLang')
 const ruLangInput = document.querySelector('#ruLang')
@@ -36,6 +38,8 @@ function switchLang() {
   changeAudioLang()
   showDate()
   getWeather()
+  getSettingLang()
+  getTodoLang()
 }
 
 window.addEventListener('load', () => {

@@ -1,5 +1,4 @@
 import { getLangFromStorage } from './helpers.js'
-// let {lang} = await import('./lang.js')
 import { changeInputColor } from './helpers.js'
 
 const nameEl = document.querySelector('#greetingName')

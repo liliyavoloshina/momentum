@@ -90,13 +90,13 @@
           <div class="select-todolist" tabindex="1">
             <input class="select-todolist__input" name="todolist-name" type="radio" id="inbox" data-todolist="inbox"
               value="inbox" checked>
-            <label for="inbox" class="select-todolist__option">Inbox</label>
+            <label for="inbox" class="select-todolist__option inbox-title">Inbox</label>
             <input class="select-todolist__input" name="todolist-name" type="radio" id="today" data-todolist="today"
               value="today">
-            <label for="today" class="select-todolist__option">Today</label>
+            <label for="today" class="select-todolist__option today-title">Today</label>
             <input class="select-todolist__input" name="todolist-name" type="radio" id="done" data-todolist="done"
               value="done">
-            <label for="done" class="select-todolist__option">Done</label>
+            <label for="done" class="select-todolist__option done-title">Done</label>
           </div>
         </div>
         <div class="todo-popup__main">
@@ -117,48 +117,48 @@
 
   <div class="setting-area" id="settingArea">
     <div class="setting-area__lang setting-section setting-section--underline">
-      <h3 class="setting-section__heading">Language</h3>
+      <h3 class="setting-section__heading langs-title">Language</h3>
       <div class="setting-section__info">
         <label class="radio-container">
-          English
+          <span class="en-radio">English</span> 
           <input class="radio-input" type="radio" name="lang" value="en" id="enLang">
           <span class="radio-checkmark"></span>
         </label>
         <label class="radio-container">
-          Russian
+          <span class="ru-radio">Russian</span> 
           <input class="radio-input" type="radio" name="lang" value="ru" id="ruLang">
           <span class="radio-checkmark"></span>
         </label>
       </div>
     </div>
     <div class="setting-area__widgets setting-section setting-section--underline">
-      <h3 class="setting-section__heading">Widgets to show</h3>
+      <h3 class="setting-section__heading widgets-title">Active widgets</h3>
       <div class="setting-section__info setting-section__info-row">
-        <label class="checkbox-container">Audio
+        <label class="checkbox-container"><span class="audio-checkbox">Audio</span> 
           <input class="checkbox-input widget-checkbox" data-widget="audio" type="checkbox" checked>
           <span class="checkbox-checkmark"></span>
         </label>
-        <label class="checkbox-container">Weather
+        <label class="checkbox-container"><span class="weather-checkbox">Weather</span> 
           <input class="checkbox-input widget-checkbox" data-widget="weather" type="checkbox" checked>
           <span class="checkbox-checkmark"></span>
         </label>
-        <label class="checkbox-container">Time
+        <label class="checkbox-container"><span class="time-checkbox">Time</span> 
           <input class="checkbox-input widget-checkbox" data-widget="time" type="checkbox" checked>
           <span class="checkbox-checkmark"></span>
         </label>
-        <label class="checkbox-container">Date
+        <label class="checkbox-container"><span class="date-checkbox">Date</span> 
           <input class="checkbox-input widget-checkbox" data-widget="date" type="checkbox" checked>
           <span class="checkbox-checkmark"></span>
         </label>
-        <label class="checkbox-container">Greeting
+        <label class="checkbox-container"><span class="greeting-checkbox">Greeting</span> 
           <input class="checkbox-input widget-checkbox" data-widget="greeting" type="checkbox" checked>
           <span class="checkbox-checkmark"></span>
         </label>
-        <label class="checkbox-container">Quote
+        <label class="checkbox-container"><span class="quote-checkbox">Quote</span> 
           <input class="checkbox-input widget-checkbox" data-widget="quote" type="checkbox" checked>
           <span class="checkbox-checkmark"></span>
         </label>
-        <label class="checkbox-container">Todo
+        <label class="checkbox-container"><span class="todo-checkbox">Todo</span> 
           <input class="checkbox-input widget-checkbox" data-widget="todo" type="checkbox" checked>
           <span class="checkbox-checkmark"></span>
         </label>
@@ -166,7 +166,7 @@
     </div>
     <div class="setting-area__photos">
       <div class="setting-section">
-        <h3 class="setting-section__heading">Photo Source</h3>
+        <h3 class="setting-section__heading photos-title">Photo Source</h3>
         <div class="setting-section__info">
           <label class="radio-container">
             GitHub
@@ -186,7 +186,7 @@
         </div>
       </div>
       <div class="setting-section">
-        <h3 class="setting-section__heading">Photo Tag</h3>
+        <h3 class="setting-section__heading phototag-title">Photo Tag</h3>
         <div class="setting-section__info">
           <input class="input input-tag input-inactive" id="photoTag" type="text">
           <span class="photo-note">*if you chose not github, changing images can be slow</span>

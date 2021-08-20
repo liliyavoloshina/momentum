@@ -1,11 +1,16 @@
+import { getLangFromStorage } from './helpers.js'
 import { changeInputColor } from './helpers.js'
 
 const todoOpenBtn = document.querySelector('#todoBtn')
 const todoPopup = document.querySelector('#todoPopup')
-// const todoArea = document.querySelector('#todoArea')
 const todoNameSelects = document.querySelectorAll('input[data-todolist]')
 const todolists = document.querySelectorAll('ul[data-todolist]')
 const todoNewInput = document.querySelector('#newtodo')
+
+const inboxTitle = document.querySelector('.inbox-title')
+const todayTitle = document.querySelector('.today-title')
+const doneTitle = document.querySelector('.done-title')
+const newTodoInput = document.querySelector('.new-todo-input')
 
 let currentTodolistName = 'inbox'
 let currentTodolistEl = document.querySelector('ul[data-todolist="inbox"]')
@@ -136,8 +141,8 @@ function moveTodo() {
   const movedCategory = todoCategory == 'inbox' ? 'today' : 'inbox'
 
   const oldTodo = todos[todoCategory].find(el => el.id == todoId)
-  const updatedTodo = {...oldTodo, category: movedCategory}
-  
+  const updatedTodo = { ...oldTodo, category: movedCategory }
+
   let index = todos[todoCategory].findIndex(el => el.id == todoId)
   todos[todoCategory].splice(index, 1)
 
@@ -194,8 +199,7 @@ function renderTodoList() {
                 </li>
                 <li class="todo-item-move ${
                   currentTodolistName === 'done' ? 'hidden' : ''
-                }">
-                 Move to ${todo.category === 'inbox' ? 'Today' : 'Inbox'}
+                }">Move
                 </li>
                 <li class="todo-item-delete">
                   Delete
@@ -209,8 +213,8 @@ function renderTodoList() {
       : `<div class="todolist-empty">
           <h3>${
             currentTodolistName === 'done'
-              ? `You haven't completed any todo yet...`
-              : 'Add a todo to get started!'
+              ? `<div class="todo-empty-done">You haven't completed any todo yet...</div>`
+              : `<div class="todo-empty">Add a todo to get started!</div>`
           }</h3>
         </div>`
 
@@ -272,6 +276,38 @@ function getTodosFromStorage() {
   }
 }
 
+function getTodoLang() {
+  const lang = getLangFromStorage()
+
+  const editTodoItem = document.querySelectorAll('.todo-item-edit')
+  const deleteTodoItem = document.querySelectorAll('.todo-item-delete')
+  const moveTodoItem = document.querySelectorAll('.todo-item-move')
+  const todoEmptyDone = document.querySelector('.todo-empty-done')
+  const todoEmpty = document.querySelector('.todo-empty')
+
+  if (lang === 'ru') {
+    inboxTitle.textContent = 'Общее'
+    todayTitle.textContent = 'Сегодня'
+    doneTitle.textContent = 'Выполнено'
+    editTodoItem.forEach(item => (item.textContent = 'Изменить'))
+    deleteTodoItem.forEach(item => (item.textContent = 'Удалить'))
+    moveTodoItem.forEach(item => (item.textContent = 'Переместить'))
+    todoEmptyDone ? todoEmptyDone.textContent = 'Вы еще ничего не выполнили...' : ''
+    todoEmpty ? todoEmpty.textContent = 'Добавьте дело, чтобы начать!' : ''
+    newTodoInput.placeholder = 'Новое дело...'
+  } else {
+    inboxTitle.textContent = 'Inbox'
+    todayTitle.textContent = 'Today'
+    doneTitle.textContent = 'Done'
+    editTodoItem.forEach(item => (item.textContent = 'Edit'))
+    deleteTodoItem.forEach(item => (item.textContent = 'Delete'))
+    moveTodoItem.forEach(item => (item.textContent = 'Move'))
+    todoEmptyDone ? todoEmptyDone.textContent = `You haven't completed any todo yet...` : ''
+    todoEmpty ? todoEmpty.textContent = 'Add a todo to get started!' : ''
+    newTodoInput.placeholder = 'New todo...'
+  }
+}
+
 todoOpenBtn.addEventListener('click', toggleTodoArea)
 todoNameSelects.forEach(select =>
   select.addEventListener('change', changeTodolist)
@@ -287,4 +323,7 @@ todoNewInput.addEventListener('keyup', e => {
 window.addEventListener('load', () => {
   getTodosFromStorage()
   renderTodoList()
+  getTodoLang()
 })
+
+export { getTodoLang }

@@ -17,10 +17,6 @@ function changeVisibilty() {
       hidden.splice(index, 1)
     }
   }
-
-  // if (widget === 'todo') {
-  //   todoBtn
-  // }
   setHiddenToStorage()
 }
 
