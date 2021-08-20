@@ -154,10 +154,10 @@ function scrub(e) {
 function volumeRegBtn() {
   if (curAudio.muted) {
     curAudio.muted = false
-    audioVolumeBtn.style.backgroundImage = "url('/momentum/img/mute.png')"
+    audioVolumeBtn.style.backgroundImage = "url('../img/mute.png')"
   } else {
     curAudio.muted = true
-    audioVolumeBtn.style.backgroundImage = "url('/momentum/img/volume.png')"
+    audioVolumeBtn.style.backgroundImage = "url('../img/volume.png')"
   }
 }
 
