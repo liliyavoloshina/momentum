@@ -85,30 +85,33 @@
     </div>
 
     <div class="todo-area widget" id="todoArea" data-widget="todo">
-      <div class="todo-area__heading">
-        <div class="select-todolist" tabindex="1">
-          <input class="select-todolist__input" name="todolist-name" type="radio" id="inbox" data-todolist="inbox"
-            value="inbox" checked>
-          <label for="inbox" class="select-todolist__option">Inbox</label>
-          <input class="select-todolist__input" name="todolist-name" type="radio" id="today" data-todolist="today"
-            value="today">
-          <label for="today" class="select-todolist__option">Today</label>
-          <input class="select-todolist__input" name="todolist-name" type="radio" id="done" data-todolist="done"
-            value="done">
-          <label for="done" class="select-todolist__option">Done</label>
+      <div class="todo-popup" id="todoPopup">
+        <div class="todo-popup__heading">
+          <div class="select-todolist" tabindex="1">
+            <input class="select-todolist__input" name="todolist-name" type="radio" id="inbox" data-todolist="inbox"
+              value="inbox" checked>
+            <label for="inbox" class="select-todolist__option">Inbox</label>
+            <input class="select-todolist__input" name="todolist-name" type="radio" id="today" data-todolist="today"
+              value="today">
+            <label for="today" class="select-todolist__option">Today</label>
+            <input class="select-todolist__input" name="todolist-name" type="radio" id="done" data-todolist="done"
+              value="done">
+            <label for="done" class="select-todolist__option">Done</label>
+          </div>
+        </div>
+        <div class="todo-popup__main">
+          <ul class="todolist" data-todolist="inbox">
+          </ul>
+          <ul class="todolist hidden" data-todolist="today">
+          </ul>
+          <ul class="todolist hidden" data-todolist="done">
+          </ul>
+          <input class="new-todo-input input input-inactive" id="newtodo" type="text" placeholder="New Todo...">
         </div>
       </div>
-      <div class="todo-area__main">
-        <ul class="todolist" data-todolist="inbox">
-        </ul>
-        <ul class="todolist hidden" data-todolist="today">
-        </ul>
-        <ul class="todolist hidden" data-todolist="done">
-        </ul>
-        <input class="new-todo-input input input-inactive" id="newtodo" type="text" placeholder="New Todo...">
-      </div>
+      <div class="todo-btn" id="todoBtn"></div>
     </div>
-    <div class="todo-btn" id="todoBtn"></div>
+
     <div class="setting-btn" id="settingBtn"></div>
   </footer>
 
@@ -153,6 +156,10 @@
         </label>
         <label class="checkbox-container">Quote
           <input class="checkbox-input widget-checkbox" data-widget="quote" type="checkbox" checked>
+          <span class="checkbox-checkmark"></span>
+        </label>
+        <label class="checkbox-container">Todo
+          <input class="checkbox-input widget-checkbox" data-widget="todo" type="checkbox" checked>
           <span class="checkbox-checkmark"></span>
         </label>
       </div>

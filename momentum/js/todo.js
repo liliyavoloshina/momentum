@@ -1,7 +1,8 @@
 import { changeInputColor } from './helpers.js'
 
 const todoOpenBtn = document.querySelector('#todoBtn')
-const todoArea = document.querySelector('#todoArea')
+const todoPopup = document.querySelector('#todoPopup')
+// const todoArea = document.querySelector('#todoArea')
 const todoNameSelects = document.querySelectorAll('input[data-todolist]')
 const todolists = document.querySelectorAll('ul[data-todolist]')
 const todoNewInput = document.querySelector('#newtodo')
@@ -13,7 +14,7 @@ let openedMenu
 
 function toggleTodoArea() {
   todoOpenBtn.classList.toggle('revert')
-  todoArea.classList.toggle('show')
+  todoPopup.classList.toggle('show')
 }
 
 function changeTodolist() {
@@ -118,6 +119,10 @@ function changeTextTodoItem(item, id) {
   })
   todos[currentTodolistName] = updatedTodos
   item.disabled = true
+
+  let completedInbox = todos.inbox.filter(todo => todo.completed)
+  let completedToday = todos.today.filter(todo => todo.completed)
+  todos.done = completedInbox.concat(completedToday)
 
   setTodosToStorage()
   renderTodoList()

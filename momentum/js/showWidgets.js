@@ -1,5 +1,6 @@
 const widgets = document.querySelectorAll('.widget')
 const widgetsCheckboxes = document.querySelectorAll('.widget-checkbox')
+const todoBtn = document.querySelector('#todoBtn')
 
 let hidden = []
 
@@ -8,7 +9,6 @@ function changeVisibilty() {
   const checked = this.checked
   const widgetEl = document.querySelector(`div[data-widget="${widget}"]`)
   widgetEl.classList.toggle('hidden')
-
   if (!checked) {
     hidden.push(widget)
   } else {
@@ -17,6 +17,10 @@ function changeVisibilty() {
       hidden.splice(index, 1)
     }
   }
+
+  // if (widget === 'todo') {
+  //   todoBtn
+  // }
   setHiddenToStorage()
 }
 

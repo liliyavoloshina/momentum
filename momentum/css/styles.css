@@ -520,7 +520,7 @@ All styles relating to a reusable component
   background: #d8d8d8;
 }
 
-.todo-area {
+.todo-popup {
   position: absolute;
   right: 2em;
   bottom: 7em;
@@ -535,16 +535,16 @@ All styles relating to a reusable component
   z-index: -1;
 }
 
-.todo-area.show {
+.todo-popup.show {
   z-index: 2;
   opacity: 1;
 }
 
-.todo-area__heading {
+.todo-popup__heading {
   padding: 2em 0;
 }
 
-.todo-area__main {
+.todo-popup__main {
   position: relative;
   height: 420px;
 }
