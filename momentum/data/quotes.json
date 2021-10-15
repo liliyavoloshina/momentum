@@ -106,10 +106,10 @@
   },
   {
     "id": 16,
-    "text_ru": "Успех не в том, что имеешь, а в том, что ты из себя представляешь.",
-    "text_en": "Success is not in what you have, but who you are.",
-    "author_ru": "Бо Беннет",
-    "author_en": "Bo Bennett"
+    "text_ru": "Вещи, которыми вы владеете, в конечном итоге, начинают владеть вами.",
+    "text_en": "Things you own end up owning you.",
+    "author_ru": "Чак Паланик",
+    "author_en": "Chuck Palahniuk"
   },
   {
     "id": 17,
@@ -127,10 +127,10 @@
   },
   {
     "id": 19,
-    "text_ru": "Жизнь приятна. Смерть безмятежна. Вся проблема в переходе от одного к другому.",
-    "text_en": "Life is pleasant. Death is peaceful. It’s the transition that’s troublesome.",
-    "author_ru": "Айзек Азимов",
-    "author_en": "Isaac Asimov"
+    "text_ru": "Плохо то, что иногда всякие глупости доставляют удовольствие.",
+    "text_en": "It's really too bad that so much crumby stuff is a lot of fun sometimes.",
+    "author_ru": "Джером Сэлинджер",
+    "author_en": "Jerome Salinger"
   },
   {
     "id": 20,
@@ -141,17 +141,17 @@
   },
   {
     "id": 21,
-    "text_ru": "Смейтесь всегда, когда можете. Это самое дешевое лекарство.",
-    "text_en": "Always laugh when you can. It is cheap medicine.",
-    "author_ru": "Джорж Байрон",
-    "author_en": "George Byron"
+    "text_ru": "Делай или не делай. Не надо пытаться.",
+    "text_en": "Do, or do not. There is no “try”.",
+    "author_ru": "Йода",
+    "author_en": "Yoda"
   },
   {
     "id": 22,
-    "text_ru": "Успех — дитя смелости.",
-    "text_en": "Success is the child of audacity.",
-    "author_ru": "Бенджамин Дизраэли",
-    "author_en": "Benjamin Disraeli"
+    "text_ru": "Жизнь настолько хороша, насколько вы ей позволяете.",
+    "text_en": "Life's as kind as you let it be.",
+    "author_ru": "Чарльз Буковски",
+    "author_en": "Charles Bukowski"
   },
   {
     "id": 23,
@@ -176,17 +176,17 @@
   },
   {
     "id": 26,
-    "text_ru": "К достойной цели нет коротких путей.",
-    "text_en": "There are no shortcuts to any place worth going.",
-    "author_ru": "Хелен Келлер",
-    "author_en": "Helen Keller"
+    "text_ru": "Никогда не позволяй никому говорить тебе, что ты не прекрасен.",
+    "text_en": "Don’t ever let anyone tell you, You ain’t beautiful.",
+    "author_ru": "Эминем",
+    "author_en": "Eminem"
   },
   {
     "id": 27,
-    "text_ru": "Успех — не ключ к счастью. Это счастье — ключ к успеху.",
-    "text_en": "Success is not the key to happiness. Happiness is the key to success.",
-    "author_ru": "Герман Кейн",
-    "author_en": "Herman Cain"
+    "text_ru": "Стремитесь к величию.",
+    "text_en": "Strive for greatness.",
+    "author_ru": "Леброн Джеймс",
+    "author_en": "Lebron James"
   },
   {
     "id": 28,
@@ -197,16 +197,65 @@
   },
   {
     "id": 29,
-    "text_ru": "Когда я делаю добро, я чувствую себя хорошо. Когда я поступаю плохо, я чувствую себя плохо. Вот моя религия.",
-    "text_en": "When I do good, I feel good. When I do bad, I feel bad. That’s my religion.",
-    "author_ru": "Авраам Линкольн",
-    "author_en": "Abraham Lincoln"
+    "text_ru": "Мне нечего терять, но есть что приобретать.",
+    "text_en": "I have nothing to lose but something to gain.",
+    "author_ru": "Эминем",
+    "author_en": "Eminem"
   },
   {
     "id": 30,
-    "text_ru": "Помните: никто не может заставить вас почувствовать себя униженным без вашего согласия.",
-    "text_en": "Remember no one can make you feel inferior without your consent.",
-    "author_ru": "Элеонора Рузвельт",
-    "author_en": "Eleanor Roosevelt"
+    "text_ru": "Accept who you are. Unless you’re a serial killer.",
+    "text_en": "Примите себя таким, какой вы есть. Только если вы не серийный убийца.",
+    "author_ru": "Эллен Дедженерес",
+    "author_en": "Ellen DeGeneres"
+  },
+  {
+    "id": 31,
+    "text_ru": "Нет ничего невозможного, само слово говорит «Я возможно».",
+    "text_en": "Nothing is impossible, the word itself says 'I'm possible'!",
+    "author_ru": "Одри Хепбёрн",
+    "author_en": "Audrey Hepburn"
+  },
+  {
+    "id": 32,
+    "text_ru": "Нель­зя быть слиш­ком хоро­шо оде­тым или слиш­ком хоро­шо обра­зо­ван­ным.",
+    "text_en": "You can never be overdressed or overeducated.",
+    "author_ru": "Оскар Уайлд",
+    "author_en": "Oscar Wilde"
+  },
+  {
+    "id": 33,
+    "text_ru": "Великими людьми не рождаются — ими становятся.",
+    "text_en": "Great men are not born great, they grow great.",
+    "author_ru": "Марио Пьюзо",
+    "author_en": "Mario Puzo"
+  },
+  {
+    "id": 34,
+    "text_ru": "Никогда не сожалей о том, что заставило тебя улыбнуться.",
+    "text_en": "Never regret anything that made you smile.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
+  },
+  {
+    "id": 35,
+    "text_ru": "Мне не нужно, чтобы это было легко, мне нужно, чтобы оно того стоило.",
+    "text_en": "I don’t need it to be easy, I need it to be worth it.",
+    "author_ru": "Лил Уэйн",
+    "author_en": "Lil Wayne"
+  },
+  {
+    "id": 36,
+    "text_ru": "Никогда не позволяйте своим эмоциям одолеть свой интеллект.",
+    "text_en": "Never let your emotions overpower your intelligence.",
+    "author_ru": "Дрейк",
+    "author_en": "Drake"
+  },
+  {
+    "id": 37,
+    "text_ru": "Разве вы не знаете, что ваши недостатки — это благословение?",
+    "text_en": "Don’t you know your imperfections is a blessing?",
+    "author_ru": "Кендрик Ламар",
+    "author_en": "Kendrick Lamar"
   }
 ]

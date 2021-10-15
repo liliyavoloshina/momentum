@@ -1,3 +1,15 @@
+:root {
+  --audio-info-fs: 1.5em;
+  --audio-dur-fs: 0.9em;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --audio-info-fs: 1.2em;
+    --audio-dur-fs: 0.7em;
+  }
+}
+
 .audio-widget {
   width: 600px;
   padding: 2em;
@@ -16,8 +28,9 @@
 .audio-widget-info {
   &__name {
     margin-bottom: 0.5em;
-    font-size: 1.5em;
+    font-size: var(--audio-info-fs);
   }
+
   &__controls {
     display: flex;
     align-items: center;
@@ -48,12 +61,13 @@
     transition: filter 0.7s linear, flex-basis 0.2s ease-in-out;
     filter: $filter-purple;
   }
+
   &__duration {
     position: absolute;
     bottom: -30px;
     right: 0;
     flex-basis: 10%;
-    font-size: 0.9em;
+    font-size: var(--audio-dur-fs);
   }
 }
 

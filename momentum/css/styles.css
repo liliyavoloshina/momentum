@@ -1,6 +1,16 @@
 /*
 All the resets, variables, mixins, and utility classes
 */
+:root {
+  --checkbox-container-fs: 1.1em;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --checkbox-container-fs: 0.8em;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -74,12 +84,17 @@ ul {
 }
 
 .checkbox-container {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   width: 130px;
-  margin: 10px 0;
+  height: 35px;
   padding-left: 35px;
-  font-size: 1.1em;
+  font-size: var(--checkbox-container-fs);
   cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -97,7 +112,7 @@ ul {
 
 .checkbox-checkmark {
   position: absolute;
-  top: 0;
+  top: 14%;
   left: 0;
   height: 25px;
   width: 25px;
@@ -136,6 +151,20 @@ ul {
 /*
 All styles relating to a reusable component
 */
+:root {
+  --weather-city-fs: 1.5em;
+  --weather-error-fs: 1.3em;
+  --weather-info-fs: 1.5em;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --weather-city-fs: 1.2em;
+    --weather-error-fs: 1em;
+    --weather-info-fs: 1.3em;
+  }
+}
+
 .weather-widget {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -151,14 +180,14 @@ All styles relating to a reusable component
 
 .weather-widget__city {
   padding-bottom: 0.2em;
-  font-size: 1.5em;
+  font-size: var(--weather-city-fs);
   border-bottom: 1px solid #d8d8d8;
 }
 
 .weather-widget__error {
   height: 70%;
-  font-size: 1.6em;
-  color: #c52929;
+  font-size: var(--weather-error-fs);
+  color: #ff2424;
 }
 
 .weather-widget__error.hidden {
@@ -166,7 +195,7 @@ All styles relating to a reusable component
 }
 
 .weather-widget__info {
-  font-size: 1.5em;
+  font-size: var(--weather-info-fs);
 }
 
 .weather-widget__info li + li {
@@ -187,6 +216,18 @@ All styles relating to a reusable component
 
 .weather-desc {
   text-transform: capitalize;
+}
+
+:root {
+  --audio-info-fs: 1.5em;
+  --audio-dur-fs: 0.9em;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --audio-info-fs: 1.2em;
+    --audio-dur-fs: 0.7em;
+  }
 }
 
 .audio-widget {
@@ -211,7 +252,7 @@ All styles relating to a reusable component
 
 .audio-widget-info__name {
   margin-bottom: 0.5em;
-  font-size: 1.5em;
+  font-size: var(--audio-info-fs);
 }
 
 .audio-widget-info__controls {
@@ -267,7 +308,7 @@ All styles relating to a reusable component
   right: 0;
   -ms-flex-preferred-size: 10%;
       flex-basis: 10%;
-  font-size: 0.9em;
+  font-size: var(--audio-dur-fs);
 }
 
 .audio-widget-control-btns {
@@ -391,13 +432,53 @@ All styles relating to a reusable component
   background-image: url("../img/pause-audio.png");
 }
 
+:root {
+  --setting-area-b: 7em;
+  --setting-area-w: 40%;
+  --setting-area-mw: 550px;
+  --setting-area-p: 0 2em;
+  --setting-section-p: 1.5em 0;
+  --setting-section-heading-pb: 1em;
+  --setting-section-heading-fs: 1.5em;
+  --setting-radio-h: 40px;
+  --setting-radio-fs: 1.1em;
+  --setting-radio-checkmark-s: 25px;
+  --setting-radio-checkmark-after-t: 33%;
+  --setting-radio-checkmark-after-l: 36%;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --setting-area-b: 6em;
+    --setting-area-w: 50%;
+    --setting-area-mw: 450px;
+    --setting-area-p: 0 1em;
+    --setting-section-p: 1em 0;
+    --setting-section-heading-pb: 0.6em;
+    --setting-section-heading-fs: 1em;
+    --setting-radio-h: 30px;
+    --setting-radio-fs: 0.8em;
+    --setting-radio-checkmark-s: 20px;
+    --setting-radio-checkmark-after-t: 30%;
+    --setting-radio-checkmark-after-l: 32%;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --setting-area-w: 100%;
+    --setting-area-mw: 100%;
+  }
+}
+
 .setting-area {
   position: absolute;
   left: 2em;
-  bottom: 7em;
-  width: 500px;
-  height: 570px;
-  padding: 0 2em;
+  bottom: var(--setting-area-b);
+  width: var(--setting-area-w);
+  max-width: var(--setting-area-mw);
+  height: auto;
+  padding: var(--setting-area-p);
   background-color: #383838;
   border-radius: 5px;
   opacity: 0;
@@ -427,7 +508,7 @@ All styles relating to a reusable component
 }
 
 .setting-section {
-  padding: 1.5em 0;
+  padding: var(--setting-section-p);
 }
 
 .setting-section--underline {
@@ -435,9 +516,10 @@ All styles relating to a reusable component
 }
 
 .setting-section__heading {
-  padding-bottom: 0.5em;
-  color: #fff;
+  padding-bottom: var(--setting-section-heading-pb);
   font-weight: 400;
+  font-size: var(--setting-section-heading-fs);
+  color: #fff;
   text-transform: uppercase;
 }
 
@@ -472,10 +554,10 @@ All styles relating to a reusable component
 .radio-container {
   display: block;
   position: relative;
+  height: var(--setting-radio-h);
   padding-left: 35px;
-  margin: 10px 0;
   cursor: pointer;
-  font-size: 1.1em;
+  font-size: var(--setting-radio-fs);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -490,10 +572,9 @@ All styles relating to a reusable component
 
 .radio-checkmark {
   position: absolute;
-  top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: var(--setting-radio-checkmark-s);
+  width: var(--setting-radio-checkmark-s);
   background-color: #d8d8d8;
   border-radius: 50%;
 }
@@ -513,27 +594,69 @@ All styles relating to a reusable component
 }
 
 .radio-container .radio-checkmark:after {
-  top: 9px;
-  left: 9px;
+  top: var(--setting-radio-checkmark-after-t);
+  left: var(--setting-radio-checkmark-after-l);
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: #d8d8d8;
 }
 
+:root {
+  --todo-popup-b: 7em;
+  --todo-popup-w: 40%;
+  --todo-popup-mw: 550px;
+  --todo-popup-h: 610px;
+  --todo-popup-p: 0 2em;
+  --todo-popup-heading-p: 2em 0;
+  --todo-input-fs: 1.5em;
+  --todo-item-mt: 1em;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --todo-popup-b: 6em;
+    --todo-popup-w: 50%;
+    --todo-popup-mw: 450px;
+    --todo-popup-h: 438px;
+    --todo-popup-p: 0 1em;
+    --todo-popup-heading-p: .7em 0;
+    --todo-input-fs: 1.1em;
+    --todo-item-mt: .3em;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --todo-popup-w: 100%;
+    --todo-popup-mw: 100%;
+  }
+}
+
 .todo-popup {
   position: absolute;
   right: 2em;
-  bottom: 7em;
-  width: 500px;
-  height: 525px;
-  padding: 0 2em;
+  bottom: var(--todo-popup-b);
+  width: var(--todo-popup-w);
+  max-width: var(--todo-popup-mw);
+  padding: var(--todo-popup-p);
+  height: var(--todo-popup-h);
   background-color: #383838;
   border-radius: 5px;
   opacity: 0;
   -webkit-transition: 0.7s linear;
   transition: 0.7s linear;
   z-index: -1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .todo-popup.show {
@@ -542,30 +665,22 @@ All styles relating to a reusable component
 }
 
 .todo-popup__heading {
-  padding: 2em 0;
-}
-
-.todo-popup__main {
-  position: relative;
-  height: 420px;
+  padding: var(--todo-popup-heading-p);
 }
 
 .new-todo-input {
-  position: absolute;
-  bottom: 1em;
-  left: 0;
-  height: 30px;
-  font-size: 1.5em;
+  margin-top: auto;
+  height: 70px;
+  font-size: var(--todo-input-fs);
 }
 
 .todolist {
-  height: 80%;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 .todolist::-webkit-scrollbar {
-  width: .5em;
+  width: 0.5em;
 }
 
 .todolist::-webkit-scrollbar-track {
@@ -583,7 +698,7 @@ All styles relating to a reusable component
 }
 
 .todolist-empty {
-  padding-top: 150px;
+  padding-top: 130px;
   text-align: center;
 }
 
@@ -625,10 +740,6 @@ All styles relating to a reusable component
   padding: 0;
 }
 
-.todo-item .checkbox-checkmark {
-  top: -10px;
-}
-
 .todo-item-menu-area {
   position: relative;
 }
@@ -646,7 +757,7 @@ All styles relating to a reusable component
 }
 
 .todo-item + .todo-item {
-  margin-top: 1em;
+  margin-top: var(--todo-item-mt);
 }
 
 .todo-menu {
@@ -914,6 +1025,22 @@ Styles for the header, footer, the grid system e.t.c.
   height: 30vh;
 }
 
+:root {
+  --time-fs: 10em;
+  --date-fs: 2em;
+  --greeting-fs: 3em;
+  --slide-btn-s: 50px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --time-fs: 7em;
+    --date-fs: 1.6em;
+    --greeting-fs: 1.6em;
+    --slide-btn-s: 30px;
+  }
+}
+
 .main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -932,11 +1059,11 @@ Styles for the header, footer, the grid system e.t.c.
 }
 
 .time {
-  font-size: 10em;
+  font-size: var(--time-fs);
 }
 
 .date {
-  font-size: 2em;
+  font-size: var(--date-fs);
 }
 
 .greeting {
@@ -952,7 +1079,7 @@ Styles for the header, footer, the grid system e.t.c.
   -webkit-column-gap: 0.2em;
           column-gap: 0.2em;
   margin-top: 1em;
-  font-size: 3em;
+  font-size: var(--greeting-fs);
 }
 
 .greeting__daytime {
@@ -968,8 +1095,8 @@ Styles for the header, footer, the grid system e.t.c.
 .slide-btn {
   position: absolute;
   top: 45%;
-  width: 50px;
-  height: 50px;
+  width: var(--slide-btn-s);
+  height: var(--slide-btn-s);
 }
 
 .slide-btn:hover {
@@ -987,6 +1114,24 @@ Styles for the header, footer, the grid system e.t.c.
   right: 2rem;
   background: url("../img/next.png") no-repeat;
   background-size: contain;
+}
+
+:root {
+  --quote-text-fs: 1.5em;
+  --quote-author-fs: 1.2em;
+  --change-btn-s: 30px;
+  --setting-btn-s: 50px;
+  --todo-btn-s: 50px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --quote-text-fs: 1.2em;
+    --quote-author-fs: 1em;
+    --change-btn-s: 20px;
+    --setting-btn-s: 40px;
+    --todo-btn-s: 40px;
+  }
 }
 
 .footer {
@@ -1020,8 +1165,8 @@ Styles for the header, footer, the grid system e.t.c.
 }
 
 .quote__change-btn {
-  width: 30px;
-  height: 30px;
+  width: var(--change-btn-s);
+  height: var(--change-btn-s);
   margin-bottom: 2em;
   background: url("../img/refresh.png");
   background-size: contain;
@@ -1036,7 +1181,7 @@ Styles for the header, footer, the grid system e.t.c.
 
 .quote__text {
   text-align: center;
-  font-size: 1.5em;
+  font-size: var(--quote-text-fs);
   font-style: italic;
 }
 
@@ -1044,15 +1189,15 @@ Styles for the header, footer, the grid system e.t.c.
   -ms-flex-item-align: end;
       align-self: flex-end;
   padding-top: 1em;
-  font-size: 1.2em;
+  font-size: var(--quote-author-fs);
 }
 
 .setting-btn {
   position: absolute;
   bottom: 2em;
   left: 2em;
-  width: 50px;
-  height: 50px;
+  width: var(--setting-btn-s);
+  height: var(--setting-btn-s);
   background: url("../img/settings.png");
   background-size: contain;
   -webkit-transition: 0.7s linear;
@@ -1076,8 +1221,8 @@ Styles for the header, footer, the grid system e.t.c.
   position: absolute;
   bottom: 2em;
   right: 2em;
-  width: 50px;
-  height: 50px;
+  width: var(--todo-btn-s);
+  height: var(--todo-btn-s);
   background: url("../img/to-do-list.png");
   background-size: contain;
   -webkit-transition: 0.7s linear;

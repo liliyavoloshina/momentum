@@ -1,10 +1,50 @@
+:root {
+  --setting-area-b: 7em;
+  --setting-area-w: 40%;
+  --setting-area-mw: 550px;
+  --setting-area-p: 0 2em;
+  --setting-section-p: 1.5em 0;
+  --setting-section-heading-pb: 1em;
+  --setting-section-heading-fs: 1.5em;
+  --setting-radio-h: 40px;
+  --setting-radio-fs: 1.1em;
+  --setting-radio-checkmark-s: 25px;
+  --setting-radio-checkmark-after-t: 33%;
+  --setting-radio-checkmark-after-l: 36%;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --setting-area-b: 6em;
+    --setting-area-w: 50%;
+    --setting-area-mw: 450px;
+    --setting-area-p: 0 1em;
+    --setting-section-p: 1em 0;
+    --setting-section-heading-pb: 0.6em;
+    --setting-section-heading-fs: 1em;
+    --setting-radio-h: 30px;
+    --setting-radio-fs: 0.8em;
+    --setting-radio-checkmark-s: 20px;
+    --setting-radio-checkmark-after-t: 30%;
+    --setting-radio-checkmark-after-l: 32%;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --setting-area-w: 100%;
+    --setting-area-mw: 100%;
+  }
+}
+
 .setting-area {
   position: absolute;
   left: 2em;
-  bottom: 7em;
-  width: 500px;
-  height: 570px;
-  padding: 0 2em;
+  bottom: var(--setting-area-b);
+  width: var(--setting-area-w);
+  max-width: var(--setting-area-mw);
+  height: auto;
+  padding: var(--setting-area-p);
   background-color: $color-dark;
   border-radius: 5px;
   opacity: 0;
@@ -15,6 +55,7 @@
     z-index: 2;
     opacity: 1;
   }
+
   &__photos {
     display: flex;
     justify-content: space-between;
@@ -28,16 +69,17 @@
 }
 
 .setting-section {
-  padding: 1.5em 0;
+  padding: var(--setting-section-p);
 
   &--underline {
     border-bottom: 1px solid #d8d8d8;
   }
 
   &__heading {
-    padding-bottom: 0.5em;
-    color: #fff;
+    padding-bottom: var(--setting-section-heading-pb);
     font-weight: 400;
+    font-size: var(--setting-section-heading-fs);
+    color: #fff;
     text-transform: uppercase;
   }
 
@@ -45,6 +87,7 @@
     display: flex;
     flex-direction: column;
   }
+
   &__info-row {
     display: flex;
     flex-flow: row wrap;
@@ -61,10 +104,10 @@
   &-container {
     display: block;
     position: relative;
+    height: var(--setting-radio-h);
     padding-left: 35px;
-    margin: 10px 0;
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: var(--setting-radio-fs);
     user-select: none;
   }
 
@@ -76,10 +119,9 @@
 
   &-checkmark {
     position: absolute;
-    top: 0;
     left: 0;
-    height: 25px;
-    width: 25px;
+    height: var(--setting-radio-checkmark-s);
+    width: var(--setting-radio-checkmark-s);
     background-color: $text-primary;
     border-radius: 50%;
   }
@@ -99,8 +141,8 @@
   }
 
   &-container &-checkmark:after {
-    top: 9px;
-    left: 9px;
+    top: var(--setting-radio-checkmark-after-t);
+    left: var(--setting-radio-checkmark-after-l);
     width: 8px;
     height: 8px;
     border-radius: 50%;
