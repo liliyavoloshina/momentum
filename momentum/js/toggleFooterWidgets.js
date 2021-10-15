@@ -24,14 +24,21 @@ function toggleTodoArea() {
   isTodoOpen = !isTodoOpen
 }
 
-window.addEventListener('click', (e) => {
-  const target = e.target
-  if (isTodoOpen && target !== todoPopup && !todoPopup.contains(target) && target !== todoOpenBtn) {
-    toggleTodoArea()
-  }
-  if (isSettingOpen && target !== settingArea && !settingArea.contains(target) && target !== settingBtn) {
-    toggleSetting()
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener('click', e => {
+    const target = e.target
+
+    if (isTodoOpen && target !== todoPopup && !todoPopup.contains(target) && target !== todoOpenBtn) {
+      // if target is moving from its position by move or delete action
+      let movingEl = target.classList.contains('todo-item-move') || target.classList.contains('todo-item-delete')
+      if (movingEl) return
+      toggleTodoArea()
+    }
+
+    if (isSettingOpen && target !== settingArea && !settingArea.contains(target) && target !== settingBtn) {
+      toggleSetting()
+    }
+  })
 })
 
 settingBtn.addEventListener('click', toggleSetting)

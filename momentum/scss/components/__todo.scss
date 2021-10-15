@@ -12,7 +12,7 @@
 
 @media (max-width: 1024px) {
   :root {
-    --todo-popup-b: 6em;
+    --todo-popup-b: 5em;
     --todo-popup-w: 50%;
     --todo-popup-mw: 450px;
     --todo-popup-h: 438px;
@@ -25,7 +25,7 @@
 
 @media (max-width: 768px) {
   :root {
-    --todo-popup-r: .8em;
+    --todo-popup-r: 0.8em;
     --todo-popup-w: calc(100% - var(--todo-popup-r) * 2);
     --todo-popup-mw: 100%;
   }
@@ -66,6 +66,7 @@
 }
 
 .todolist {
+  height: 80%;
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -116,6 +117,10 @@
     outline: 0;
     word-wrap: break-word;
     color: $text-primary;
+
+    @media (max-width: 768px) {
+      width: 80%;
+    }
   }
 
   .checkbox {

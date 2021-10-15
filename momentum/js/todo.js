@@ -165,8 +165,8 @@ function renderTodoList() {
       ? todos[currentTodolistName]
           .map(
             todo => `
-        <li class="todo-item ${
-          todo.completed === true ? 'todo-item--completed' : ''
+        <li class="${
+          todo.completed === true ? 'todo-item todo-item--completed' : 'todo-item'
         }" data-todoid="${todo.id}" data-category="${todo.category}">
         
           <label class="checkbox-container">
@@ -185,13 +185,13 @@ function renderTodoList() {
             }" data-category="${todo.category}"></button>
             <div class="todo-menu todo-menu-hidden">
               <ul class="todo-menu-list">
-                <li class="todo-item-edit ${
-                  currentTodolistName === 'done' ? 'hidden' : ''
+                <li class="${
+                  currentTodolistName === 'done' ? 'todo-item-edit hidden' : 'todo-item-edit'
                 }">
                   Edit
                 </li>
-                <li class="todo-item-move ${
-                  currentTodolistName === 'done' ? 'hidden' : ''
+                <li class="${
+                  currentTodolistName === 'done' ? 'todo-item-move hidden' : 'todo-item-move'
                 }">Move
                 </li>
                 <li class="todo-item-delete">

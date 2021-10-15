@@ -175,7 +175,7 @@ All styles relating to a reusable component
           flex-direction: column;
   row-gap: 1em;
   width: 300px;
-  padding: 1em;
+  padding: 2em;
 }
 
 .weather-widget__city {
@@ -498,7 +498,7 @@ All styles relating to a reusable component
 
 @media (max-width: 1024px) {
   :root {
-    --setting-area-b: 6em;
+    --setting-area-b: 5em;
     --setting-area-w: 50%;
     --setting-area-mw: 450px;
     --setting-area-p: 0 1em;
@@ -666,7 +666,7 @@ All styles relating to a reusable component
 
 @media (max-width: 1024px) {
   :root {
-    --todo-popup-b: 6em;
+    --todo-popup-b: 5em;
     --todo-popup-w: 50%;
     --todo-popup-mw: 450px;
     --todo-popup-h: 438px;
@@ -679,7 +679,7 @@ All styles relating to a reusable component
 
 @media (max-width: 768px) {
   :root {
-    --todo-popup-r: .8em;
+    --todo-popup-r: 0.8em;
     --todo-popup-w: calc(100% - var(--todo-popup-r) * 2);
     --todo-popup-mw: 100%;
   }
@@ -727,6 +727,7 @@ All styles relating to a reusable component
 }
 
 .todolist {
+  height: 80%;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -784,6 +785,12 @@ All styles relating to a reusable component
   outline: 0;
   word-wrap: break-word;
   color: #d8d8d8;
+}
+
+@media (max-width: 768px) {
+  .todo-item-text {
+    width: 80%;
+  }
 }
 
 .todo-item .checkbox-container {
