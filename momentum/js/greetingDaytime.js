@@ -8,7 +8,7 @@ async function getTimeOfDay() {
   if (hours >= 6 && hours < 12) {
     return 'morning'
   } else if (hours >= 12 && hours < 18) {
-    return 'day'
+    return 'afternoon'
   } else if (hours >= 18 && hours < 24) {
     return 'evening'
   } else if (hours >= 0 || hours < 6) {
@@ -25,9 +25,9 @@ async function getGreetingText() {
     } else {
       return 'Доброе утро'
     }
-  } else if (timeOfDay === 'day') {
+  } else if (timeOfDay === 'afternoon') {
     if (lang == 'en') {
-      return 'Good day'
+      return 'Good afternoon'
     } else {
       return 'Добрый день'
     }

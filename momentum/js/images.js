@@ -6,7 +6,7 @@ const imageTagEl = document.querySelector('#photoTag')
 let source
 let tag
 
-function changeSource() {
+async function changeSource() {
   source = this.dataset.source
   setSourceToStorage()
   setBg()

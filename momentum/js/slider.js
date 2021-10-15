@@ -3,6 +3,7 @@ import { getSourceFromStorage, getTagFromStorage } from './images.js'
 
 const slidePrev = document.querySelector('#slidePrev')
 const slideNext = document.querySelector('#slideNext')
+const imageLoader = document.querySelector('#imageLoader')
 
 slidePrev.addEventListener('click', getSlidePrev)
 slideNext.addEventListener('click', getSlideNext)
@@ -18,6 +19,7 @@ function padNum(num) {
 }
 
 async function setBg() {
+  imageLoader.classList.add('show')
   let source = getSourceFromStorage()
   let tag = getTagFromStorage()
   let url
@@ -50,6 +52,8 @@ async function setBg() {
   img.src = url
   img.addEventListener('load', () => {
     document.body.style.backgroundImage = `url('${img.src}')`
+    
+  imageLoader.classList.remove('show')
   })
 }
 
