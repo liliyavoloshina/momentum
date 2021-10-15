@@ -1,5 +1,4 @@
 :root {
-  --audio-widget-p: 2em;
   --audio-widget-w: 60%;
   --audio-info-fs: 1.5em;
   --audio-controls-btns-w: 150px;
@@ -20,7 +19,6 @@
 @media (max-width: 768px) {
   :root {
     --audio-widget-w: 30%;
-    --audio-widget-p: 0.8em;
     --audio-controls-btns-w: 100%;
     --audio-progress-w: 100%;
   }
@@ -28,7 +26,7 @@
 
 .audio-widget {
   width: var(--audio-widget-w);
-  padding: var(--audio-widget-p);
+  padding: var(--widgets-p);
 
   &-info {
     display: flex;

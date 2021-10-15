@@ -61,13 +61,13 @@
 }
 
 .slide-prev-btn {
-  left: 2rem;
+  left: var(--widgets-p);
   background: url('../img/prev.png') no-repeat;
   background-size: contain;
 }
 
 .slide-next-btn {
-  right: 2rem;
+  right: var(--widgets-p);
   background: url('../img/next.png') no-repeat;
   background-size: contain;
 }

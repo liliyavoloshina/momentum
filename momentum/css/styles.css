@@ -2,12 +2,19 @@
 All the resets, variables, mixins, and utility classes
 */
 :root {
+  --widgets-p: 2em;
   --checkbox-container-fs: 1.1em;
 }
 
 @media (max-width: 1024px) {
   :root {
     --checkbox-container-fs: 0.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --widgets-p: 0.8em;
   }
 }
 
@@ -152,6 +159,7 @@ ul {
 All styles relating to a reusable component
 */
 :root {
+  --weather-widget-w: 60%;
   --weather-city-fs: 1.5em;
   --weather-error-fs: 1.3em;
   --weather-info-fs: 1.5em;
@@ -165,6 +173,12 @@ All styles relating to a reusable component
   }
 }
 
+@media (max-width: 768px) {
+  :root {
+    --weather-widget-w: 30%;
+  }
+}
+
 .weather-widget {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -174,14 +188,17 @@ All styles relating to a reusable component
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 1em;
-  width: 300px;
-  padding: 2em;
+  width: var(--weather-widget-w);
+  padding: var(--widgets-p);
 }
 
 .weather-widget__city {
   padding-bottom: 0.2em;
   font-size: var(--weather-city-fs);
-  border-bottom: 1px solid #d8d8d8;
+}
+
+.weather-widget__city .input {
+  text-align: end;
 }
 
 .weather-widget__error {
@@ -195,11 +212,12 @@ All styles relating to a reusable component
 }
 
 .weather-widget__info {
+  text-align: end;
   font-size: var(--weather-info-fs);
 }
 
 .weather-widget__info li + li {
-  margin-top: .5em;
+  margin-top: 0.5em;
 }
 
 .weather-info-main {
@@ -209,6 +227,9 @@ All styles relating to a reusable component
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-column-gap: 1em;
           column-gap: 1em;
   font-size: 2em;
@@ -219,7 +240,6 @@ All styles relating to a reusable component
 }
 
 :root {
-  --audio-widget-p: 2em;
   --audio-widget-w: 60%;
   --audio-info-fs: 1.5em;
   --audio-controls-btns-w: 150px;
@@ -240,7 +260,6 @@ All styles relating to a reusable component
 @media (max-width: 768px) {
   :root {
     --audio-widget-w: 30%;
-    --audio-widget-p: 0.8em;
     --audio-controls-btns-w: 100%;
     --audio-progress-w: 100%;
   }
@@ -248,7 +267,7 @@ All styles relating to a reusable component
 
 .audio-widget {
   width: var(--audio-widget-w);
-  padding: var(--audio-widget-p);
+  padding: var(--widgets-p);
 }
 
 .audio-widget-info {
@@ -481,7 +500,6 @@ All styles relating to a reusable component
 }
 
 :root {
-  --setting-area-l: 2em;
   --setting-area-b: 7em;
   --setting-area-w: 40%;
   --setting-area-mw: 550px;
@@ -515,15 +533,14 @@ All styles relating to a reusable component
 
 @media (max-width: 768px) {
   :root {
-    --setting-area-l: .8em;
-    --setting-area-w: calc(100% - var(--setting-area-l) * 2);
+    --setting-area-w: calc(100% - var(--widgets-p) * 2);
     --setting-area-mw: 100%;
   }
 }
 
 .setting-area {
   position: absolute;
-  left: var(--setting-area-l);
+  left: var(--widgets-p);
   bottom: var(--setting-area-b);
   width: var(--setting-area-w);
   max-width: var(--setting-area-mw);
@@ -532,8 +549,8 @@ All styles relating to a reusable component
   background-color: #383838;
   border-radius: 5px;
   opacity: 0;
-  -webkit-transition: 0.7s linear;
-  transition: 0.7s linear;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
   z-index: -1;
 }
 
@@ -653,7 +670,6 @@ All styles relating to a reusable component
 }
 
 :root {
-  --todo-popup-r: 2em;
   --todo-popup-b: 7em;
   --todo-popup-w: 40%;
   --todo-popup-mw: 550px;
@@ -679,15 +695,14 @@ All styles relating to a reusable component
 
 @media (max-width: 768px) {
   :root {
-    --todo-popup-r: 0.8em;
-    --todo-popup-w: calc(100% - var(--todo-popup-r) * 2);
+    --todo-popup-w: calc(100% - var(--widgets-p) * 2);
     --todo-popup-mw: 100%;
   }
 }
 
 .todo-popup {
   position: absolute;
-  right: var(--todo-popup-r);
+  right: var(--widgets-p);
   bottom: var(--todo-popup-b);
   width: var(--todo-popup-w);
   max-width: var(--todo-popup-mw);
@@ -696,8 +711,8 @@ All styles relating to a reusable component
   background-color: #383838;
   border-radius: 5px;
   opacity: 0;
-  -webkit-transition: 0.7s linear;
-  transition: 0.7s linear;
+  -webkit-transition: .3s linear;
+  transition: .3s linear;
   z-index: -1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1164,13 +1179,13 @@ Styles for the header, footer, the grid system e.t.c.
 }
 
 .slide-prev-btn {
-  left: 2rem;
+  left: var(--widgets-p);
   background: url("../img/prev.png") no-repeat;
   background-size: contain;
 }
 
 .slide-next-btn {
-  right: 2rem;
+  right: var(--widgets-p);
   background: url("../img/next.png") no-repeat;
   background-size: contain;
 }
@@ -1181,6 +1196,7 @@ Styles for the header, footer, the grid system e.t.c.
   --change-btn-s: 30px;
   --setting-btn-s: 50px;
   --todo-btn-s: 50px;
+  --setting-btn-l: 2em;
 }
 
 @media (max-width: 1024px) {
@@ -1253,8 +1269,8 @@ Styles for the header, footer, the grid system e.t.c.
 
 .setting-btn {
   position: absolute;
-  bottom: 2em;
-  left: 2em;
+  bottom: var(--widgets-p);
+  left: var(--widgets-p);
   width: var(--setting-btn-s);
   height: var(--setting-btn-s);
   background: url("../img/settings.png");
@@ -1278,8 +1294,8 @@ Styles for the header, footer, the grid system e.t.c.
 
 .todo-btn {
   position: absolute;
-  bottom: 2em;
-  right: 2em;
+  bottom: var(--widgets-p);
+  right: var(--widgets-p);
   width: var(--todo-btn-s);
   height: var(--todo-btn-s);
   background: url("../img/to-do-list.png");
