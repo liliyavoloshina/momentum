@@ -1,0 +1,57 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.time {
+  font-size: 10em;
+}
+
+.date {
+  font-size: 2em;
+}
+
+.greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.2em;
+  margin-top: 1em;
+  font-size: 3em;
+
+  &__daytime {
+    width: 50%;
+    text-align: right;
+  }
+
+  &__name {
+    width: 40%;
+    padding-top: 4px;
+  }
+}
+
+.slide-btn {
+  position: absolute;
+  top: 45%;
+  width: 50px;
+  height: 50px;
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.slide-prev-btn {
+  left: 2rem;
+  background: url('../img/prev.png') no-repeat;
+  background-size: contain;
+}
+
+.slide-next-btn {
+  right: 2rem;
+  background: url('../img/next.png') no-repeat;
+  background-size: contain;
+}

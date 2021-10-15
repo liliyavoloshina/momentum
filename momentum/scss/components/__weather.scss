@@ -1,0 +1,39 @@
+.weather-widget {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  width: 300px;
+  padding: 1em;
+  
+  &__city {
+    padding-bottom: 0.2em;
+    font-size: 1.5em;
+    border-bottom: 1px solid $text-primary;
+  }
+  &__error {
+    height: 70%;
+    font-size: 1.6em;
+    color: #c52929;
+  }
+  &__error.hidden {
+    display: none;
+  }
+  &__info{
+    font-size: 1.5em;
+  }
+}
+
+.weather-widget__info li + li {
+  margin-top: .5em;
+}
+
+.weather-info-main {
+  display: flex;
+  align-items: center;
+  column-gap: 1em;
+  font-size: 2em;
+}
+
+.weather-desc {
+  text-transform: capitalize;
+}
