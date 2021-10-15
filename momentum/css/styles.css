@@ -219,20 +219,36 @@ All styles relating to a reusable component
 }
 
 :root {
+  --audio-widget-p: 2em;
+  --audio-widget-w: 60%;
   --audio-info-fs: 1.5em;
+  --audio-controls-btns-w: 150px;
+  --audio-progress-w: 200px;
+  --audio-duration-b: -30px;
   --audio-dur-fs: 0.9em;
 }
 
 @media (max-width: 1024px) {
   :root {
     --audio-info-fs: 1.2em;
+    --audio-progress-w: 150px;
+    --audio-duration-b: -20px;
     --audio-dur-fs: 0.7em;
   }
 }
 
+@media (max-width: 768px) {
+  :root {
+    --audio-widget-w: 30%;
+    --audio-widget-p: 0.8em;
+    --audio-controls-btns-w: 100%;
+    --audio-progress-w: 100%;
+  }
+}
+
 .audio-widget {
-  width: 600px;
-  padding: 2em;
+  width: var(--audio-widget-w);
+  padding: var(--audio-widget-p);
 }
 
 .audio-widget-info {
@@ -246,6 +262,12 @@ All styles relating to a reusable component
   margin-bottom: 2em;
 }
 
+@media (max-width: 768px) {
+  .audio-widget-info {
+    margin-bottom: 1.5em;
+  }
+}
+
 .audio-widget-playlist {
   list-style-type: none;
 }
@@ -253,6 +275,12 @@ All styles relating to a reusable component
 .audio-widget-info__name {
   margin-bottom: 0.5em;
   font-size: var(--audio-info-fs);
+}
+
+@media (max-width: 768px) {
+  .audio-widget-info__name {
+    margin-bottom: 1em;
+  }
 }
 
 .audio-widget-info__controls {
@@ -266,15 +294,29 @@ All styles relating to a reusable component
           column-gap: 2em;
 }
 
+@media (max-width: 768px) {
+  .audio-widget-info__controls {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    row-gap: 20px;
+  }
+}
+
 .audio-widget-progress {
   position: relative;
+  width: var(--audio-progress-w);
 }
 
 .audio-widget-progress__track {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 200px;
+  width: 100%;
   height: 8px;
   border-radius: 5px;
   -webkit-transition: height 0.3s;
@@ -304,7 +346,7 @@ All styles relating to a reusable component
 
 .audio-widget-progress__duration {
   position: absolute;
-  bottom: -30px;
+  bottom: var(--audio-duration-b);
   right: 0;
   -ms-flex-preferred-size: 10%;
       flex-basis: 10%;
@@ -318,7 +360,7 @@ All styles relating to a reusable component
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 150px;
+  width: var(--audio-controls-btns-w);
 }
 
 .audio-widget-control-btns .btn {
@@ -355,6 +397,12 @@ All styles relating to a reusable component
           align-items: center;
   -webkit-column-gap: 1em;
           column-gap: 1em;
+}
+
+@media (max-width: 768px) {
+  .audio-widget-control-volume {
+    width: 100%;
+  }
 }
 
 .audio-widget-volume-btn {
@@ -433,6 +481,7 @@ All styles relating to a reusable component
 }
 
 :root {
+  --setting-area-l: 2em;
   --setting-area-b: 7em;
   --setting-area-w: 40%;
   --setting-area-mw: 550px;
@@ -466,14 +515,15 @@ All styles relating to a reusable component
 
 @media (max-width: 768px) {
   :root {
-    --setting-area-w: 100%;
+    --setting-area-l: .8em;
+    --setting-area-w: calc(100% - var(--setting-area-l) * 2);
     --setting-area-mw: 100%;
   }
 }
 
 .setting-area {
   position: absolute;
-  left: 2em;
+  left: var(--setting-area-l);
   bottom: var(--setting-area-b);
   width: var(--setting-area-w);
   max-width: var(--setting-area-mw);
@@ -603,6 +653,7 @@ All styles relating to a reusable component
 }
 
 :root {
+  --todo-popup-r: 2em;
   --todo-popup-b: 7em;
   --todo-popup-w: 40%;
   --todo-popup-mw: 550px;
@@ -620,22 +671,23 @@ All styles relating to a reusable component
     --todo-popup-mw: 450px;
     --todo-popup-h: 438px;
     --todo-popup-p: 0 1em;
-    --todo-popup-heading-p: .7em 0;
+    --todo-popup-heading-p: 0.7em 0;
     --todo-input-fs: 1.1em;
-    --todo-item-mt: .3em;
+    --todo-item-mt: 0.3em;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --todo-popup-w: 100%;
+    --todo-popup-r: .8em;
+    --todo-popup-w: calc(100% - var(--todo-popup-r) * 2);
     --todo-popup-mw: 100%;
   }
 }
 
 .todo-popup {
   position: absolute;
-  right: 2em;
+  right: var(--todo-popup-r);
   bottom: var(--todo-popup-b);
   width: var(--todo-popup-w);
   max-width: var(--todo-popup-mw);

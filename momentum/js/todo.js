@@ -1,8 +1,6 @@
 import { getLangFromStorage } from './helpers.js'
 import { changeInputColor } from './helpers.js'
 
-const todoOpenBtn = document.querySelector('#todoBtn')
-const todoPopup = document.querySelector('#todoPopup')
 const todoNameSelects = document.querySelectorAll('input[data-todolist]')
 const todolists = document.querySelectorAll('ul[data-todolist]')
 const todoNewInput = document.querySelector('#newtodo')
@@ -16,11 +14,6 @@ let currentTodolistName = 'inbox'
 let currentTodolistEl = document.querySelector('ul[data-todolist="inbox"]')
 let todos
 let openedMenu
-
-function toggleTodoArea() {
-  todoOpenBtn.classList.toggle('revert')
-  todoPopup.classList.toggle('show')
-}
 
 function changeTodolist() {
   currentTodolistName = this.dataset.todolist
@@ -308,7 +301,6 @@ function getTodoLang() {
   }
 }
 
-todoOpenBtn.addEventListener('click', toggleTodoArea)
 todoNameSelects.forEach(select =>
   select.addEventListener('change', changeTodolist)
 )

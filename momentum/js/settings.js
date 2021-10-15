@@ -1,8 +1,6 @@
 import { getLangFromStorage } from './helpers.js'
 import { changeLang } from './lang.js'
 
-const settingBtn = document.querySelector('#settingBtn')
-const settingArea = document.querySelector('#settingArea')
 const langInputs = document.querySelectorAll('input[name="lang"]')
 
 const settingTitle = document.querySelector('.langs-title')
@@ -22,10 +20,6 @@ const photosTitle = document.querySelector('.photos-title')
 const photoTagTitle = document.querySelector('.phototag-title')
 const photoNote = document.querySelector('.photo-note')
 
-function toggleSetting() {
-  settingBtn.classList.toggle('revert')
-  settingArea.classList.toggle('show')
-}
 
 function getSettingLang() {
   const lang = getLangFromStorage()
@@ -65,7 +59,6 @@ function getSettingLang() {
 
 getSettingLang()
 
-settingBtn.addEventListener('click', toggleSetting)
 langInputs.forEach(input => {
   input.addEventListener('change', changeLang)
 })

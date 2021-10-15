@@ -1,4 +1,5 @@
 :root {
+  --setting-area-l: 2em;
   --setting-area-b: 7em;
   --setting-area-w: 40%;
   --setting-area-mw: 550px;
@@ -32,14 +33,15 @@
 
 @media (max-width: 768px) {
   :root {
-    --setting-area-w: 100%;
+    --setting-area-l: .8em;
+    --setting-area-w: calc(100% - var(--setting-area-l) * 2);
     --setting-area-mw: 100%;
   }
 }
 
 .setting-area {
   position: absolute;
-  left: 2em;
+  left: var(--setting-area-l);
   bottom: var(--setting-area-b);
   width: var(--setting-area-w);
   max-width: var(--setting-area-mw);

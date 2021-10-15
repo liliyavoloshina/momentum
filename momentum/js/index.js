@@ -11,5 +11,6 @@ import './settings.js'
 import './showWidgets.js'
 import './images.js'
 import './todo.js'
+import './toggleFooterWidgets.js'
 
 

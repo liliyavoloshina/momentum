@@ -1,4 +1,5 @@
 :root {
+  --todo-popup-r: 2em;
   --todo-popup-b: 7em;
   --todo-popup-w: 40%;
   --todo-popup-mw: 550px;
@@ -16,22 +17,23 @@
     --todo-popup-mw: 450px;
     --todo-popup-h: 438px;
     --todo-popup-p: 0 1em;
-    --todo-popup-heading-p: .7em 0;
+    --todo-popup-heading-p: 0.7em 0;
     --todo-input-fs: 1.1em;
-    --todo-item-mt: .3em;
+    --todo-item-mt: 0.3em;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --todo-popup-w: 100%;
+    --todo-popup-r: .8em;
+    --todo-popup-w: calc(100% - var(--todo-popup-r) * 2);
     --todo-popup-mw: 100%;
   }
 }
 
 .todo-popup {
   position: absolute;
-  right: 2em;
+  right: var(--todo-popup-r);
   bottom: var(--todo-popup-b);
   width: var(--todo-popup-w);
   max-width: var(--todo-popup-mw);
