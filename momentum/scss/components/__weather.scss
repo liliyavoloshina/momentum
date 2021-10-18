@@ -3,6 +3,8 @@
   --weather-city-fs: 1.5em;
   --weather-error-fs: 1.3em;
   --weather-info-fs: 1.5em;
+  --weather-info-main-cg: 1em;
+  --weather-info-main-fs: 2em;
 }
 
 @media (max-width: 1024px) {
@@ -15,7 +17,16 @@
 
 @media (max-width: 768px) {
   :root {
-    --weather-widget-w: 30%;
+    --weather-widget-w: 40%;
+    --weather-info-fs: 1.1em;
+    --weather-info-main-cg: .5em;
+    --weather-info-main-fs: 1.5em;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --weather-info-fs: 1em;
   }
 }
 
@@ -60,8 +71,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  column-gap: 1em;
-  font-size: 2em;
+  column-gap: var(--weather-info-main-cg);
+  font-size: var(--weather-info-main-fs);
 }
 
 .weather-desc {

@@ -163,6 +163,8 @@ All styles relating to a reusable component
   --weather-city-fs: 1.5em;
   --weather-error-fs: 1.3em;
   --weather-info-fs: 1.5em;
+  --weather-info-main-cg: 1em;
+  --weather-info-main-fs: 2em;
 }
 
 @media (max-width: 1024px) {
@@ -175,7 +177,16 @@ All styles relating to a reusable component
 
 @media (max-width: 768px) {
   :root {
-    --weather-widget-w: 30%;
+    --weather-widget-w: 40%;
+    --weather-info-fs: 1.1em;
+    --weather-info-main-cg: .5em;
+    --weather-info-main-fs: 1.5em;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --weather-info-fs: 1em;
   }
 }
 
@@ -230,9 +241,9 @@ All styles relating to a reusable component
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-column-gap: 1em;
-          column-gap: 1em;
-  font-size: 2em;
+  -webkit-column-gap: var(--weather-info-main-cg);
+          column-gap: var(--weather-info-main-cg);
+  font-size: var(--weather-info-main-fs);
 }
 
 .weather-desc {
@@ -259,9 +270,15 @@ All styles relating to a reusable component
 
 @media (max-width: 768px) {
   :root {
-    --audio-widget-w: 30%;
+    --audio-widget-w: 40%;
     --audio-controls-btns-w: 100%;
     --audio-progress-w: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --audio-widget-w: 50%;
   }
 }
 
@@ -323,6 +340,12 @@ All styles relating to a reusable component
         -ms-flex-align: baseline;
             align-items: baseline;
     row-gap: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .audio-widget-info__controls {
+    row-gap: 30px;
   }
 }
 
@@ -1115,6 +1138,21 @@ Styles for the header, footer, the grid system e.t.c.
   }
 }
 
+@media (max-width: 768px) {
+  :root {
+    --time-fs: 5em;
+    --slide-btn-s: 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --time-fs: 4em;
+    --date-fs: 1.3em;
+    --greeting-fs: 1.2em;
+  }
+}
+
 .main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1178,6 +1216,12 @@ Styles for the header, footer, the grid system e.t.c.
           transform: scale(1.2);
 }
 
+@media (max-width: 768px) {
+  .slide-btn {
+    top: 47%;
+  }
+}
+
 .slide-prev-btn {
   left: var(--widgets-p);
   background: url("../img/prev.png") no-repeat;
@@ -1186,7 +1230,7 @@ Styles for the header, footer, the grid system e.t.c.
 
 .slide-next-btn {
   right: var(--widgets-p);
-  background: url("../img/next.png") no-repeat;
+  background: url("../img/next.png") no-repeat right;
   background-size: contain;
 }
 

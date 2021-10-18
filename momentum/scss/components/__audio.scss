@@ -18,9 +18,15 @@
 
 @media (max-width: 768px) {
   :root {
-    --audio-widget-w: 30%;
+    --audio-widget-w: 40%;
     --audio-controls-btns-w: 100%;
     --audio-progress-w: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --audio-widget-w: 50%;
   }
 }
 
@@ -62,6 +68,10 @@
       flex-direction: column;
       align-items: baseline;
       row-gap: 20px;
+    }
+
+    @media (max-width: 420px) {
+      row-gap: 30px;
     }
   }
 }
