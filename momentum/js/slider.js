@@ -46,8 +46,7 @@ async function setBg() {
   }
 
   if (source === 'github') {
-    let tag = timeOfDay === 'afternoon' ? 'day' : timeOfDay
-    url = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${tag}/${padNum(
+    url = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${padNum(
       randomNum
     )}.jpg`
   }
