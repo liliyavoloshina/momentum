@@ -156,18 +156,26 @@ function scrub(e) {
   }, 500)
 }
 
-function volumeRegBtn() {
-  if (curAudio.muted) {
-    curAudio.muted = false
-    audioVolumeBtn.style.backgroundImage = "url('./img/unmute.png')"
+function mute() {
+  curAudio.muted = true
+  audioVolumeBtn.style.backgroundImage = "url('./img/mute.png')"
+  audioVolumeRange.value = 0
+  changeVolumeRangeBg(0)
+}
 
-    audioVolumeRange.value = curAudio.volume
-    changeVolumeRangeBg(curAudio.volume)
+function unmute() {
+  curAudio.muted = false
+  audioVolumeBtn.style.backgroundImage = "url('./img/unmute.png')"
+
+  audioVolumeRange.value = curAudio.volume
+  changeVolumeRangeBg(curAudio.volume)
+}
+
+function toggleMute() {
+  if (curAudio.muted) {
+    unmute()
   } else {
-    curAudio.muted = true
-    audioVolumeBtn.style.backgroundImage = "url('./img/mute.png')"
-    audioVolumeRange.value = 0
-    changeVolumeRangeBg(0)
+    mute()
   }
 }
 
@@ -177,8 +185,17 @@ function changeVolumeRangeBg(value) {
 }
 
 function volumeRegRange(input) {
-  curAudio.volume = input.value
-  changeVolumeRangeBg(input.value)
+  const newValue = +input.value
+  curAudio.volume = newValue
+  changeVolumeRangeBg(newValue)
+
+  if (curAudio.muted) {
+    unmute()
+  }
+
+  if (newValue === 0) {
+    mute()
+  }
 }
 
 function initPlaylist() {
@@ -202,7 +219,7 @@ audioVolumeRange.addEventListener('input', e => {
   volumeRegRange(input)
 })
 
-audioVolumeBtn.addEventListener('click', volumeRegBtn)
+audioVolumeBtn.addEventListener('click', toggleMute)
 audioPlayMain.addEventListener('click', togglePlay)
 audioPlaySmall.addEventListener('click', togglePlay)
 audioNextMain.addEventListener('click', playNext)
