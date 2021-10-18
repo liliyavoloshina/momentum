@@ -48,7 +48,7 @@
   }
 
   &__error {
-    height: 70%;
+    height: 70%;text-align: end;
     font-size: var(--weather-error-fs);
     color: #ff2424;
   }

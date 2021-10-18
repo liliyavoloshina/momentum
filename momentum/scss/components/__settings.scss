@@ -5,7 +5,7 @@
   --setting-area-p: 0 2em;
   --setting-section-p: 1.5em 0;
   --setting-section-heading-pb: 1em;
-  --setting-section-heading-fs: 1.5em;
+  --setting-section-heading-fs: 1.2em;
   --setting-radio-h: 40px;
   --setting-radio-fs: 1.1em;
   --setting-radio-checkmark-s: 25px;
@@ -77,6 +77,7 @@
 
   &__heading {
     padding-bottom: var(--setting-section-heading-pb);
+    line-height: 20px;
     font-weight: 400;
     font-size: var(--setting-section-heading-fs);
     color: #fff;

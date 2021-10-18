@@ -20,13 +20,16 @@ function padNum(num) {
 
 async function setBg() {
   imageLoader.classList.add('show')
-  let source = getSourceFromStorage()
-  let tag = getTagFromStorage()
+
+  const timeOfDay = await getTimeOfDay(),
+    source = getSourceFromStorage(),
+    tag = getTagFromStorage()
+
   let url
 
   if (source === 'unsplash') {
     const response = await fetch(
-      `https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=${tag}&client_id=ZMe8BGgm8MXpmbZUBCgMi4m1CTgEQhzy90dkk9gjcpY`
+      `https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=${timeOfDay}/${tag}&client_id=ZMe8BGgm8MXpmbZUBCgMi4m1CTgEQhzy90dkk9gjcpY`
     )
     const json = await response.json()
     url = json.urls.raw
@@ -34,7 +37,7 @@ async function setBg() {
 
   if (source === 'flickr') {
     const response = await fetch(
-      `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=d67d8fac287c9a1f0a13e08a11231403&tags=${tag}&tag_mode=all&extras=url_h&format=json&nojsoncallback=1`
+      `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=d67d8fac287c9a1f0a13e08a11231403&tags=${timeOfDay},${tag}&tag_mode=all&extras=url_h&format=json&nojsoncallback=1`
     )
     const json = await response.json()
     const photos = json.photos.photo
@@ -43,7 +46,6 @@ async function setBg() {
   }
 
   if (source === 'github') {
-    const timeOfDay = await getTimeOfDay()
     let tag = timeOfDay === 'afternoon' ? 'day' : timeOfDay
     url = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${tag}/${padNum(
       randomNum
@@ -54,8 +56,8 @@ async function setBg() {
   img.src = url
   img.addEventListener('load', () => {
     document.body.style.backgroundImage = `url('${img.src}')`
-    
-  imageLoader.classList.remove('show')
+
+    imageLoader.classList.remove('show')
   })
 }
 
