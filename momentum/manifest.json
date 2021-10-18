@@ -10,8 +10,9 @@
     "default_icon": "./img/favicon.png"
   },
   "background": {
-    "persistent": false,
     "scripts": ["background.js"]
   },
-  "permissions": ["activeTab", "storage", "clipboardWrite"]
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  }
 }

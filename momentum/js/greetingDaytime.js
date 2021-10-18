@@ -44,6 +44,8 @@ async function getGreetingText() {
       return 'Доброй ночи'
     }
   }
+
+  setTimeout(getGreetingText, 1000)
 }
 
 async function showGreeting() {
