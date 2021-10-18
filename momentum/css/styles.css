@@ -462,7 +462,7 @@ All styles relating to a reusable component
 .audio-widget-volume-btn {
   width: 2em;
   height: 2em;
-  background-image: url("../img/mute.png");
+  background-image: url("../img/unmute.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

@@ -24,7 +24,7 @@ let playNum = 0
 let curAudioEl
 let durationEnd = playlist[0].duration
 
-// инициализация песни
+// song initialization
 const curAudio = new Audio()
 curAudio.volume = 0.5
 curAudio.src = playlist[playNum].src
@@ -41,7 +41,9 @@ let audioPlaySmall = curAudioEl.querySelector('button')
 
 function updateProgress() {
   const percent = (curAudio.currentTime / curAudio.duration) * 100
-  const currentTime = Math.floor(curAudio.currentTime).toString().padStart(2, 0)
+  const currentTime = Math.floor(curAudio.currentTime)
+    .toString()
+    .padStart(2, 0)
   audioProgressFillEl.style.flexBasis = `${percent}%`
   audioDurationCurEl.textContent = `00:${currentTime}`
 
@@ -72,7 +74,11 @@ function toggleSmallBtn() {
 
 async function changeAudioLang() {
   lang = getLangFromStorage()
-  playlistItemsEls.forEach(item => lang == 'en' ? item.querySelector('.playlist-item__name').textContent = playlist[item.dataset.id - 1].title_en : item.querySelector('.playlist-item__name').textContent = playlist[item.dataset.id - 1].title_ru)
+  playlistItemsEls.forEach(item =>
+    lang == 'en'
+      ? (item.querySelector('.playlist-item__name').textContent = playlist[item.dataset.id - 1].title_en)
+      : (item.querySelector('.playlist-item__name').textContent = playlist[item.dataset.id - 1].title_ru)
+  )
   audioNameEl.textContent = lang == 'en' ? playlist[playNum].title_en : playlist[playNum].title_ru
 }
 
@@ -141,8 +147,7 @@ function switchAudio() {
 }
 
 function scrub(e) {
-  const scrubTime =
-    (e.offsetX / audioProgressEl.offsetWidth) * curAudio.duration
+  const scrubTime = (e.offsetX / audioProgressEl.offsetWidth) * curAudio.duration
   curAudio.currentTime = scrubTime
   audioProgressFillEl.classList.add('active')
 
@@ -154,18 +159,26 @@ function scrub(e) {
 function volumeRegBtn() {
   if (curAudio.muted) {
     curAudio.muted = false
-    audioVolumeBtn.style.backgroundImage = "url('../img/mute.png')"
+    audioVolumeBtn.style.backgroundImage = "url('./img/unmute.png')"
+
+    audioVolumeRange.value = curAudio.volume
+    changeVolumeRangeBg(curAudio.volume)
   } else {
     curAudio.muted = true
-    audioVolumeBtn.style.backgroundImage = "url('../img/volume.png')"
+    audioVolumeBtn.style.backgroundImage = "url('./img/mute.png')"
+    audioVolumeRange.value = 0
+    changeVolumeRangeBg(0)
   }
 }
 
+function changeVolumeRangeBg(value) {
+  audioVolumeRange.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${value * 70}%, #383838 ${value *
+    100}%, #383838 100%)`
+}
+
 function volumeRegRange(input) {
-  input.style.background = `linear-gradient(to right, #d8d8d8 0%, #d8d8d8 ${
-    input.value * 70
-  }%, #383838 ${input.value * 100}%, #383838 100%)`
   curAudio.volume = input.value
+  changeVolumeRangeBg(input.value)
 }
 
 function initPlaylist() {
@@ -188,6 +201,7 @@ audioVolumeRange.addEventListener('input', e => {
   const input = e.target
   volumeRegRange(input)
 })
+
 audioVolumeBtn.addEventListener('click', volumeRegBtn)
 audioPlayMain.addEventListener('click', togglePlay)
 audioPlaySmall.addEventListener('click', togglePlay)

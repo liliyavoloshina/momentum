@@ -126,14 +126,17 @@
   background: url('../img/prev-audio.png');
   background-size: contain;
 }
+
 .audio-widget-play-btn {
   background: url('../img/play-audio.png');
   background-size: contain;
 }
+
 .audio-widget-pause-btn {
   background: url('../img/pause-audio.png');
   background-size: contain;
 }
+
 .audio-widget-next-btn {
   background: url('../img/next-audio.png');
   background-size: contain;
@@ -152,7 +155,7 @@
 .audio-widget-volume-btn {
   width: 2em;
   height: 2em;
-  background-image: url('../img/mute.png');
+  background-image: url('../img/unmute.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
