@@ -46,9 +46,9 @@ async function setBg() {
   }
 
   if (source === 'github') {
-    url = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${padNum(
-      randomNum
-    )}.jpg`
+    url = `https://raw.githubusercontent.com/liliyavoloshina/stage1-tasks/assets/images/${timeOfDay}/${padNum(
+        randomNum
+      )}.jpg`
   }
 
   const img = new Image()

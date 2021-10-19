@@ -12,4 +12,5 @@ import './showWidgets.js'
 import './images.js'
 import './todo.js'
 import './toggleFooterWidgets.js'
+import './logging.js'
 
