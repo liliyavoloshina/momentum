@@ -17,7 +17,8 @@ let lang = getLangFromStorage()
 
 initPlaylist()
 
-const playlistItemsEls = document.querySelectorAll('.playlist-item')
+const playlistItemsEls = document.querySelectorAll('.playlist-item'),
+  btnsSmallPlay = document.querySelectorAll('.playlist-item__small-btn')
 
 let isPlaying = false
 let playNum = 0
@@ -221,10 +222,12 @@ audioVolumeRange.addEventListener('input', e => {
 
 audioVolumeBtn.addEventListener('click', toggleMute)
 audioPlayMain.addEventListener('click', togglePlay)
-audioPlaySmall.addEventListener('click', togglePlay)
 audioNextMain.addEventListener('click', playNext)
 audioPrevMain.addEventListener('click', playPrev)
 curAudio.addEventListener('timeupdate', updateProgress)
+btnsSmallPlay.forEach(btn => {
+  btn.addEventListener('click', togglePlay)
+})
 playlistItemsEls.forEach(item => {
   item.addEventListener('click', switchAudio)
 })
