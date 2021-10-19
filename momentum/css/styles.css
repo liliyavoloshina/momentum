@@ -754,8 +754,8 @@ All styles relating to a reusable component
   background-color: #383838;
   border-radius: 5px;
   opacity: 0;
-  -webkit-transition: .3s linear;
-  transition: .3s linear;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
   z-index: -1;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -805,12 +805,19 @@ All styles relating to a reusable component
 }
 
 .todolist.hidden {
-  display: none;
+  position: absolute;
+  left: -999px;
 }
 
 .todolist-empty {
   padding-top: 130px;
   text-align: center;
+}
+
+.todolist-empty .note {
+  display: block;
+  margin-top: 5px;
+  color: #6d6d6d;
 }
 
 .todo-item {

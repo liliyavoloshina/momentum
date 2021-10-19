@@ -40,7 +40,7 @@
   background-color: $color-dark;
   border-radius: 5px;
   opacity: 0;
-  transition: .3s linear;
+  transition: 0.3s linear;
   z-index: -1;
 
   display: flex;
@@ -83,12 +83,20 @@
   }
 
   &.hidden {
-    display: none;
+    // display: none;
+    position: absolute;
+    left: -999px;
   }
 
   &-empty {
     padding-top: 130px;
     text-align: center;
+
+    .note {
+      display: block;
+      margin-top: 5px;
+      color: rgb(109, 109, 109);
+    }
   }
 }
 

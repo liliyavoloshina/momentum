@@ -17,9 +17,7 @@ let openedMenu
 
 function changeTodolist() {
   currentTodolistName = this.dataset.todolist
-  currentTodolistEl = document.querySelector(
-    `ul[data-todolist="${currentTodolistName}"]`
-  )
+  currentTodolistEl = document.querySelector(`ul[data-todolist="${currentTodolistName}"]`)
   todolists.forEach(todolist =>
     todolist.dataset.todolist === currentTodolistName
       ? todolist.classList.remove('hidden')
@@ -100,9 +98,7 @@ function editTodo() {
   todoItemText.value = ''
   todoItemText.value = tmpStr
 
-  todoItemText.addEventListener('change', () =>
-    changeTextTodoItem(todoItemText, todoId)
-  )
+  todoItemText.addEventListener('change', () => changeTextTodoItem(todoItemText, todoId))
 }
 
 function changeTextTodoItem(item, id) {
@@ -159,40 +155,34 @@ function openMenuTodo(e) {
   openedMenu = menu
 }
 
-function renderTodoList() {
+async function renderTodoList() {
   currentTodolistEl.innerHTML =
     todos[currentTodolistName].length > 0
       ? todos[currentTodolistName]
           .map(
             todo => `
-        <li class="${
-          todo.completed === true ? 'todo-item todo-item--completed' : 'todo-item'
-        }" data-todoid="${todo.id}" data-category="${todo.category}">
+        <li class="${todo.completed === true ? 'todo-item todo-item--completed' : 'todo-item'}" data-todoid="${
+              todo.id
+            }" data-category="${todo.category}">
         
           <label class="checkbox-container">
-            <input class="checkbox-input todo-checkbox" type="checkbox" data-id="${
-              todo.id
-            }" data-category="${todo.category}" ${
-              todo.completed === true ? 'checked' : ''
-            }>
+            <input class="checkbox-input todo-checkbox" type="checkbox" data-id="${todo.id}" data-category="${
+              todo.category
+            }" ${todo.completed === true ? 'checked' : ''}>
             <span class="checkbox-checkmark"></span>
           </label>
           
           <input class="input todo-item-text" value="${todo.text}" disabled />
           <div class="todo-item-menu-area">
-            <button class="todo-item-menu btn input-inactive" title="Todo Menu" data-id="${
-              todo.id
-            }" data-category="${todo.category}"></button>
+            <button class="todo-item-menu btn input-inactive" title="Todo Menu" data-id="${todo.id}" data-category="${
+              todo.category
+            }"></button>
             <div class="todo-menu todo-menu-hidden">
               <ul class="todo-menu-list">
-                <li class="${
-                  currentTodolistName === 'done' ? 'todo-item-edit hidden' : 'todo-item-edit'
-                }">
+                <li class="${currentTodolistName === 'done' ? 'todo-item-edit hidden' : 'todo-item-edit'}">
                   Edit
                 </li>
-                <li class="${
-                  currentTodolistName === 'done' ? 'todo-item-move hidden' : 'todo-item-move'
-                }">Move
+                <li class="${currentTodolistName === 'done' ? 'todo-item-move hidden' : 'todo-item-move'}">Move
                 </li>
                 <li class="todo-item-delete">
                   Delete
@@ -206,8 +196,10 @@ function renderTodoList() {
       : `<div class="todolist-empty">
           <h3>${
             currentTodolistName === 'done'
-              ? `<div class="todo-empty-done">You haven't completed any todo yet...</div>`
-              : `<div class="todo-empty">Add a todo to get started!</div>`
+              ? `<div class="todo-empty-done"></div>`
+              : currentTodolistName === 'today'
+              ? `<div class="todo-empty-today"></div>`
+              : `<div class="todo-empty-inbox"></div>`
           }</h3>
         </div>`
 
@@ -216,13 +208,13 @@ function renderTodoList() {
   const editTodoItem = document.querySelectorAll('.todo-item-edit')
   const deleteTodoItem = document.querySelectorAll('.todo-item-delete')
   const moveTodoItem = document.querySelectorAll('.todo-item-move')
-  checkboxesTodo.forEach(checkbox =>
-    checkbox.addEventListener('change', checkTodo)
-  )
+  checkboxesTodo.forEach(checkbox => checkbox.addEventListener('change', checkTodo))
   menuTodoBtns.forEach(menu => menu.addEventListener('click', openMenuTodo))
   deleteTodoItem.forEach(btn => btn.addEventListener('click', deleteTodo))
   editTodoItem.forEach(btn => btn.addEventListener('click', editTodo))
   moveTodoItem.forEach(btn => btn.addEventListener('click', moveTodo))
+
+  getTodoLang()
 }
 
 function addNewTodo(e) {
@@ -276,7 +268,8 @@ function getTodoLang() {
   const deleteTodoItem = document.querySelectorAll('.todo-item-delete')
   const moveTodoItem = document.querySelectorAll('.todo-item-move')
   const todoEmptyDone = document.querySelector('.todo-empty-done')
-  const todoEmpty = document.querySelector('.todo-empty')
+  const todoEmptyToday = document.querySelector('.todo-empty-today')
+  const todoEmptyInbox = document.querySelector('.todo-empty-inbox')
 
   if (lang === 'ru') {
     inboxTitle.textContent = 'Общее'
@@ -285,8 +278,9 @@ function getTodoLang() {
     editTodoItem.forEach(item => (item.textContent = 'Изменить'))
     deleteTodoItem.forEach(item => (item.textContent = 'Удалить'))
     moveTodoItem.forEach(item => (item.textContent = 'Переместить'))
-    todoEmptyDone ? todoEmptyDone.textContent = 'Вы еще ничего не выполнили...' : ''
-    todoEmpty ? todoEmpty.textContent = 'Добавьте дело, чтобы начать!' : ''
+    todoEmptyDone ? (todoEmptyDone.innerHTML = 'Вы не закончили ни одно дело... <span class="note">Скорее выполните что-то!</span>') : ''
+    todoEmptyToday ? (todoEmptyToday.innerHTML = 'Здесь будут ваши дела на сегодня <span class="note">(наконец помыть посуду?)</span>') : ''
+    todoEmptyInbox ? (todoEmptyInbox.innerHTML = 'Здесь будут ваши общие дела <span class="note">(может жизненная цель?)</span>') : ''
     newTodoInput.placeholder = 'Новое дело...'
   } else {
     inboxTitle.textContent = 'Inbox'
@@ -295,15 +289,15 @@ function getTodoLang() {
     editTodoItem.forEach(item => (item.textContent = 'Edit'))
     deleteTodoItem.forEach(item => (item.textContent = 'Delete'))
     moveTodoItem.forEach(item => (item.textContent = 'Move'))
-    todoEmptyDone ? todoEmptyDone.textContent = `You haven't completed any todo yet...` : ''
-    todoEmpty ? todoEmpty.textContent = 'Add a todo to get started!' : ''
+    todoEmptyDone ? (todoEmptyDone.innerHTML = `You haven't completed any todo yet... <span class="note">Hurry up to do something!</span>`) : ''
+    todoEmptyToday ? (todoEmptyToday.innerHTML = `Place for your today's todo <span class="note">(finally wash the dishes?)</span>`) : ''
+    todoEmptyInbox ? (todoEmptyInbox.innerHTML = 'The place for your general todo <span class="note">(maybe a lifegoal?)</span>') : ''
     newTodoInput.placeholder = 'New todo...'
   }
 }
 
-todoNameSelects.forEach(select =>
-  select.addEventListener('change', changeTodolist)
-)
+todoNameSelects.forEach(select => select.addEventListener('change', changeTodolist))
+
 todoNewInput.addEventListener('focus', e => changeInputColor(e))
 todoNewInput.addEventListener('blur', e => changeInputColor(e))
 todoNewInput.addEventListener('keyup', e => {
@@ -312,10 +306,9 @@ todoNewInput.addEventListener('keyup', e => {
     addNewTodo(e)
   }
 })
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
   getTodosFromStorage()
-  renderTodoList()
-  getTodoLang()
+  await renderTodoList()
 })
 
 export { getTodoLang }
