@@ -99,34 +99,40 @@
       <div class="quote__author" id="quoteAuthor"></div>
     </div>
 
-    <div class="todo-area widget" id="todoArea" data-widget="todo">
-      <div class="todo-popup" id="todoPopup">
-        <div class="todo-popup__heading">
-          <div class="select-todolist" tabindex="1">
-            <input class="select-todolist__input" name="todolist-name" type="radio" id="inbox" data-todolist="inbox"
-              value="inbox" checked>
-            <label for="inbox" class="select-todolist__option inbox-title">Inbox</label>
-            <input class="select-todolist__input" name="todolist-name" type="radio" id="today" data-todolist="today"
-              value="today">
-            <label for="today" class="select-todolist__option today-title">Today</label>
-            <input class="select-todolist__input" name="todolist-name" type="radio" id="done" data-todolist="done"
-              value="done">
-            <label for="done" class="select-todolist__option done-title">Done</label>
-          </div>
-        </div>
-        <ul class="todolist" data-todolist="inbox">
-        </ul>
-        <ul class="todolist hidden" data-todolist="today">
-        </ul>
-        <ul class="todolist hidden" data-todolist="done">
-        </ul>
-        <input class="new-todo-input input input-inactive" id="newtodo" type="text" placeholder="New Todo...">
-      </div>
-      <div class="todo-btn" id="todoBtn"></div>
+    <div class="copyright">
+      <div class="copyright__year">© 2021</div>
+      <a href="https://github.com/liliyavoloshina" class="copyright__github">liliyavoloshina</a>
+      <a href="https://rs.school/js/" class="copyright__logo"><img src="./img/rss-logo.svg" alt="RS-School"></a>
     </div>
 
     <div class="setting-btn" id="settingBtn"></div>
   </footer>
+
+  <div class="todo-area widget" id="todoArea" data-widget="todo">
+    <div class="todo-popup" id="todoPopup">
+      <div class="todo-popup__heading">
+        <div class="select-todolist" tabindex="1">
+          <input class="select-todolist__input" name="todolist-name" type="radio" id="inbox" data-todolist="inbox"
+            value="inbox" checked>
+          <label for="inbox" class="select-todolist__option inbox-title">Inbox</label>
+          <input class="select-todolist__input" name="todolist-name" type="radio" id="today" data-todolist="today"
+            value="today">
+          <label for="today" class="select-todolist__option today-title">Today</label>
+          <input class="select-todolist__input" name="todolist-name" type="radio" id="done" data-todolist="done"
+            value="done">
+          <label for="done" class="select-todolist__option done-title">Done</label>
+        </div>
+      </div>
+      <ul class="todolist" data-todolist="inbox">
+      </ul>
+      <ul class="todolist hidden" data-todolist="today">
+      </ul>
+      <ul class="todolist hidden" data-todolist="done">
+      </ul>
+      <input class="new-todo-input input input-inactive" id="newtodo" type="text" placeholder="New Todo...">
+    </div>
+    <div class="todo-btn" id="todoBtn"></div>
+  </div>
 
   <div class="setting-area" id="settingArea">
     <div class="setting-area__lang setting-section setting-section--underline">
