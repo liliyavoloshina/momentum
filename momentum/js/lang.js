@@ -1,6 +1,6 @@
 import { quoteLang } from './quote.js'
 import { showGreeting } from './greetingDaytime.js'
-import { getUsernameFromStorage } from './greetingName.js'
+import { getUsernameFromStorage, changeNamePlaceholderLang } from './greetingName.js'
 import { changeAudioLang } from './audio.js'
 import { getLangFromStorage } from './helpers.js'
 import { showDate } from './date.js'
@@ -34,6 +34,7 @@ function setLang() {
 function switchLang() {
   quoteLang()
   showGreeting()
+  changeNamePlaceholderLang()
   getUsernameFromStorage()
   changeAudioLang()
   showDate()

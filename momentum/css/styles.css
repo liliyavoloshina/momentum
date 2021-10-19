@@ -1243,13 +1243,13 @@ Styles for the header, footer, the grid system e.t.c.
 
 .slide-prev-btn {
   left: var(--widgets-p);
-  background: url("../img/prev.png") no-repeat;
+  background: url("../img/prev.png") no-repeat center;
   background-size: contain;
 }
 
 .slide-next-btn {
   right: var(--widgets-p);
-  background: url("../img/next.png") no-repeat right;
+  background: url("../img/next.png") no-repeat center;
   background-size: contain;
 }
 

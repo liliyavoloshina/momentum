@@ -1,6 +1,17 @@
-import { changeInputColor } from './helpers.js'
+import { changeInputColor, getLangFromStorage } from './helpers.js'
 
 const nameEl = document.querySelector('#greetingName')
+
+async function changeNamePlaceholderLang() {
+  const lang = getLangFromStorage()
+  if (lang === 'en') {
+    nameEl.placeholder = '[Enter name]'
+  } else {
+    nameEl.placeholder = '[Введите имя]'
+  }
+}
+
+changeNamePlaceholderLang()
 
 function setUsernameToStorage() {
   localStorage.setItem('username', document.querySelector('#greetingName').value)
@@ -22,4 +33,4 @@ nameEl.addEventListener('blur', e => changeInputColor(e))
 window.addEventListener('load', () => {
   getUsernameFromStorage()
 })
-export { getUsernameFromStorage }
+export { getUsernameFromStorage, changeNamePlaceholderLang }
