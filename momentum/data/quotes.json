@@ -15,10 +15,10 @@
   },
   {
     "id": 3,
-    "text_ru": "Что лучше? Родиться добрым или преодолеть свою злую натуру огромными усилиями?",
-    "text_en": "What is better? To be born good or to overcome your evil nature through great effort?",
-    "author_ru": "Партурнакс",
-    "author_en": "Paarthurnax"
+    "text_ru": "Нет ничего более раздражающего, чем хороший пример.",
+    "text_en": "Few things are harder to put up with than the annoyance of a good example.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 4,
@@ -36,10 +36,10 @@
   },
   {
     "id": 6,
-    "text_ru": "Что такое храбрость без капли безрассудства?",
-    "text_en": "What is bravery, without a dash of recklessness?",
-    "author_ru": "Гох Соколиный Глаз",
-    "author_en": "Hawkeye Gough"
+    "text_ru": "Не заблуждайтесь в мысли, что мир вам чем-то обязан — он был до вас и ничего вам не должен.",
+    "text_en": "Don't go around saying the world owes you a living. The world owes you nothing. It was here first.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 7,
@@ -64,10 +64,10 @@
   },
   {
     "id": 10,
-    "text_ru": "Человек выбирает; раб же подчиняется.",
-    "text_en": "A man chooses; a slave obeys.",
-    "author_ru": "Эндрю Райан",
-    "author_en": "Andrew Ryan"
+    "text_ru": "При желании вполне можно научиться переносить невзгоды. Не свои, конечно, а чужие.",
+    "text_en": "By trying we can easily learn to endure adversity -- another man's I mean.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 11,
@@ -78,17 +78,17 @@
   },
   {
     "id": 12,
-    "text_ru": "Кто вы, что не знаете своей истории?",
-    "text_en": "Who are you, that do not know your history?",
-    "author_ru": "Улисс",
-    "author_en": "Ulysses"
+    "text_ru": "Всегда честно признавайте свои ошибки, это притупит бдительность начальства и позволит тебе натворить новые.",
+    "text_en": "Always acknowledge a fault. This will throw those in authority off their guard and give you an opportunity to commit more.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 13,
-    "text_ru": "Война. Война не меняется.",
-    "text_en": "War. War never changes.",
-    "author_ru": "Fallout",
-    "author_en": "Fallout"
+    "text_ru": "Ложь успевает обойти полмира, пока правда надевает штаны.",
+    "text_en": "A lie can travel halfway around the world while the truth is putting on its shoes.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 14,
@@ -176,10 +176,10 @@
   },
   {
     "id": 26,
-    "text_ru": "Никогда не позволяй никому говорить тебе, что ты не прекрасен.",
-    "text_en": "Don’t ever let anyone tell you, you ain’t beautiful.",
-    "author_ru": "Эминем",
-    "author_en": "Eminem"
+    "text_ru": "Вообще-то я против миллионеров, но если бы мне предложили им стать...",
+    "text_en": "I am opposed to millionaires, but it would be dangerous to offer me the position.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 27,
@@ -197,10 +197,10 @@
   },
   {
     "id": 29,
-    "text_ru": "Мне нечего терять, но есть что приобретать.",
-    "text_en": "I have nothing to lose but something to gain.",
-    "author_ru": "Эминем",
-    "author_en": "Eminem"
+    "text_ru": "Я прошел через ужасные вещи в моей жизни, некоторые из которых на самом деле произошли.",
+    "text_en": "I have been through some terrible things in my life, some of which actually happened.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 30,
@@ -211,10 +211,10 @@
   },
   {
     "id": 31,
-    "text_ru": "Пусть прошлое умрет. Убей его, если нужно.",
-    "text_en": "Let the past die. Kill it if you have to.",
-    "author_ru": "Кайло Рен",
-    "author_en": "Kylo Ren"
+    "text_ru": "Если вы скажете правду, вам не придется ничего вспоминать.",
+    "text_en": "If you tell the truth you don't have to remember anything.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 32,
@@ -246,10 +246,10 @@
   },
   {
     "id": 36,
-    "text_ru": "Смотри не задохнись от своих амбиций.",
-    "text_en": "Be careful not to choke on your aspirations.",
-    "author_ru": "Дарт Вейдер",
-    "author_en": "Darth Vader"
+    "text_ru": "Лучше молчать и показаться дураком, чем заговорить и развеять все сомнения.",
+    "text_en": "It is better to keep your mouth closed and let people think you are a fool than to open it and remove all doubt.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 37,
@@ -260,10 +260,10 @@
   },
   {
     "id": 38,
-    "text_ru": "Нет места лучше 127.0.0.1.",
-    "text_en": "There is no place like 127.0.0.1.",
-    "author_ru": "Неизвестный",
-    "author_en": "Anonymous"
+    "text_ru": "Не откладывай на завтра то, что можешь отложить на послезавтра.",
+    "text_en": "Never put off until tomorrow what you can do the day after tomorrow.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 39,
@@ -281,17 +281,17 @@
   },
   {
     "id": 41,
-    "text_ru": "Каждый думает, что он герой своей истории.",
-    "text_en": "Everyone thinks they’re the hero of their own story.",
-    "author_ru": "Красавчик Джек",
-    "author_en": "Handsome Jack"
+    "text_ru": "Лучший способ развеселить самого себя - это развеселить кого-либо еще.",
+    "text_en": "The best way to cheer yourself is to try to cheer someone else up.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 42,
-    "text_ru": "Закрывая глаза вы смотрите на тьму внутри.",
-    "text_en": "Closing your eyes forces you to look at the darkness inside.",
-    "author_ru": "Макс Пэйн",
-    "author_en": "Max Payne"
+    "text_ru": "Когда сомневаешься, говори правду.",
+    "text_en": "When in doubt, tell the truth.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 43,
@@ -313,5 +313,40 @@
     "text_en": "A mind needs books like a sword needs a whetstone.",
     "author_ru": "Тирион Ланнистер",
     "author_en": "Tyrion Lannister"
+  },
+  {
+    "id": 46,
+    "text_ru": "Давайте полагать, что все мы безумны – это многое объяснит и позволит разрешить много проблем.",
+    "text_en": "When we remember we are all mad, the mysteries disappear and life stands explained.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
+  },
+  {
+    "id": 47,
+    "text_ru": "Если вам не удается услышать комплиментот других, сделайте его себе сами.",
+    "text_en": "When you cannot get a compliment any other way pay yourself one.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
+  },
+  {
+    "id": 48,
+    "text_ru": "Если вы заметили, что вы на стороне большинства, это верный признак того, что пора меняться.",
+    "text_en": "Whenever you find that you are on the side of the majority, it is time to reform.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
+  },
+  {
+    "id": 49,
+    "text_ru": "Есть несколько хороших способов защиты от соблазнов, но самым верным является трусость.",
+    "text_en": "There are several good protections against temptations, but the surest is cowardice.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
+  },
+  {
+    "id": 50,
+    "text_ru": "Худшее одиночество — это когда человеку неуютно с самим собой.",
+    "text_en": "The worst loneliness is not to be comfortable with yourself.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   }
 ]
