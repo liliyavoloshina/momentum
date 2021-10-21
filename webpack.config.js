@@ -77,6 +77,12 @@ module.exports = ({ development }) => {
           type: 'asset/resource',
         },
         {
+          test: /\.(js|jsx)$/,
+          exclude: [
+            path.resolve(__dirname, 'src/background.js'),
+            path.resolve(__dirname, 'src/data/playlist.js')]
+        },
+        {
           test: /\.(?:mp3|wav|ogg|mp4)$/i,
           type: 'asset/resource',
         },
