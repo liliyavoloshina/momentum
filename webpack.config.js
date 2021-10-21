@@ -117,19 +117,13 @@ module.exports = ({ development }) => {
             from: '**/*',
             context: srcPath,
             globOptions: {
-              ignore: [
-                '**/*.js',
-                '**/*.ts',
-                '**/*.scss',
-                '**/*.sass',
-                '**/*.html'
-              ]
+              ignore: ['**/*.js', '**/*.ts', '**/*.scss', '**/*.sass', '**/*.html']
             },
             noErrorOnMissing: true,
             force: true
           },
-          { from: "background.js",    to: 'background.js'},
-          { from: "data/playlist.js",    to: 'data/playlist.js'},
+          { from: 'background.js', to: 'background.js' },
+          { from: 'data/playlist.js', to: 'data/playlist.js' }
         ]
       }),
       new CleanWebpackPlugin(),
