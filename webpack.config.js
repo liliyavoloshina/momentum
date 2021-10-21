@@ -1,64 +1,78 @@
-const fs = require('fs');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
+const fs = require('fs')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts')
 
-const htmlFile = /^([-_\d\w]+).html$/i;
-const srcPath = path.resolve(__dirname, 'src');
+const htmlFile = /^([-_\d\w]+).html$/i
+const srcPath = path.resolve(__dirname, 'src')
 
-const devServer = (isDev) => !isDev ? {} : {
-  devServer: {
-    open: true,
-    port: 'auto',
-    static: {
-      directory: srcPath,
-      watch: true,
-    },
-  },
-};
+const devServer = isDev =>
+  !isDev
+    ? {}
+    : {
+        devServer: {
+          open: true,
+          port: 'auto',
+          static: {
+            directory: srcPath,
+            watch: true
+          }
+        }
+      }
 
-const getRelative = (absolutePath) => path.relative(srcPath, absolutePath);
-const makePath = (relativePath) => './' + relativePath.replace(/\\+/g, '/');
+const getRelative = absolutePath => path.relative(srcPath, absolutePath)
+const makePath = relativePath => './' + relativePath.replace(/\\+/g, '/')
 
 const getPages = (dir, n) => {
-  const dirContent = fs.readdirSync(dir);
+  const dirContent = fs.readdirSync(dir)
   const pages = dirContent
     .filter(f => htmlFile.test(f))
     .reduce((res, f, i) => {
-      const name = path.basename(f, path.extname(f));
+      const name = path.basename(f, path.extname(f))
       res.push({
-        name: `p${n += i}`,
+        name: `p${(n += i)}`,
         dir: getRelative(dir),
         html: makePath(getRelative(path.join(dir, f))),
         script: dirContent.find(f => new RegExp(`^${name}\.js$`, 'i').test(f)),
-        style: dirContent.find(f => new RegExp(`^${name}\.s(c|a)ss$`, 'i').test(f)),
-      });
-      return res;
+        style: dirContent.find(f => new RegExp(`^${name}\.s(c|a)ss$`, 'i').test(f))
+      })
+      return res
     }, [])
-    .concat(dirContent
-      .filter(f => fs.lstatSync(path.resolve(dir, f)).isDirectory())
-      .reduce((res, f) => [...res, ...getPages(path.resolve(dir, f), n + 1)], [])
-    );
+    .concat(
+      dirContent
+        .filter(f => fs.lstatSync(path.resolve(dir, f)).isDirectory())
+        .reduce((res, f) => [...res, ...getPages(path.resolve(dir, f), n + 1)], [])
+    )
 
-  return pages;
-};
+  return pages
+}
 
-const getEntryPoints = (pages) => pages.reduce((entry, {name, dir, script, style}) => Object.assign(entry,
-  script ? { [name]: makePath(path.join(dir, script)) } : {},
-  style ? { [`${name}-styles`]: makePath(path.join(dir, style)) } : {},
-), {});
+const getEntryPoints = pages =>
+  pages.reduce(
+    (entry, { name, dir, script, style }) =>
+      Object.assign(
+        entry,
+        script ? { [name]: makePath(path.join(dir, script)) } : {},
+        style ? { [`${name}-styles`]: makePath(path.join(dir, style)) } : {}
+      ),
+    {}
+  )
 
-const getHtmlPlugins = (pages) => pages.map(({html, name, script, style}) => new HtmlWebpackPlugin({
-  template: html,
-  filename: html,
-  chunks: [ script ? name : null, style ? `${name}-styles` : null ].filter(c => !!c),
-}));
+const getHtmlPlugins = pages =>
+  pages.map(
+    ({ html, name, script, style }) =>
+      new HtmlWebpackPlugin({
+        template: html,
+        filename: html,
+        chunks: [script ? name : null, style ? `${name}-styles` : null].filter(c => !!c)
+      })
+  )
 
 module.exports = ({ development }) => {
-  const pages = getPages(srcPath, 1);
+  const pages = getPages(srcPath, 1)
   return {
     mode: development ? 'development' : 'production',
     devtool: development ? 'inline-source-map' : false,
@@ -67,38 +81,32 @@ module.exports = ({ development }) => {
     output: {
       filename: 'js/[name].[contenthash].js',
       path: path.resolve(__dirname, 'dist'),
-      assetModuleFilename: '[file]',
+      assetModuleFilename: '[file]'
     },
     target: ['web', 'es6'],
     module: {
       rules: [
         {
           test: /\.(?:ico|gif|png|jpg|jpeg|svg|webp)$/i,
-          type: 'asset/resource',
-        },
-        {
-          test: /\.(js|jsx)$/,
-          exclude: [
-            path.resolve(__dirname, 'src/background.js'),
-            path.resolve(__dirname, 'src/data/playlist.js')]
+          type: 'asset/resource'
         },
         {
           test: /\.(?:mp3|wav|ogg|mp4)$/i,
-          type: 'asset/resource',
+          type: 'asset/resource'
         },
         {
           test: /\.(woff(2)?|eot|ttf|otf)$/i,
-          type: 'asset/resource',
+          type: 'asset/resource'
         },
         {
           test: /\.css$/i,
-          use: [{loader: MiniCssExtractPlugin.loader, options: { publicPath: '../' }}, 'css-loader'],
+          use: [{ loader: MiniCssExtractPlugin.loader, options: { publicPath: '../' } }, 'css-loader']
         },
         {
           test: /\.s[ac]ss$/i,
-          use: [{loader: MiniCssExtractPlugin.loader, options: { publicPath: '../' }}, 'css-loader', 'sass-loader']
+          use: [{ loader: MiniCssExtractPlugin.loader, options: { publicPath: '../' } }, 'css-loader', 'sass-loader']
         }
-      ],
+      ]
     },
     plugins: [
       new MiniCssExtractPlugin({ filename: 'css/[name].[contenthash].css' }),
@@ -114,20 +122,22 @@ module.exports = ({ development }) => {
                 '**/*.ts',
                 '**/*.scss',
                 '**/*.sass',
-                '**/*.html',
-              ],
+                '**/*.html'
+              ]
             },
             noErrorOnMissing: true,
-            force: true,
-          }
-        ],
+            force: true
+          },
+          { from: "background.js",    to: 'background.js'},
+          { from: "data/playlist.js",    to: 'data/playlist.js'},
+        ]
       }),
       new CleanWebpackPlugin(),
-      new RemoveEmptyScriptsPlugin(),
+      new RemoveEmptyScriptsPlugin()
     ],
     resolve: {
-      extensions: ['.js'],
+      extensions: ['.js']
     },
     ...devServer(development)
-  };
+  }
 }
