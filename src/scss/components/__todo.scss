@@ -67,6 +67,7 @@
   height: 80%;
   overflow-y: auto;
   overflow-x: hidden;
+  position: relative;
 
   &::-webkit-scrollbar {
     width: 0.5em;
@@ -83,13 +84,16 @@
   }
 
   &.hidden {
-    // display: none;
     position: absolute;
-    left: -999px;
+    right: -99999px;
   }
 
   &-empty {
-    padding-top: 130px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
     text-align: center;
 
     .note {
