@@ -25,8 +25,8 @@ module.exports = ({ development }) => ({
   mode: development ? 'development' : 'production',
   devtool: development ? 'inline-source-map' : false,
   entry: {
-    main: './index.js',
-    critical: './critical.js'
+    critical: './critical.js',
+    main: './index.js'
   },
   context: path.resolve(__dirname, 'src'),
   output: {

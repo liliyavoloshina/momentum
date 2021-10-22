@@ -10,10 +10,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
-  <% for (var css in htmlWebpackPlugin.files.css) { %>
-  <link href="<%= htmlWebpackPlugin.files.css[css] %>" rel="stylesheet">
-  <% } %>
+  <!-- critical css  -->
+  <link href="<%= htmlWebpackPlugin.files.css[0] %>" rel="stylesheet">
+  <!-- main css  -->
+  <link href="<%= htmlWebpackPlugin.files.css[1] %>" rel="stylesheet">
 </head>
 
 <body>
@@ -217,9 +217,11 @@
   </div>
 
 
-  <% for (let js in htmlWebpackPlugin.files.js) { %>
-  <script src="<%= htmlWebpackPlugin.files.js[js] %>"></script>
-  <% } %>
+  <!-- critical js  -->
+  <script src="<%= htmlWebpackPlugin.files.js[0] %>"></script>
+
+  <!-- main js  -->
+  <script src="<%= htmlWebpackPlugin.files.js[1] %>"></script>
 </body>
 
 </html>
