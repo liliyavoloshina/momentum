@@ -2,6 +2,8 @@ const widgets = document.querySelectorAll('.widget')
 const widgetsCheckboxes = document.querySelectorAll('.widget-checkbox')
 const todoBtn = document.querySelector('#todoBtn')
 
+console.log(widgets)
+
 let hidden = []
 
 function changeVisibilty() {
@@ -35,15 +37,11 @@ function setHiddenToStorage() {
 function checkHidden() {
   hidden.map(widgetName => {
     widgets.forEach(widget => {
-      widget.dataset.widget === widgetName
-        ? widget.classList.add('hidden')
-        : ''
+      widget.dataset.widget === widgetName ? widget.classList.add('hidden') : ''
     })
   })
   widgetsCheckboxes.forEach(checkbox => {
-    hidden.some(elem => elem == checkbox.dataset.widget)
-      ? (checkbox.checked = false)
-      : (checkbox.checked = true)
+    hidden.some(elem => elem == checkbox.dataset.widget) ? (checkbox.checked = false) : (checkbox.checked = true)
   })
 }
 
