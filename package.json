@@ -1,8 +1,8 @@
 {
   "version": "0.1.0",
-  "description": "My new js application",
+  "description": "Momentum",
   "private": true,
-  "name": "momentum-webpack",
+  "name": "momentum",
   "scripts": {
     "start": "webpack serve --env development",
     "build": "webpack"

@@ -64,7 +64,7 @@ module.exports = ({ development }) => ({
       filename: '[name]-[chunkhash].css',
       chunkFilename: '[name]-[chunkhash].chunk.js'
     }),
-    new HtmlWebpackPlugin({ title: 'momentum', template: './index.html', inject: false }),
+    new HtmlWebpackPlugin({ title: 'My App', template: './index.html', inject: false }),
     new CopyPlugin({
       patterns: [
         {

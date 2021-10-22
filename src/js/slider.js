@@ -47,8 +47,8 @@ async function setBg() {
 
   if (source === 'github') {
     url = `https://raw.githubusercontent.com/liliyavoloshina/stage1-tasks/assets/images/${timeOfDay}/${padNum(
-        randomNum
-      )}.jpg`
+      randomNum
+    )}.jpg`
   }
 
   const img = new Image()
