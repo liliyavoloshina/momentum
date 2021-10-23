@@ -83,9 +83,13 @@ async function changeAudioLang() {
   audioNameEl.textContent = lang == 'en' ? playlist[playNum].title_en : playlist[playNum].title_ru
 }
 
+function pause() {
+  curAudio.pause()
+}
+
 function togglePlay() {
   if (isPlaying) {
-    curAudio.pause()
+    pause()
   } else {
     curAudio.play()
   }
@@ -234,3 +238,4 @@ playlistItemsEls.forEach(item => {
 audioProgressEl.addEventListener('click', scrub)
 
 export { changeAudioLang }
+// export { changeAudioLang, pause, curAudio }

@@ -194,9 +194,14 @@
   width: fit-content;
   height: 2em;
   transition: 0.7s linear;
+
   &:hover,
   &.active {
     filter: $filter-purple;
+  }
+
+  &__name {
+    cursor: pointer;
   }
 
   &__small-btn {

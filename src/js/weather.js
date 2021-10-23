@@ -35,6 +35,14 @@ function getCityFromStorage() {
 async function getWeather() {
   const lang = getLangFromStorage()
   try {
+    if (city === 'Минск' || city === 'Minsk') {
+      if (lang === 'en') {
+        document.querySelector('#weatherCity').value = 'Minsk'
+      } else {
+        document.querySelector('#weatherCity').value = 'Минск'
+      }
+    }
+
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lang}&appid=01d522b353a969527c35ef13f4db2c3e&units=metric`
     const res = await fetch(url)
     const data = await res.json()
@@ -60,7 +68,6 @@ async function getWeather() {
   }
 }
 
-
 window.addEventListener('beforeunload', () => {
   setCityToStorage()
 })
@@ -69,5 +76,4 @@ window.addEventListener('load', () => {
   getWeather()
 })
 
-
-export {getWeather}
+export { getWeather }

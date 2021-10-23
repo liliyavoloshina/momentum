@@ -46,6 +46,8 @@ async function setBg() {
   }
 
   if (source === 'github') {
+    console.log(`✨ Изображения перелистываются последовательно: ${padNum(randomNum)}`)
+
     url = `https://raw.githubusercontent.com/liliyavoloshina/stage1-tasks/assets/images/${timeOfDay}/${padNum(
       randomNum
     )}.jpg`

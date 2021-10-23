@@ -1,8 +1,5 @@
 const widgets = document.querySelectorAll('.widget')
 const widgetsCheckboxes = document.querySelectorAll('.widget-checkbox')
-const todoBtn = document.querySelector('#todoBtn')
-
-console.log(widgets)
 
 let hidden = []
 
@@ -10,6 +7,7 @@ function changeVisibilty() {
   const widget = this.dataset.widget
   const checked = this.checked
   const widgetEl = document.querySelector(`div[data-widget="${widget}"]`)
+
   widgetEl.classList.toggle('hidden')
   if (!checked) {
     hidden.push(widget)
