@@ -27,13 +27,18 @@ function getCityFromStorage() {
     city = localStorage.getItem('city')
     document.querySelector('#weatherCity').value = localStorage.getItem('city')
   } else {
-    city = 'Минск'
+    city = 'Minsk'
     document.querySelector('#weatherCity').value = 'Minsk'
   }
 }
 
 async function getWeather() {
   const lang = getLangFromStorage()
+  if (lang === 'en') {
+    document.querySelector('#weatherCity').placeholder = '[Enter city]'
+  } else {
+    document.querySelector('#weatherCity').placeholder = '[Введите город]'
+  }
   try {
     if (city === 'Минск' || city === 'Minsk') {
       if (lang === 'en') {
@@ -64,7 +69,11 @@ async function getWeather() {
   } catch (e) {
     weatherErrorEl.classList.remove('hidden')
     weatherInfoEl.classList.add('hidden')
-    weatherErrorEl.textContent = `Unfortunately, there is no place for "${city}" on Earth... :(`
+    if (lang === 'en') {
+      weatherErrorEl.textContent = `Unfortunately, "${city}" is not exist :(`
+    } else {
+      weatherErrorEl.textContent = `К сожалению, "${city}" не существует :(`
+    }
   }
 }
 

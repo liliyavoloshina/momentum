@@ -29,7 +29,7 @@ async function setBg() {
 
   if (source === 'unsplash') {
     const response = await fetch(
-      `https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=${timeOfDay}/${tag}&client_id=ZMe8BGgm8MXpmbZUBCgMi4m1CTgEQhzy90dkk9gjcpY`
+      `https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=${timeOfDay},${tag}&client_id=ZMe8BGgm8MXpmbZUBCgMi4m1CTgEQhzy90dkk9gjcpY`
     )
     const json = await response.json()
     url = json.urls.raw
