@@ -32,8 +32,8 @@ function getTagFromStorage() {
     tag = JSON.parse(localStorage.getItem('tag'))
     imageTagEl.value = tag
   } else {
-    imageTagEl.value = 'nature'
-    tag = 'nature'
+    imageTagEl.value = ''
+    tag = ''
   }
   if (source === 'github') {
     imageTagEl.value = '-'
@@ -57,9 +57,7 @@ window.addEventListener('load', () => {
   tag = getTagFromStorage()
   source = getSourceFromStorage()
   widgetsRadios.forEach(radio => {
-    radio.dataset.source === source
-      ? (radio.checked = true)
-      : (radio.checked = false)
+    radio.dataset.source === source ? (radio.checked = true) : (radio.checked = false)
   })
 })
 

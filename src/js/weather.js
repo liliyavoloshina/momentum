@@ -70,7 +70,7 @@ async function getWeather() {
     weatherErrorEl.classList.remove('hidden')
     weatherInfoEl.classList.add('hidden')
     if (lang === 'en') {
-      weatherErrorEl.textContent = `Unfortunately, "${city}" is not exist :(`
+      weatherErrorEl.textContent = `Unfortunately, "${city}" does not exist :(`
     } else {
       weatherErrorEl.textContent = `К сожалению, "${city}" не существует :(`
     }
