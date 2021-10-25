@@ -17,8 +17,9 @@ async function getTimeOfDay() {
 }
 
 async function getGreetingText() {
-  const timeOfDay =  await getTimeOfDay()
+  const timeOfDay = await getTimeOfDay()
   const lang = getLangFromStorage()
+
   if (timeOfDay === 'morning') {
     if (lang == 'en') {
       return 'Good morning'
@@ -44,13 +45,13 @@ async function getGreetingText() {
       return 'Доброй ночи'
     }
   }
-
-  setTimeout(getGreetingText, 1000)
 }
 
 async function showGreeting() {
   const greetingText = `${await getGreetingText()},`
   greetingDaytimeEl.textContent = greetingText
+
+  setTimeout(showGreeting, 1000)
 }
 
 showGreeting()
