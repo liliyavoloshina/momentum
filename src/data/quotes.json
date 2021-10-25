@@ -29,10 +29,10 @@
   },
   {
     "id": 5,
-    "text_ru": "Торт — это ложь.",
-    "text_en": "The cake is a lie.",
-    "author_ru": "Портал",
-    "author_en": "Portal"
+    "text_ru": "С новым слоем краски даже замки в небе будут красивы.",
+    "text_en": "Even castles in the sky can do with a fresh coat of paint.",
+    "author_ru": "Харуки Мураками",
+    "author_en": "Haruki Murakami"
   },
   {
     "id": 6,
@@ -43,17 +43,17 @@
   },
   {
     "id": 7,
-    "text_ru": "Если наши жизни уже написаны, потребуется смелый человек, чтобы изменить сценарий.",
-    "text_en": "If our lives are already written, it would take a courageous man to change the script.",
-    "author_ru": "Алан Вэйк",
-    "author_en": "Alan Wake"
+    "text_ru": "Все животные равны, но некоторые животные более равны, чем другие.",
+    "text_en": "All animals are equal, but some animals are more equal than others.",
+    "author_ru": "Джордж Оруэлл",
+    "author_en": "George Orwell"
   },
   {
     "id": 8,
-    "text_ru": "Пусть уж меня ненавидят за то, кто я есть, чем любят за то, кем я не являюсь.",
-    "text_en": "I'd rather be hated for who I am, than loved for who I am not.",
-    "author_ru": "Курт Кобейн",
-    "author_en": "Kurt Cobain"
+    "text_ru": "Компьютеры бесполезны. Они могут только давать ответы.",
+    "text_en": "Computers are useless. They can only give you answers.",
+    "author_ru": "Пабло Пикассо",
+    "author_en": "Pablo Picasso"
   },
   {
     "id": 9,
@@ -92,10 +92,10 @@
   },
   {
     "id": 14,
-    "text_ru": "Будущее не предопределено. Судьбы нет, мы ее создаем.",
-    "text_en": "The future’s not set. There’s no fate but what we make for ourselves.",
-    "author_ru": "Джон Коннор",
-    "author_en": "John Connor"
+    "text_ru": "Я всегда делаю то, что не умею делать. Так я могу научиться этому.",
+    "text_en": "I am always doing that which I can not do, in order that I may learn how to do it.",
+    "author_ru": "Пабло Пикассо",
+    "author_en": "Pablo Picasso"
   },
   {
     "id": 15,
@@ -106,10 +106,10 @@
   },
   {
     "id": 16,
-    "text_ru": "Вещи, которыми вы владеете, в конечном итоге, начинают владеть вами.",
-    "text_en": "Things you own end up owning you.",
-    "author_ru": "Чак Паланик",
-    "author_en": "Chuck Palahniuk"
+    "text_ru": "Вдохновение, когда оно приходит ко мне, застает меня за работой.",
+    "text_en": "Inspiration does exist, but it must find you working.",
+    "author_ru": "Пабло Пикассо",
+    "author_en": "Pablo Picasso"
   },
   {
     "id": 17,
@@ -134,10 +134,10 @@
   },
   {
     "id": 20,
-    "text_ru": "Ничто не истина, все дозволено.",
-    "text_en": "Nothing is true. Everything is permitted.",
-    "author_ru": "Эцио Аудиторе",
-    "author_en": "Ezio Auditore"
+    "text_ru": "Будьте осторожны, когда читаете книги о здоровье: опечатка может стоить вам жизни.",
+    "text_en": "Be careful about reading health books. You may die of a misprint.",
+    "author_ru": "Марк Твен",
+    "author_en": "Mark Twain"
   },
   {
     "id": 21,
