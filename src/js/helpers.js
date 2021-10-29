@@ -17,7 +17,7 @@ function getLangFromStorage() {
 }
 
 const preloadedImages = new Array()
-const images = ['../img/unmute.png', '../img/mute.png', '../img/play-audio.png', '../img/pause-audio.png']
+const images = ['./img/unmute.png', './img/mute.png', './img/play-audio.png', './img/pause-audio.png']
 
 function preload(images) {
   for (let i = 0; i < images.length; i++) {

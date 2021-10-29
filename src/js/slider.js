@@ -36,9 +36,6 @@ async function setBg() {
 
     const json = await response.json()
     url = json.urls.raw
-
-    console.log(`✨ URL изображения: ${response.url}`)
-    console.log(`✨ Тэг: ${request}`)
   }
 
   if (source === 'flickr') {
@@ -49,19 +46,12 @@ async function setBg() {
     const photos = json.photos.photo
     const randomImage = photos[Math.floor(Math.random() * photos.length)]
     url = randomImage.url_h
-
-    console.log(`✨ URL изображения: ${response.url}`)
-    console.log(`✨ Тэг: ${request}`)
   }
 
   if (source === 'github') {
-    console.log(`✨ Изображения перелистываются последовательно: ${padNum(randomNum)}`)
-
     url = `https://raw.githubusercontent.com/liliyavoloshina/stage1-tasks/assets/images/${timeOfDay}/${padNum(
       randomNum
     )}.jpg`
-
-    console.log(`✨ URL изображения: ${url}`)
   }
 
   const img = new Image()
