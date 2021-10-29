@@ -1,9 +1,5 @@
 .header {
   display: flex;
   justify-content: space-between;
-  height: 30vh;
-
-  @media (max-width: 420px) {
-    height: 40vh;
-  }
+  height: calc(var(--vh, 1vh) * 30);
 }

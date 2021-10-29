@@ -34,12 +34,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 40vh;
-
-  @media (max-width: 420px) {
-    height: 20vh;
-    row-gap: 0;
-  }
+  height: calc(var(--vh, 1vh) * 30);
 }
 
 .time {

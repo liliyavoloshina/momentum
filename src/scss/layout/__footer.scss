@@ -34,15 +34,16 @@
 }
 
 .footer {
-  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 30vh;
+  justify-content: flex-end;
+  height: calc(var(--vh, 1vh) * 30);
+  padding: var(--widgets-p);
 
-  @media (max-width: 420px) {
-    height: 40vh;
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
 
@@ -87,9 +88,9 @@
 }
 
 .setting-btn {
-  position: absolute;
-  bottom: var(--widgets-p);
-  left: var(--widgets-p);
+  // position: absolute;
+  // bottom: var(--widgets-p);
+  // left: var(--widgets-p);
   width: var(--setting-btn-s);
   height: var(--setting-btn-s);
   background: url('../img/settings.png');
@@ -108,9 +109,9 @@
 }
 
 .todo-btn {
-  position: absolute;
-  bottom: var(--widgets-p);
-  right: var(--widgets-p);
+  // position: absolute;
+  // bottom: var(--widgets-p);
+  // right: var(--widgets-p);
   width: var(--todo-btn-s);
   height: var(--todo-btn-s);
   background: url('../img/to-do-list.png');
@@ -128,8 +129,6 @@
 }
 
 .copyright {
-  position: absolute;
-  bottom: var(--widgets-p);
   display: flex;
   column-gap: 10px;
   font-size: var(--copyright-fs);

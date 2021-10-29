@@ -36,6 +36,11 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
   font-family: 'Lato', sans-serif;
   color: $text-primary;
   background: rgba(0, 0, 0, 0.7);
