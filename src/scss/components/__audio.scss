@@ -40,12 +40,24 @@
     margin-bottom: 2em;
 
     @media (max-width: 768px) {
-      margin-bottom: 1.5em;
+      margin-bottom: 1em;
     }
+
+    // @media (max-width: 420px) {
+    //   margin-bottom: 1em;
+    // }
   }
 
   &-playlist {
     list-style-type: none;
+
+    @media (max-width: 420px) {
+      position: absolute;
+      right: var(--widgets-p);
+      left: var(--widgets-p);
+      display: flex;
+      justify-content: space-between;
+    }
   }
 }
 
@@ -56,6 +68,10 @@
 
     @media (max-width: 768px) {
       margin-bottom: 1em;
+    }
+
+    @media (max-width: 420px) {
+      margin-bottom: 0.5em;
     }
   }
 
@@ -71,7 +87,7 @@
     }
 
     @media (max-width: 420px) {
-      row-gap: 30px;
+      row-gap: 1.3em;
     }
   }
 }
@@ -195,6 +211,14 @@
   height: 2em;
   transition: 0.7s linear;
 
+  @media (max-width: 768px) {
+    height: 1.5em;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 12px;
+  }
+
   &:hover,
   &.active {
     filter: $filter-purple;
@@ -208,6 +232,7 @@
     width: 1em;
     height: 1em;
     background-size: contain;
+    background-repeat: no-repeat;
     background-color: transparent;
   }
 

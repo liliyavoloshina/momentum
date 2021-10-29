@@ -23,7 +23,7 @@
 
 @media (max-width: 420px) {
   :root {
-    --time-fs: 4em;
+    --time-fs: 2em;
     --date-fs: 1.3em;
     --greeting-fs: 1.2em;
   }
@@ -35,6 +35,11 @@
   justify-content: center;
   align-items: center;
   height: 40vh;
+
+  @media (max-width: 420px) {
+    height: 20vh;
+    row-gap: 0;
+  }
 }
 
 .time {
@@ -52,6 +57,10 @@
   column-gap: 0.2em;
   margin-top: 1em;
   font-size: var(--greeting-fs);
+
+  @media (max-width: 420px) {
+    margin-top: 0;
+  }
 
   &__daytime {
     width: 50%;
@@ -76,6 +85,10 @@
 
   @media (max-width: 768px) {
     top: 47%;
+  }
+
+  @media (max-width: 420px) {
+    top: 50%;
   }
 }
 
