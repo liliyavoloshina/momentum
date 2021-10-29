@@ -40,7 +40,7 @@
     margin-bottom: 2em;
 
     @media (max-width: 768px) {
-      margin-bottom: 1em;
+      margin-bottom: 3em;
     }
 
     // @media (max-width: 420px) {
@@ -135,6 +135,12 @@
   & .btn {
     width: 2em;
     height: 2em;
+    background-repeat: no-repeat;
+
+    @media (max-width: 420px) {
+      width: 1em;
+      height: 1em;
+    }
   }
 }
 
@@ -176,6 +182,11 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-color: transparent;
+
+  @media (max-width: 420px) {
+    width: 1em;
+    height: 1em;
+  }
 }
 
 .audio-widget-volume-range {
@@ -187,12 +198,17 @@
   -webkit-appearance: none;
 
   &::-webkit-slider-thumb {
-    width: 20px;
-    height: 20px;
+    width: 2em;
+    height: 2em;
     border-radius: 50%;
     -webkit-appearance: none;
     cursor: pointer;
     background: $text-primary;
+
+    @media (max-width: 768px) {
+      width: 1em;
+      height: 1em;
+    }
   }
 
   &::-webkit-slider-thumb:hover {
@@ -200,7 +216,7 @@
     filter: $filter-purple;
   }
 
-  background: linear-gradient(to right, $text-primary 0%, $text-primary 45%, $color-dark 30%, $color-dark 100%);
+  background: linear-gradient(to right, $text-primary 0%, $text-primary 35%, $color-dark 50%, $color-dark 100%);
 }
 
 .playlist-item {
@@ -213,6 +229,7 @@
 
   @media (max-width: 768px) {
     height: 1.5em;
+    column-gap: 0.5em;
   }
 
   @media (max-width: 420px) {
